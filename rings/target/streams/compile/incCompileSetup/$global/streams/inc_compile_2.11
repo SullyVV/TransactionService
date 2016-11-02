@@ -1,0 +1,753 @@
+format version: 5
+output mode:
+1 items
+0 -> single
+output directories:
+1 items
+output dir -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes
+compile options:
+0 items
+javac options:
+0 items
+compiler version:
+1 items
+0 -> 2.11.7
+compile order:
+1 items
+0 -> Mixed
+name hashing:
+1 items
+0 -> true
+products:
+46 items
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/AppServiceAPI.class
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/Command$.class
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/Command.class
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/KVAppService$$anonfun$1.class
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/KVAppService$$anonfun$2.class
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/KVAppService$$anonfun$apply$1.class
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/KVAppService$.class
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/KVAppService.class
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/Prime$.class
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/Prime.class
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/View$.class
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/View.class
+/Users/JohnDong/Desktop/rings/KVClient.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/AnyMap.class
+/Users/JohnDong/Desktop/rings/KVClient.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/KVClient$$anonfun$1.class
+/Users/JohnDong/Desktop/rings/KVClient.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/KVClient$$anonfun$2.class
+/Users/JohnDong/Desktop/rings/KVClient.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/KVClient.class
+/Users/JohnDong/Desktop/rings/KVStore.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/Get$.class
+/Users/JohnDong/Desktop/rings/KVStore.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/Get.class
+/Users/JohnDong/Desktop/rings/KVStore.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/KVStore$$anonfun$receive$1.class
+/Users/JohnDong/Desktop/rings/KVStore.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/KVStore$.class
+/Users/JohnDong/Desktop/rings/KVStore.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/KVStore.class
+/Users/JohnDong/Desktop/rings/KVStore.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/KVStoreAPI.class
+/Users/JohnDong/Desktop/rings/KVStore.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/Put$.class
+/Users/JohnDong/Desktop/rings/KVStore.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/Put.class
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/BurstAck$.class
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/BurstAck.class
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/Join$.class
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/Join.class
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/LoadMaster$$anonfun$1.class
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/LoadMaster$$anonfun$burst$1.class
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/LoadMaster$$anonfun$deactivate$1.class
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/LoadMaster$$anonfun$receive$1$$anonfun$applyOrElse$1.class
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/LoadMaster$$anonfun$receive$1.class
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/LoadMaster$.class
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/LoadMaster.class
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/LoadMasterAPI.class
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/Start$.class
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/Start.class
+/Users/JohnDong/Desktop/rings/RingService.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/RingCell.class
+/Users/JohnDong/Desktop/rings/RingService.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/RingMap.class
+/Users/JohnDong/Desktop/rings/RingService.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/RingServer$$anonfun$receive$1.class
+/Users/JohnDong/Desktop/rings/RingService.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/RingServer$.class
+/Users/JohnDong/Desktop/rings/RingService.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/RingServer.class
+/Users/JohnDong/Desktop/rings/Stats.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/Stats.class
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/TestHarness$.class
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> /Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/TestHarness.class
+binary dependencies:
+20 items
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> /Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/rt.jar
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> /Users/JohnDong/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.3.12.jar
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> /Users/JohnDong/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7.jar
+/Users/JohnDong/Desktop/rings/KVClient.scala -> /Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/rt.jar
+/Users/JohnDong/Desktop/rings/KVClient.scala -> /Users/JohnDong/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.3.12.jar
+/Users/JohnDong/Desktop/rings/KVClient.scala -> /Users/JohnDong/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7.jar
+/Users/JohnDong/Desktop/rings/KVStore.scala -> /Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/rt.jar
+/Users/JohnDong/Desktop/rings/KVStore.scala -> /Users/JohnDong/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.3.12.jar
+/Users/JohnDong/Desktop/rings/KVStore.scala -> /Users/JohnDong/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7.jar
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> /Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/rt.jar
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> /Users/JohnDong/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.3.12.jar
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> /Users/JohnDong/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7.jar
+/Users/JohnDong/Desktop/rings/RingService.scala -> /Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/rt.jar
+/Users/JohnDong/Desktop/rings/RingService.scala -> /Users/JohnDong/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.3.12.jar
+/Users/JohnDong/Desktop/rings/RingService.scala -> /Users/JohnDong/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7.jar
+/Users/JohnDong/Desktop/rings/Stats.scala -> /Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/rt.jar
+/Users/JohnDong/Desktop/rings/Stats.scala -> /Users/JohnDong/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7.jar
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> /Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/rt.jar
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> /Users/JohnDong/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.3.12.jar
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> /Users/JohnDong/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7.jar
+direct source dependencies:
+0 items
+direct external dependencies:
+0 items
+public inherited source dependencies:
+0 items
+public inherited external dependencies:
+0 items
+member reference internal dependencies:
+13 items
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> /Users/JohnDong/Desktop/rings/KVStore.scala
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> /Users/JohnDong/Desktop/rings/LoadMaster.scala
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> /Users/JohnDong/Desktop/rings/RingService.scala
+/Users/JohnDong/Desktop/rings/KVClient.scala -> /Users/JohnDong/Desktop/rings/KVStore.scala
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> /Users/JohnDong/Desktop/rings/KVAppService.scala
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> /Users/JohnDong/Desktop/rings/Stats.scala
+/Users/JohnDong/Desktop/rings/RingService.scala -> /Users/JohnDong/Desktop/rings/KVAppService.scala
+/Users/JohnDong/Desktop/rings/RingService.scala -> /Users/JohnDong/Desktop/rings/KVClient.scala
+/Users/JohnDong/Desktop/rings/RingService.scala -> /Users/JohnDong/Desktop/rings/LoadMaster.scala
+/Users/JohnDong/Desktop/rings/RingService.scala -> /Users/JohnDong/Desktop/rings/Stats.scala
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> /Users/JohnDong/Desktop/rings/KVAppService.scala
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> /Users/JohnDong/Desktop/rings/LoadMaster.scala
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> /Users/JohnDong/Desktop/rings/Stats.scala
+member reference external dependencies:
+0 items
+inheritance internal dependencies:
+0 items
+inheritance external dependencies:
+0 items
+class names:
+46 items
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> rings.AppServiceAPI
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> rings.Command
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> rings.Command$
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> rings.KVAppService
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> rings.KVAppService$
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> rings.KVAppService$$anonfun$1
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> rings.KVAppService$$anonfun$2
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> rings.KVAppService$$anonfun$apply$1
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> rings.Prime
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> rings.Prime$
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> rings.View
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> rings.View$
+/Users/JohnDong/Desktop/rings/KVClient.scala -> rings.AnyMap
+/Users/JohnDong/Desktop/rings/KVClient.scala -> rings.KVClient
+/Users/JohnDong/Desktop/rings/KVClient.scala -> rings.KVClient$$anonfun$1
+/Users/JohnDong/Desktop/rings/KVClient.scala -> rings.KVClient$$anonfun$2
+/Users/JohnDong/Desktop/rings/KVStore.scala -> rings.Get
+/Users/JohnDong/Desktop/rings/KVStore.scala -> rings.Get$
+/Users/JohnDong/Desktop/rings/KVStore.scala -> rings.KVStore
+/Users/JohnDong/Desktop/rings/KVStore.scala -> rings.KVStore$
+/Users/JohnDong/Desktop/rings/KVStore.scala -> rings.KVStore$$anonfun$receive$1
+/Users/JohnDong/Desktop/rings/KVStore.scala -> rings.KVStoreAPI
+/Users/JohnDong/Desktop/rings/KVStore.scala -> rings.Put
+/Users/JohnDong/Desktop/rings/KVStore.scala -> rings.Put$
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> rings.BurstAck
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> rings.BurstAck$
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> rings.Join
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> rings.Join$
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> rings.LoadMaster
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> rings.LoadMaster$
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> rings.LoadMaster$$anonfun$1
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> rings.LoadMaster$$anonfun$burst$1
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> rings.LoadMaster$$anonfun$deactivate$1
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> rings.LoadMaster$$anonfun$receive$1
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> rings.LoadMaster$$anonfun$receive$1$$anonfun$applyOrElse$1
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> rings.LoadMasterAPI
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> rings.Start
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> rings.Start$
+/Users/JohnDong/Desktop/rings/RingService.scala -> rings.RingCell
+/Users/JohnDong/Desktop/rings/RingService.scala -> rings.RingMap
+/Users/JohnDong/Desktop/rings/RingService.scala -> rings.RingServer
+/Users/JohnDong/Desktop/rings/RingService.scala -> rings.RingServer$
+/Users/JohnDong/Desktop/rings/RingService.scala -> rings.RingServer$$anonfun$receive$1
+/Users/JohnDong/Desktop/rings/Stats.scala -> rings.Stats
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> rings.TestHarness
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> rings.TestHarness$
+used names:
+480 items
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> !
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> &&
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> +
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> <init>
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> ==
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> AbstractFunction0
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> AbstractFunction1
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> ActorRef
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> ActorSystem
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> AnyRef
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> AppServiceAPI
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> Command
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> IndexedSeq
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> Int
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> KVAppService
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> KVStore
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> LoadMaster
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> None
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> Predef
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> Prime
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> Product
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> Props
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> RingServer
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> ScalaRunTime
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> Seq
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> Serializable
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> View
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> _hashCode
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> _toString
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> ackEach
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> actor
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> actorOf
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> actorRef2Scala
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> akka
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> asInstanceOf
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> canBuildFrom
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> endpoints
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> eq
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> foreach
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> i
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> immutable
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> intWrapper
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> isInstanceOf
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> map
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> master
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> numNodes
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> package
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> props
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> qual$1
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> rings
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> runtime
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> scala
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> server
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> servers
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> stores
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> system
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> toString
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> typedProductIterator
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> until
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> x$1
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> x$2
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> ||
+/Users/JohnDong/Desktop/rings/KVClient.scala -> %
+/Users/JohnDong/Desktop/rings/KVClient.scala -> ++
+/Users/JohnDong/Desktop/rings/KVClient.scala -> <init>
+/Users/JohnDong/Desktop/rings/KVClient.scala -> ActorRef
+/Users/JohnDong/Desktop/rings/KVClient.scala -> Any
+/Users/JohnDong/Desktop/rings/KVClient.scala -> AnyMap
+/Users/JohnDong/Desktop/rings/KVClient.scala -> AnyRef
+/Users/JohnDong/Desktop/rings/KVClient.scala -> Array
+/Users/JohnDong/Desktop/rings/KVClient.scala -> Await
+/Users/JohnDong/Desktop/rings/KVClient.scala -> BigInt
+/Users/JohnDong/Desktop/rings/KVClient.scala -> Byte
+/Users/JohnDong/Desktop/rings/KVClient.scala -> ClassTag
+/Users/JohnDong/Desktop/rings/KVClient.scala -> ExecutionContext
+/Users/JohnDong/Desktop/rings/KVClient.scala -> HashMap
+/Users/JohnDong/Desktop/rings/KVClient.scala -> Implicits
+/Users/JohnDong/Desktop/rings/KVClient.scala -> Int
+/Users/JohnDong/Desktop/rings/KVClient.scala -> KVClient
+/Users/JohnDong/Desktop/rings/KVClient.scala -> MessageDigest
+/Users/JohnDong/Desktop/rings/KVClient.scala -> Option
+/Users/JohnDong/Desktop/rings/KVClient.scala -> Predef
+/Users/JohnDong/Desktop/rings/KVClient.scala -> Seq
+/Users/JohnDong/Desktop/rings/KVClient.scala -> StringCanBuildFrom
+/Users/JohnDong/Desktop/rings/KVClient.scala -> Timeout
+/Users/JohnDong/Desktop/rings/KVClient.scala -> _1
+/Users/JohnDong/Desktop/rings/KVClient.scala -> _2
+/Users/JohnDong/Desktop/rings/KVClient.scala -> actor
+/Users/JohnDong/Desktop/rings/KVClient.scala -> akka
+/Users/JohnDong/Desktop/rings/KVClient.scala -> apply
+/Users/JohnDong/Desktop/rings/KVClient.scala -> ask
+/Users/JohnDong/Desktop/rings/KVClient.scala -> augmentString
+/Users/JohnDong/Desktop/rings/KVClient.scala -> cache
+/Users/JohnDong/Desktop/rings/KVClient.scala -> cellSeq
+/Users/JohnDong/Desktop/rings/KVClient.scala -> clear
+/Users/JohnDong/Desktop/rings/KVClient.scala -> collection
+/Users/JohnDong/Desktop/rings/KVClient.scala -> concurrent
+/Users/JohnDong/Desktop/rings/KVClient.scala -> digest
+/Users/JohnDong/Desktop/rings/KVClient.scala -> directRead
+/Users/JohnDong/Desktop/rings/KVClient.scala -> directWrite
+/Users/JohnDong/Desktop/rings/KVClient.scala -> dirtyset
+/Users/JohnDong/Desktop/rings/KVClient.scala -> duration
+/Users/JohnDong/Desktop/rings/KVClient.scala -> foreach
+/Users/JohnDong/Desktop/rings/KVClient.scala -> future
+/Users/JohnDong/Desktop/rings/KVClient.scala -> get
+/Users/JohnDong/Desktop/rings/KVClient.scala -> getBytes
+/Users/JohnDong/Desktop/rings/KVClient.scala -> getInstance
+/Users/JohnDong/Desktop/rings/KVClient.scala -> global
+/Users/JohnDong/Desktop/rings/KVClient.scala -> int2bigInt
+/Users/JohnDong/Desktop/rings/KVClient.scala -> isDefined
+/Users/JohnDong/Desktop/rings/KVClient.scala -> isEmpty
+/Users/JohnDong/Desktop/rings/KVClient.scala -> java
+/Users/JohnDong/Desktop/rings/KVClient.scala -> key
+/Users/JohnDong/Desktop/rings/KVClient.scala -> label
+/Users/JohnDong/Desktop/rings/KVClient.scala -> length
+/Users/JohnDong/Desktop/rings/KVClient.scala -> mapTo
+/Users/JohnDong/Desktop/rings/KVClient.scala -> materializeClassTag
+/Users/JohnDong/Desktop/rings/KVClient.scala -> math
+/Users/JohnDong/Desktop/rings/KVClient.scala -> md
+/Users/JohnDong/Desktop/rings/KVClient.scala -> mutable
+/Users/JohnDong/Desktop/rings/KVClient.scala -> ne
+/Users/JohnDong/Desktop/rings/KVClient.scala -> nodeID
+/Users/JohnDong/Desktop/rings/KVClient.scala -> package
+/Users/JohnDong/Desktop/rings/KVClient.scala -> pattern
+/Users/JohnDong/Desktop/rings/KVClient.scala -> put
+/Users/JohnDong/Desktop/rings/KVClient.scala -> result
+/Users/JohnDong/Desktop/rings/KVClient.scala -> rings
+/Users/JohnDong/Desktop/rings/KVClient.scala -> route
+/Users/JohnDong/Desktop/rings/KVClient.scala -> scala
+/Users/JohnDong/Desktop/rings/KVClient.scala -> seconds
+/Users/JohnDong/Desktop/rings/KVClient.scala -> security
+/Users/JohnDong/Desktop/rings/KVClient.scala -> stores
+/Users/JohnDong/Desktop/rings/KVClient.scala -> timeout
+/Users/JohnDong/Desktop/rings/KVClient.scala -> toInt
+/Users/JohnDong/Desktop/rings/KVClient.scala -> toString
+/Users/JohnDong/Desktop/rings/KVClient.scala -> unchecked
+/Users/JohnDong/Desktop/rings/KVClient.scala -> util
+/Users/JohnDong/Desktop/rings/KVClient.scala -> v
+/Users/JohnDong/Desktop/rings/KVClient.scala -> value
+/Users/JohnDong/Desktop/rings/KVClient.scala -> withFilter
+/Users/JohnDong/Desktop/rings/KVStore.scala -> !
+/Users/JohnDong/Desktop/rings/KVStore.scala -> &&
+/Users/JohnDong/Desktop/rings/KVStore.scala -> <init>
+/Users/JohnDong/Desktop/rings/KVStore.scala -> ==
+/Users/JohnDong/Desktop/rings/KVStore.scala -> A1
+/Users/JohnDong/Desktop/rings/KVStore.scala -> AbstractFunction1
+/Users/JohnDong/Desktop/rings/KVStore.scala -> AbstractFunction2
+/Users/JohnDong/Desktop/rings/KVStore.scala -> Actor
+/Users/JohnDong/Desktop/rings/KVStore.scala -> Any
+/Users/JohnDong/Desktop/rings/KVStore.scala -> AnyRef
+/Users/JohnDong/Desktop/rings/KVStore.scala -> B1
+/Users/JohnDong/Desktop/rings/KVStore.scala -> BigInt
+/Users/JohnDong/Desktop/rings/KVStore.scala -> Function1
+/Users/JohnDong/Desktop/rings/KVStore.scala -> Get
+/Users/JohnDong/Desktop/rings/KVStore.scala -> HashMap
+/Users/JohnDong/Desktop/rings/KVStore.scala -> KVStore
+/Users/JohnDong/Desktop/rings/KVStore.scala -> KVStoreAPI
+/Users/JohnDong/Desktop/rings/KVStore.scala -> None
+/Users/JohnDong/Desktop/rings/KVStore.scala -> Product
+/Users/JohnDong/Desktop/rings/KVStore.scala -> Props
+/Users/JohnDong/Desktop/rings/KVStore.scala -> Put
+/Users/JohnDong/Desktop/rings/KVStore.scala -> ScalaRunTime
+/Users/JohnDong/Desktop/rings/KVStore.scala -> Serializable
+/Users/JohnDong/Desktop/rings/KVStore.scala -> _hashCode
+/Users/JohnDong/Desktop/rings/KVStore.scala -> _toString
+/Users/JohnDong/Desktop/rings/KVStore.scala -> actor
+/Users/JohnDong/Desktop/rings/KVStore.scala -> actorRef2Scala
+/Users/JohnDong/Desktop/rings/KVStore.scala -> akka
+/Users/JohnDong/Desktop/rings/KVStore.scala -> apply
+/Users/JohnDong/Desktop/rings/KVStore.scala -> asInstanceOf
+/Users/JohnDong/Desktop/rings/KVStore.scala -> cell
+/Users/JohnDong/Desktop/rings/KVStore.scala -> collection
+/Users/JohnDong/Desktop/rings/KVStore.scala -> eq
+/Users/JohnDong/Desktop/rings/KVStore.scala -> get
+/Users/JohnDong/Desktop/rings/KVStore.scala -> isInstanceOf
+/Users/JohnDong/Desktop/rings/KVStore.scala -> key
+/Users/JohnDong/Desktop/rings/KVStore.scala -> mutable
+/Users/JohnDong/Desktop/rings/KVStore.scala -> package
+/Users/JohnDong/Desktop/rings/KVStore.scala -> put
+/Users/JohnDong/Desktop/rings/KVStore.scala -> rings
+/Users/JohnDong/Desktop/rings/KVStore.scala -> runtime
+/Users/JohnDong/Desktop/rings/KVStore.scala -> scala
+/Users/JohnDong/Desktop/rings/KVStore.scala -> self
+/Users/JohnDong/Desktop/rings/KVStore.scala -> sender
+/Users/JohnDong/Desktop/rings/KVStore.scala -> store
+/Users/JohnDong/Desktop/rings/KVStore.scala -> toString
+/Users/JohnDong/Desktop/rings/KVStore.scala -> typedProductIterator
+/Users/JohnDong/Desktop/rings/KVStore.scala -> unchecked
+/Users/JohnDong/Desktop/rings/KVStore.scala -> value
+/Users/JohnDong/Desktop/rings/KVStore.scala -> ||
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> !
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> &&
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> +=
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> -
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> <init>
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> ==
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> A1
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> AbstractFunction0
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> AbstractFunction1
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> AbstractFunction2
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> Actor
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> ActorRef
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> ActorSystem
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> AnyRef
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> B1
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> Boolean
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> BurstAck
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> Function1
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> Int
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> Join
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> LoadMaster
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> LoadMasterAPI
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> LogSource
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> Logging
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> None
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> Option
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> Predef
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> Product
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> Props
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> ScalaRunTime
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> Seq
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> Serializable
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> Start
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> Statics
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> Stats
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> StringContext
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> Unit
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> _hashCode
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> _toString
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> active
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> active_=
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> actor
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> actorRef2Scala
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> akka
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> anyHash
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> apply
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> asInstanceOf
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> burst
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> burstSize
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> canBuildFrom
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> collection
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> context
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> deactivate
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> eq
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> event
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> finalizeHash
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> foreach
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> fromActor
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> get
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> info
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> intWrapper
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> isDefined
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> isInstanceOf
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> listener
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> listener_=
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> log
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> map
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> maxPerNode
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> maxPerNode_=
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> messages
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> mix
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> ne
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> nodesActive
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> nodesActive_=
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> numNodes
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> package
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> println
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> rings
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> runtime
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> s
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> scala
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> self
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> sender
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> senderNodeID
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> server
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> serverStats
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> servers
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> stats
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> system
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> to
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> toString
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> total
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> totalPerNode
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> typedProductIterator
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> unchecked
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> ||
+/Users/JohnDong/Desktop/rings/RingService.scala -> !
+/Users/JohnDong/Desktop/rings/RingService.scala -> !=
+/Users/JohnDong/Desktop/rings/RingService.scala -> +
+/Users/JohnDong/Desktop/rings/RingService.scala -> -
+/Users/JohnDong/Desktop/rings/RingService.scala -> <
+/Users/JohnDong/Desktop/rings/RingService.scala -> <=
+/Users/JohnDong/Desktop/rings/RingService.scala -> <init>
+/Users/JohnDong/Desktop/rings/RingService.scala -> >=
+/Users/JohnDong/Desktop/rings/RingService.scala -> A1
+/Users/JohnDong/Desktop/rings/RingService.scala -> Actor
+/Users/JohnDong/Desktop/rings/RingService.scala -> ActorRef
+/Users/JohnDong/Desktop/rings/RingService.scala -> ActorSystem
+/Users/JohnDong/Desktop/rings/RingService.scala -> AnyMap
+/Users/JohnDong/Desktop/rings/RingService.scala -> AnyRef
+/Users/JohnDong/Desktop/rings/RingService.scala -> B1
+/Users/JohnDong/Desktop/rings/RingService.scala -> BigInt
+/Users/JohnDong/Desktop/rings/RingService.scala -> Function1
+/Users/JohnDong/Desktop/rings/RingService.scala -> HashMap
+/Users/JohnDong/Desktop/rings/RingService.scala -> Int
+/Users/JohnDong/Desktop/rings/RingService.scala -> KVClient
+/Users/JohnDong/Desktop/rings/RingService.scala -> LogSource
+/Users/JohnDong/Desktop/rings/RingService.scala -> Logging
+/Users/JohnDong/Desktop/rings/RingService.scala -> None
+/Users/JohnDong/Desktop/rings/RingService.scala -> Option
+/Users/JohnDong/Desktop/rings/RingService.scala -> Predef
+/Users/JohnDong/Desktop/rings/RingService.scala -> Props
+/Users/JohnDong/Desktop/rings/RingService.scala -> Random
+/Users/JohnDong/Desktop/rings/RingService.scala -> RingCell
+/Users/JohnDong/Desktop/rings/RingService.scala -> RingMap
+/Users/JohnDong/Desktop/rings/RingService.scala -> RingServer
+/Users/JohnDong/Desktop/rings/RingService.scala -> Seq
+/Users/JohnDong/Desktop/rings/RingService.scala -> Stats
+/Users/JohnDong/Desktop/rings/RingService.scala -> actor
+/Users/JohnDong/Desktop/rings/RingService.scala -> actorRef2Scala
+/Users/JohnDong/Desktop/rings/RingService.scala -> akka
+/Users/JohnDong/Desktop/rings/RingService.scala -> allocCell
+/Users/JohnDong/Desktop/rings/RingService.scala -> allocated
+/Users/JohnDong/Desktop/rings/RingService.scala -> allocated_=
+/Users/JohnDong/Desktop/rings/RingService.scala -> apply
+/Users/JohnDong/Desktop/rings/RingService.scala -> asInstanceOf
+/Users/JohnDong/Desktop/rings/RingService.scala -> assert
+/Users/JohnDong/Desktop/rings/RingService.scala -> burstSize
+/Users/JohnDong/Desktop/rings/RingService.scala -> cell
+/Users/JohnDong/Desktop/rings/RingService.scala -> cellSeq
+/Users/JohnDong/Desktop/rings/RingService.scala -> cellstore
+/Users/JohnDong/Desktop/rings/RingService.scala -> chooseActiveCell
+/Users/JohnDong/Desktop/rings/RingService.scala -> chooseEmptyCell
+/Users/JohnDong/Desktop/rings/RingService.scala -> chosenNodeID
+/Users/JohnDong/Desktop/rings/RingService.scala -> coercedMap
+/Users/JohnDong/Desktop/rings/RingService.scala -> collection
+/Users/JohnDong/Desktop/rings/RingService.scala -> command
+/Users/JohnDong/Desktop/rings/RingService.scala -> context
+/Users/JohnDong/Desktop/rings/RingService.scala -> directRead
+/Users/JohnDong/Desktop/rings/RingService.scala -> directWrite
+/Users/JohnDong/Desktop/rings/RingService.scala -> dirtycells
+/Users/JohnDong/Desktop/rings/RingService.scala -> dirtyset
+/Users/JohnDong/Desktop/rings/RingService.scala -> e
+/Users/JohnDong/Desktop/rings/RingService.scala -> endpoints
+/Users/JohnDong/Desktop/rings/RingService.scala -> endpoints_=
+/Users/JohnDong/Desktop/rings/RingService.scala -> errors
+/Users/JohnDong/Desktop/rings/RingService.scala -> errors_=
+/Users/JohnDong/Desktop/rings/RingService.scala -> event
+/Users/JohnDong/Desktop/rings/RingService.scala -> fromActor
+/Users/JohnDong/Desktop/rings/RingService.scala -> generator
+/Users/JohnDong/Desktop/rings/RingService.scala -> get
+/Users/JohnDong/Desktop/rings/RingService.scala -> hashForKey
+/Users/JohnDong/Desktop/rings/RingService.scala -> incoming
+/Users/JohnDong/Desktop/rings/RingService.scala -> int2bigInt
+/Users/JohnDong/Desktop/rings/RingService.scala -> isEmpty
+/Users/JohnDong/Desktop/rings/RingService.scala -> isInstanceOf
+/Users/JohnDong/Desktop/rings/RingService.scala -> key
+/Users/JohnDong/Desktop/rings/RingService.scala -> localWeight
+/Users/JohnDong/Desktop/rings/RingService.scala -> log
+/Users/JohnDong/Desktop/rings/RingService.scala -> master
+/Users/JohnDong/Desktop/rings/RingService.scala -> math
+/Users/JohnDong/Desktop/rings/RingService.scala -> messages
+/Users/JohnDong/Desktop/rings/RingService.scala -> messages_=
+/Users/JohnDong/Desktop/rings/RingService.scala -> misses
+/Users/JohnDong/Desktop/rings/RingService.scala -> misses_=
+/Users/JohnDong/Desktop/rings/RingService.scala -> mutable
+/Users/JohnDong/Desktop/rings/RingService.scala -> myNodeID
+/Users/JohnDong/Desktop/rings/RingService.scala -> next
+/Users/JohnDong/Desktop/rings/RingService.scala -> nextInt
+/Users/JohnDong/Desktop/rings/RingService.scala -> next_=
+/Users/JohnDong/Desktop/rings/RingService.scala -> numNodes
+/Users/JohnDong/Desktop/rings/RingService.scala -> package
+/Users/JohnDong/Desktop/rings/RingService.scala -> prev
+/Users/JohnDong/Desktop/rings/RingService.scala -> prev_=
+/Users/JohnDong/Desktop/rings/RingService.scala -> println
+/Users/JohnDong/Desktop/rings/RingService.scala -> push
+/Users/JohnDong/Desktop/rings/RingService.scala -> r
+/Users/JohnDong/Desktop/rings/RingService.scala -> read
+/Users/JohnDong/Desktop/rings/RingService.scala -> result
+/Users/JohnDong/Desktop/rings/RingService.scala -> returned
+/Users/JohnDong/Desktop/rings/RingService.scala -> rings
+/Users/JohnDong/Desktop/rings/RingService.scala -> sample
+/Users/JohnDong/Desktop/rings/RingService.scala -> scala
+/Users/JohnDong/Desktop/rings/RingService.scala -> self
+/Users/JohnDong/Desktop/rings/RingService.scala -> sender
+/Users/JohnDong/Desktop/rings/RingService.scala -> stats
+/Users/JohnDong/Desktop/rings/RingService.scala -> stats_=
+/Users/JohnDong/Desktop/rings/RingService.scala -> storeServers
+/Users/JohnDong/Desktop/rings/RingService.scala -> system
+/Users/JohnDong/Desktop/rings/RingService.scala -> touchCell
+/Users/JohnDong/Desktop/rings/RingService.scala -> touches
+/Users/JohnDong/Desktop/rings/RingService.scala -> touches_=
+/Users/JohnDong/Desktop/rings/RingService.scala -> unchecked
+/Users/JohnDong/Desktop/rings/RingService.scala -> util
+/Users/JohnDong/Desktop/rings/RingService.scala -> value
+/Users/JohnDong/Desktop/rings/RingService.scala -> write
+/Users/JohnDong/Desktop/rings/Stats.scala -> +
+/Users/JohnDong/Desktop/rings/Stats.scala -> <init>
+/Users/JohnDong/Desktop/rings/Stats.scala -> AnyRef
+/Users/JohnDong/Desktop/rings/Stats.scala -> Int
+/Users/JohnDong/Desktop/rings/Stats.scala -> Predef
+/Users/JohnDong/Desktop/rings/Stats.scala -> Stats
+/Users/JohnDong/Desktop/rings/Stats.scala -> String
+/Users/JohnDong/Desktop/rings/Stats.scala -> StringContext
+/Users/JohnDong/Desktop/rings/Stats.scala -> allocated
+/Users/JohnDong/Desktop/rings/Stats.scala -> allocated_=
+/Users/JohnDong/Desktop/rings/Stats.scala -> checks
+/Users/JohnDong/Desktop/rings/Stats.scala -> checks_=
+/Users/JohnDong/Desktop/rings/Stats.scala -> errors
+/Users/JohnDong/Desktop/rings/Stats.scala -> errors_=
+/Users/JohnDong/Desktop/rings/Stats.scala -> messages
+/Users/JohnDong/Desktop/rings/Stats.scala -> messages_=
+/Users/JohnDong/Desktop/rings/Stats.scala -> misses
+/Users/JohnDong/Desktop/rings/Stats.scala -> misses_=
+/Users/JohnDong/Desktop/rings/Stats.scala -> right
+/Users/JohnDong/Desktop/rings/Stats.scala -> rings
+/Users/JohnDong/Desktop/rings/Stats.scala -> s
+/Users/JohnDong/Desktop/rings/Stats.scala -> scala
+/Users/JohnDong/Desktop/rings/Stats.scala -> touches
+/Users/JohnDong/Desktop/rings/Stats.scala -> touches_=
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> !
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> *
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> -
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> /
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> <init>
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> Actor
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> ActorRef
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> ActorSystem
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> AnyRef
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> Array
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> Await
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> ClassTag
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> KVAppService
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> Logging
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> Predef
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> Props
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> Stats
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> String
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> StringContext
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> System
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> TestHarness
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> Timeout
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> Unit
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> actor
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> actorRef2Scala
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> akka
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> apply
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> ask
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> burstSize
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> concurrent
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> currentTimeMillis
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> duration
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> event
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> future
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> java
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> lang
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> mapTo
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> master
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> materializeClassTag
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> numNodes
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> opsPerNode
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> package
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> pattern
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> println
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> qual$1
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> result
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> rings
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> run
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> runUntilDone
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> runtime
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> s
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> scala
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> seconds
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> shutdown
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> system
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> throughput
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> timeout
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> util
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> x$1
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> x$2
+product stamps:
+46 items
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/AnyMap.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/AppServiceAPI.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/BurstAck$.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/BurstAck.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/Command$.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/Command.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/Get$.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/Get.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/Join$.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/Join.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/KVAppService$$anonfun$1.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/KVAppService$$anonfun$2.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/KVAppService$$anonfun$apply$1.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/KVAppService$.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/KVAppService.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/KVClient$$anonfun$1.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/KVClient$$anonfun$2.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/KVClient.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/KVStore$$anonfun$receive$1.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/KVStore$.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/KVStore.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/KVStoreAPI.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/LoadMaster$$anonfun$1.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/LoadMaster$$anonfun$burst$1.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/LoadMaster$$anonfun$deactivate$1.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/LoadMaster$$anonfun$receive$1$$anonfun$applyOrElse$1.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/LoadMaster$$anonfun$receive$1.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/LoadMaster$.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/LoadMaster.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/LoadMasterAPI.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/Prime$.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/Prime.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/Put$.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/Put.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/RingCell.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/RingMap.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/RingServer$$anonfun$receive$1.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/RingServer$.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/RingServer.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/Start$.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/Start.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/Stats.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/TestHarness$.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/TestHarness.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/View$.class -> lastModified(1478012769000)
+/Users/JohnDong/Desktop/rings/target/scala-2.11/classes/rings/View.class -> lastModified(1478012769000)
+source stamps:
+7 items
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> hash(a6f8054dff7d5a221ae67fb73469e664b5c21276)
+/Users/JohnDong/Desktop/rings/KVClient.scala -> hash(11d5b2ea36ceef9b4d96a6502149c921f0d13b32)
+/Users/JohnDong/Desktop/rings/KVStore.scala -> hash(f144ca5a98ffe8914bb38659d4ea38052fb2b854)
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> hash(d6bd7ebb424fce4245851cb81eba6e8129beb838)
+/Users/JohnDong/Desktop/rings/RingService.scala -> hash(44bdd98a57994580f65c4eaf3aacb483bf05d6fb)
+/Users/JohnDong/Desktop/rings/Stats.scala -> hash(40af84eb80ce41d033b88d8bdf81bcb677a90b75)
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> hash(84dd0130ca7e3804eb0f42651715a45325ee4819)
+binary stamps:
+3 items
+/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/rt.jar -> lastModified(1444173647000)
+/Users/JohnDong/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.3.12.jar -> lastModified(1436444009000)
+/Users/JohnDong/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7.jar -> lastModified(1438617791000)
+class names:
+3 items
+/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/rt.jar -> java.lang.Object
+/Users/JohnDong/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.3.12.jar -> akka.event.Logging$
+/Users/JohnDong/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7.jar -> scala.Predef$
+internal apis:
+7 items
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHCc/27TAHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAAAdXEAfgAJAAAAInNyACB4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaFsO9SJ2OFfPAgACSQAEaGFzaEwABG5hbWV0ABJMamF2YS9sYW5nL1N0cmluZzt4cP9Azd50AAZub3RpZnlzcQB+AAyjDwqqdAAEd2FpdHNxAH4ADJcZjrZ0AA0kYXNJbnN0YW5jZU9mc3EAfgAMYnKBJHQADHByb2R1Y3RBcml0eXNxAH4ADNdVLlp0AAZlcXVhbHNzcQB+AAz8XPaEdAAJZW5kcG9pbnRzc3EAfgAMFsYrI3QADUFwcFNlcnZpY2VBUElzcQB+AAxsfM9kdAAMYXNJbnN0YW5jZU9mc3EAfgAMV1q0h3QAB0NvbW1hbmRzcQB+AAxLY1VGdAAMc3luY2hyb25pemVkc3EAfgAM1d7hunQADSRpc0luc3RhbmNlT2ZzcQB+AAyHyje9dAAIY2FuRXF1YWxzcQB+AAxVSvKkdAANcHJvZHVjdFByZWZpeHNxAH4ADFUOO3d0AAlub3RpZnlBbGxzcQB+AAzjcV3xdAAEVmlld3NxAH4ADNOR1Wh0AAxpc0luc3RhbmNlT2ZzcQB+AAzuEs8OdAAGPGluaXQ+c3EAfgAM2O0XtXQABWFwcGx5c3EAfgAMg0+yZ3QAAj09c3EAfgAMTWj0kHQABWNsb25lc3EAfgAM1MYj8HQABVByaW1lc3EAfgAMmayzLXQABGNvcHlzcQB+AAyxbb/idAAIdG9TdHJpbmdzcQB+AAwYT67odAACIT1zcQB+AAxilpzGdAAIZ2V0Q2xhc3NzcQB+AAx1mzjHdAAOY29weSRkZWZhdWx0JDFzcQB+AAzKfqlYdAAMS1ZBcHBTZXJ2aWNlc3EAfgAMw02rY3QAAm5lc3EAfgAMl2wvAXQAAmVxc3EAfgAMVQlzonQAD3Byb2R1Y3RJdGVyYXRvcnNxAH4ADIFaXnB0AAIjI3NxAH4ADCLA7q10AAhmaW5hbGl6ZXNxAH4ADIt3VSd0AA5wcm9kdWN0RWxlbWVudHNxAH4ADHEilXF0AAhoYXNoQ29kZXNyABN4c2J0aS5hcGkuU291cmNlQVBJuV6n+SkjOKQCAAJbAAtkZWZpbml0aW9uc3QAF1tMeHNidGkvYXBpL0RlZmluaXRpb247WwAIcGFja2FnZXN0ABRbTHhzYnRpL2FwaS9QYWNrYWdlO3hwdXIAF1tMeHNidGkuYXBpLkRlZmluaXRpb247iMlc57TjXg4CAAB4cAAAAAVzcgATeHNidGkuYXBpLkNsYXNzTGlrZYM0HKHfsJdsAgAETAAOZGVmaW5pdGlvblR5cGV0ABpMeHNidGkvYXBpL0RlZmluaXRpb25UeXBlO1sAEHNhdmVkQW5ub3RhdGlvbnN0ABNbTGphdmEvbGFuZy9TdHJpbmc7TAAIc2VsZlR5cGV0ABBMeHNidGkvYXBpL0xhenk7TAAJc3RydWN0dXJlcQB+AFt4cgAheHNidGkuYXBpLlBhcmFtZXRlcml6ZWREZWZpbml0aW9u+RFusdVQPOICAAFbAA50eXBlUGFyYW1ldGVyc3QAGltMeHNidGkvYXBpL1R5cGVQYXJhbWV0ZXI7eHIAFHhzYnRpLmFwaS5EZWZpbml0aW9uhyob6HFC40YCAARMAAZhY2Nlc3N0ABJMeHNidGkvYXBpL0FjY2VzcztbAAthbm5vdGF0aW9uc3QAF1tMeHNidGkvYXBpL0Fubm90YXRpb247TAAJbW9kaWZpZXJzdAAVTHhzYnRpL2FwaS9Nb2RpZmllcnM7TAAEbmFtZXEAfgANeHBzcgAQeHNidGkuYXBpLlB1YmxpY7pYPa5sLWBCAgAAeHIAEHhzYnRpLmFwaS5BY2Nlc3PdYpr4HWMxSAIAAHhwdXIAF1tMeHNidGkuYXBpLkFubm90YXRpb24765frGRD2jUgCAAB4cAAAAABzcgATeHNidGkuYXBpLk1vZGlmaWVyc8cREyFpnNwkAgABQgAFZmxhZ3N4cAl0ABNyaW5ncy5BcHBTZXJ2aWNlQVBJdXIAGltMeHNidGkuYXBpLlR5cGVQYXJhbWV0ZXI72W0mDyid8rYCAAB4cAAAAAB+cgAYeHNidGkuYXBpLkRlZmluaXRpb25UeXBlAAAAAAAAAAASAAB4cgAOamF2YS5sYW5nLkVudW0AAAAAAAAAABIAAHhwdAAFVHJhaXR1cgATW0xqYXZhLmxhbmcuU3RyaW5nO63SVufpHXtHAgAAeHAAAAAAc3IAE3hzYnRpLlNhZmVMYXp5JEltcGxQAi6Tl5dAPwIAA1oACGJpdG1hcCQwTAACX3R0ABJMamF2YS9sYW5nL09iamVjdDtMAARldmFsdAARTHNjYWxhL0Z1bmN0aW9uMDt4cgAWeHNidGkuYXBpLkFic3RyYWN0TGF6edN3tQFfu+egAgAAeHAAcHNyACB4c2J0aS5TYWZlTGF6eSQkYW5vbmZ1biRzdHJpY3QkMQAAAAAAAAAAAgABTAAHdmFsdWUkMXEAfgB0eHBzcgATeHNidGkuYXBpLkVtcHR5VHlwZbz9nkZJO4kkAgAAeHIAFHhzYnRpLmFwaS5TaW1wbGVUeXBlcnhiiCEjv0ACAAB4cgAOeHNidGkuYXBpLlR5cGU/atkhFkmqygIAAHhwc3EAfgBzAHBzcQB+AHhzcgATeHNidGkuYXBpLlN0cnVjdHVyZamq+YCTb9gAAgADTAAIZGVjbGFyZWRxAH4AW0wACWluaGVyaXRlZHEAfgBbTAAHcGFyZW50c3EAfgBbeHEAfgB8c3EAfgBzAHBzcQB+AHh1cQB+AFYAAAAAc3EAfgBzAHBzcQB+AHh1cQB+AFYAAAAAc3EAfgBzAHBzcQB+AHh1cgARW0x4c2J0aS5hcGkuVHlwZTt0/6Vae/npQQIAAHhwAAAAAnNyABR4c2J0aS5hcGkuUHJvamVjdGlvbvPSjVTpRaQtAgACTAACaWRxAH4ADUwABnByZWZpeHQAFkx4c2J0aS9hcGkvU2ltcGxlVHlwZTt4cQB+AHt0AAZPYmplY3RzcgATeHNidGkuYXBpLlNpbmdsZXRvbvynX/jPVuRGAgABTAAEcGF0aHQAEEx4c2J0aS9hcGkvUGF0aDt4cQB+AHtzcgAOeHNidGkuYXBpLlBhdGibPVwIzqUnhAIAAVsACmNvbXBvbmVudHN0ABpbTHhzYnRpL2FwaS9QYXRoQ29tcG9uZW50O3hwdXIAGltMeHNidGkuYXBpLlBhdGhDb21wb25lbnQ7Q9oJdC1nFnQCAAB4cAAAAANzcgAMeHNidGkuYXBpLklkmDJsizdTxEACAAFMAAJpZHEAfgANeHIAF3hzYnRpLmFwaS5QYXRoQ29tcG9uZW50X5oiWy6Gn7wCAAB4cHQABGphdmFzcQB+AJh0AARsYW5nc3IADnhzYnRpLmFwaS5UaGlz2wntpsxaQFwCAAB4cQB+AJlzcQB+AIx0AANBbnlzcQB+AJBzcQB+AJN1cQB+AJYAAAACc3EAfgCYdAAFc2NhbGFxAH4An3NxAH4AWHEAfgBldXEAfgBmAAAAAHNxAH4AaAB0AAtyaW5ncy5QcmltZXVxAH4AawAAAAB+cQB+AG10AAhDbGFzc0RlZnVxAH4AcQAAAABzcQB+AHMAcHNxAH4AeHEAfgB9c3EAfgBzAHBzcQB+AHhzcQB+AIBzcQB+AHMAcHNxAH4AeHVxAH4AVgAAAABzcQB+AHMAcHNxAH4AeHVxAH4AVgAAAABzcQB+AHMAcHNxAH4AeHVxAH4AigAAAAdzcQB+AIx0AAxTZXJpYWxpemFibGVzcQB+AJBzcQB+AJN1cQB+AJYAAAACc3EAfgCYcQB+AKZxAH4An3NxAH4AjHEAfgC+c3EAfgCQc3EAfgCTdXEAfgCWAAAAA3NxAH4AmHEAfgCbc3EAfgCYdAACaW9xAH4An3NxAH4AjHQAB1Byb2R1Y3RxAH4Av3NxAH4AjHQABkVxdWFsc3EAfgC/c3EAfgCMdAANQXBwU2VydmljZUFQSXNxAH4AkHNxAH4Ak3VxAH4AlgAAAAJzcQB+AJh0AAVyaW5nc3EAfgCfc3EAfgCMcQB+AI9zcQB+AJBzcQB+AJN1cQB+AJYAAAADc3EAfgCYcQB+AJtzcQB+AJhxAH4AnXEAfgCfc3EAfgCMcQB+AKFxAH4Av3NxAH4AWHEAfgBldXEAfgBmAAAAAHNxAH4AaAB0AA1yaW5ncy5Db21tYW5kdXEAfgBrAAAAAHEAfgCsdXEAfgBxAAAAAHNxAH4AcwBwc3EAfgB4cQB+AH1zcQB+AHMAcHNxAH4AeHNxAH4AgHNxAH4AcwBwc3EAfgB4dXEAfgBWAAAAAHNxAH4AcwBwc3EAfgB4dXEAfgBWAAAAAHNxAH4AcwBwc3EAfgB4dXEAfgCKAAAAB3NxAH4AjHEAfgC+c3EAfgCQc3EAfgCTdXEAfgCWAAAAAnNxAH4AmHEAfgCmcQB+AJ9zcQB+AIxxAH4AvnNxAH4AkHNxAH4Ak3VxAH4AlgAAAANzcQB+AJhxAH4Am3NxAH4AmHQAAmlvcQB+AJ9zcQB+AIxxAH4Ay3EAfgDxc3EAfgCMdAAGRXF1YWxzcQB+APFzcQB+AIx0AA1BcHBTZXJ2aWNlQVBJc3EAfgCQc3EAfgCTdXEAfgCWAAAAAnNxAH4AmHQABXJpbmdzcQB+AJ9zcQB+AIxxAH4Aj3NxAH4AkHNxAH4Ak3VxAH4AlgAAAANzcQB+AJhxAH4Am3NxAH4AmHEAfgCdcQB+AJ9zcQB+AIxxAH4AoXEAfgDxc3EAfgBYcQB+AGV1cQB+AGYAAAAAc3EAfgBoAHQACnJpbmdzLlZpZXd1cQB+AGsAAAAAcQB+AKx1cQB+AHEAAAAAc3EAfgBzAHBzcQB+AHhxAH4AfXNxAH4AcwBwc3EAfgB4c3EAfgCAc3EAfgBzAHBzcQB+AHh1cQB+AFYAAAAAc3EAfgBzAHBzcQB+AHh1cQB+AFYAAAAAc3EAfgBzAHBzcQB+AHh1cQB+AIoAAAAHc3EAfgCMcQB+AL5zcQB+AJBzcQB+AJN1cQB+AJYAAAACc3EAfgCYcQB+AKZxAH4An3NxAH4AjHEAfgC+c3EAfgCQc3EAfgCTdXEAfgCWAAAAA3NxAH4AmHEAfgCbc3EAfgCYdAACaW9xAH4An3NxAH4AjHEAfgDLcQB+ASJzcQB+AIx0AAZFcXVhbHNxAH4BInNxAH4AjHQADUFwcFNlcnZpY2VBUElzcQB+AJBzcQB+AJN1cQB+AJYAAAACc3EAfgCYdAAFcmluZ3NxAH4An3NxAH4AjHEAfgCPc3EAfgCQc3EAfgCTdXEAfgCWAAAAA3NxAH4AmHEAfgCbc3EAfgCYcQB+AJ1xAH4An3NxAH4AjHEAfgChcQB+ASJzcQB+AFhxAH4AZXVxAH4AZgAAAABzcQB+AGgAdAAScmluZ3MuS1ZBcHBTZXJ2aWNldXEAfgBrAAAAAH5xAH4AbXQABk1vZHVsZXVxAH4AcQAAAABzcQB+AHMAcHNxAH4AeHEAfgB9c3EAfgBzAHBzcQB+AHhzcQB+AIBzcQB+AHMAcHNxAH4AeHVxAH4AVgAAAABzcQB+AHMAcHNxAH4AeHVxAH4AVgAAAABzcQB+AHMAcHNxAH4AeHVxAH4AigAAAAJzcQB+AIxxAH4Aj3NxAH4AkHNxAH4Ak3VxAH4AlgAAAANzcQB+AJhxAH4Am3NxAH4AmHEAfgCdcQB+AJ9zcQB+AIxxAH4AoXNxAH4AkHNxAH4Ak3VxAH4AlgAAAAJzcQB+AJhxAH4ApnEAfgCfdXIAFFtMeHNidGkuYXBpLlBhY2thZ2U7WxMZN3CnJ6ECAAB4cAAAAAFzcgAReHNidGkuYXBpLlBhY2thZ2V+WY/2rs45WAIAAUwABG5hbWVxAH4ADXhwdAAFcmluZ3NzcgAVeHNidGkuYXBpLkNvbXBpbGF0aW9u7frgw2rooEICAAJKAAlzdGFydFRpbWVbAAdvdXRwdXRzdAAaW0x4c2J0aS9hcGkvT3V0cHV0U2V0dGluZzt4cAAAAVggbPDFdXIAGltMeHNidGkuYXBpLk91dHB1dFNldHRpbmc7f2rC86eHpUICAAB4cAAAAAFzcgAXeHNidGkuYXBpLk91dHB1dFNldHRpbmd62ZpHdPsdewIAAkwAD291dHB1dERpcmVjdG9yeXEAfgANTAAPc291cmNlRGlyZWN0b3J5cQB+AA14cHQANy9Vc2Vycy9Kb2huRG9uZy9EZXNrdG9wL3JpbmdzL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEvdXIAAltCrPMX+AYIVOACAAB4cAAAABSm+AVN/31aIhrmf7c0aeZktcISdg==
+/Users/JohnDong/Desktop/rings/KVClient.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHCF0KLNAHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAABc3IAIHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoWw71InY4V88CAAJJAARoYXNoTAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hw2h/XNnQAB3RpbWVvdXR1cQB+AAkAAADic3EAfgALjlF60HQACnRvSXRlcmFibGVzcQB+AAtbqOYSdAAKd2l0aEZpbHRlcnNxAH4AC89TIVl0AA10b1RyYXZlcnNhYmxlc3EAfgALlNak23QACWZpbmRFbnRyeXNxAH4ACxGofhl0AAxwcmludFNpemVNYXBzcQB+AAsWBN2BdAAGbm90aWZ5c3EAfgALlZqIB3QADURlZmF1bHRLZXlTZXRzcQB+AAuw3A5gdAAEcmVhZHNxAH4AC3Knk5d0AAVFbnRyeXNxAH4ACx1vDC50AARmaW5kc3EAfgALusAxV3QABHNwYW5zcQB+AAvur7RmdAAHZmxhdHRlbnNxAH4ACz2AT7J0AA9jYWxjU2l6ZU1hcFNpemVzcQB+AAsZmnjtdAAMZWxlbUhhc2hDb2Rlc3EAfgALTp3axXQACHRvQnVmZmVyc3EAfgALumecWnQAC3JlbW92ZUVudHJ5c3EAfgALpN+mOXQABWNvdW50c3EAfgALb+d1NHQADHJlZHVjZU9wdGlvbnNxAH4ACw+ZuJt0ABNzbGljZVdpdGhLbm93bkRlbHRhc3EAfgALpbfC23QABHdhaXRzcQB+AAvQUTXGdAAJZm9sZFJpZ2h0c3EAfgALDg2nV3QACXRha2VXaGlsZXNxAH4AC6AwCYV0AAxzdHJpbmdQcmVmaXhzcQB+AAsZhaZhdAANJGFzSW5zdGFuY2VPZnNxAH4AC+sNfyt0AAVlbXB0eXNxAH4AC63jaSZ0AAdzcGxpdEF0c3EAfgALPG8jBHQABW1pbkJ5c3EAfgALGy/Tz3QAEGluaXRXaXRoQ29udGVudHNzcQB+AAt2pAEBdAAEc2l6ZXNxAH4AC/kYRcB0AAV1bmlvbnNxAH4AC73j2aN0AAlpbnRlcnNlY3RzcQB+AAvrYjPKdAAFaW5pdHNzcQB+AAs2t9tUdAADemlwc3EAfgAL2DBw63QAB2NvbXBvc2VzcQB+AAuIYjosdAAFdG9TZXRzcQB+AAta04rHdAAIc3Vic2V0T2ZzcQB+AAtIfqJTdAACOlxzcQB+AAtC0MgldAADbWFwc3EAfgALV7FS6XQACXRha2VSaWdodHNxAH4AC6ApI1N0AAlkcm9wV2hpbGVzcQB+AAs7YxPjdAAFdG9NYXBzcQB+AAteZeQhdAAJZmlsdGVyTm90c3EAfgALrlQdw3QABmVxdWFsc3NxAH4AC+hWH8V0AANwYXJzcQB+AAsplznNdAAGdW56aXAzc3EAfgALqYLpTHQABHJlcHJzcQB+AAtv7v0DdAALX2xvYWRGYWN0b3JzcQB+AAuAqIxcdAAGdG9MaXN0c3EAfgALPBe46HQAAis9c3EAfgALMR6GunQABWNsZWFyc3EAfgAL8jBnLXQAD2VudHJpZXNJdGVyYXRvcnNxAH4AC0bel5d0ABJpc1RyYXZlcnNhYmxlQWdhaW5zcQB+AAsppI9sdAAIYWRkRW50cnlzcQB+AAvfyLG7dAAMRmlsdGVyZWRLZXlzc3EAfgAL62xipHQABGhlYWRzcQB+AAuC5G5MdAAMYXNJbnN0YW5jZU9mc3EAfgAL64AaLXQADHNhbWVFbGVtZW50c3NxAH4AC3nXakF0AApmaWx0ZXJLZXlzc3EAfgALGBl0cHQACnVzZVNpemVNYXBzcQB+AAvqUkSwdAAFdW56aXBzcQB+AAvyEJfddAAGcmVzdWx0c3EAfgALUaXvMHQAEHJlZHVjZUxlZnRPcHRpb25zcQB+AAuVuOoldAAKaGFzaEZvcktleXNxAH4AC8KwtpN0AAlzZWVkdmFsdWVzcQB+AAv5lLWxdAAEcHVzaHNxAH4AC4qj1590AAEmc3EAfgALhKfNhXQADHN5bmNocm9uaXplZHNxAH4AC/pe5TJ0AA5ublNpemVNYXBSZXNldHNxAH4AC2N0cjp0AAdzbGlkaW5nc3EAfgALUDaJy3QAC3dpdGhEZWZhdWx0c3EAfgAL6s/Ml3QABFNlbGZzcQB+AAvD8d6FdAAJcGFydGl0aW9uc3EAfgALSZF4unQACWFnZ3JlZ2F0ZXNxAH4AC+bw5Ih0AA0kaXNJbnN0YW5jZU9mc3EAfgAL8E76QnQABmZvcmFsbHNxAH4AC1P86+l0AApuZXdCdWlsZGVyc3EAfgALyE+afnQADnZhbHVlc0l0ZXJhdG9yc3EAfgAL/TcwNXQAB2FuZFRoZW5zcQB+AAvYznXXdAAIbWtTdHJpbmdzcQB+AAsyV1emdAATdG90YWxTaXplTWFwQnVja2V0c3NxAH4AC0la6IF0AAZBbnlNYXBzcQB+AAtLLsvSdAAGcmV0YWluc3EAfgALWrDW1XQAA21pbnNxAH4AC4qkgNJ0AAlzY2FuUmlnaHRzcQB+AAuXjqncdAALc2VyaWFsaXplVG9zcQB+AAv2hmuKdAAEZm9sZHNxAH4AC70BH7p0AAF8c3EAfgALHrvI/XQADGtleXNJdGVyYXRvcnNxAH4AC9HD8Oh0AARzY2Fuc3EAfgALeJq5SXQACG5vbkVtcHR5c3EAfgALzWJmyXQACGNhbkVxdWFsc3EAfgAL7NWEdXQAD2dldE9yRWxzZVVwZGF0ZXNxAH4AC5kI1Yt0AAR0YWlsc3EAfgALZLMRDHQAAi09c3EAfgAL4ZY7gXQACmxhc3RPcHRpb25zcQB+AAvgPbT4dAAJZHJvcFJpZ2h0c3EAfgALyQANzXQACGl0ZXJhdG9yc3EAfgALHYdF9nQABGxhc3RzcQB+AAvjceXWdAAGb3JFbHNlc3EAfgALPgZpr3QACmVsZW1FcXVhbHNzcQB+AAtgzq7+dAALZGlyZWN0V3JpdGVzcQB+AAutSyh/dAAJbm90aWZ5QWxsc3EAfgALqK8/mnQAAi86c3EAfgALbDD3L3QACnRvSXRlcmF0b3JzcQB+AAtJNfX7dAAJYWRkU3RyaW5nc3EAfgALdGdlR3QAD25uU2l6ZU1hcFJlbW92ZXNxAH4AC9jQ8pR0AAJ0b3NxAH4AC7lEAc50AAZrZXlTZXRzcQB+AAuY+gwwdAAMY29sbGVjdEZpcnN0c3EAfgALwZYBYXQABWNhY2hlc3EAfgALxUURIXQABXB1cmdlc3EAfgALqGru/nQABGRyb3BzcQB+AAv2uNzUdAABLXNxAH4ACy5kL810AAxpc0luc3RhbmNlT2ZzcQB+AAsgfNbbdAAGZmlsdGVyc3EAfgALFDcBFHQAC2lzRGVmaW5lZEF0c3EAfgALGLKdHXQADmZpbmRPckFkZEVudHJ5c3EAfgALfJKMSnQACmNsZWFyVGFibGVzcQB+AAv3UcuqdAADKys6c3EAfgALzuVEB3QACHNpemVIaW50c3EAfgALtfvo9XQADnNpemVNYXBEaXNhYmxlc3EAfgALtHJstHQABjxpbml0PnNxAH4AC4mkCCZ0AAh0b1N0cmVhbXNxAH4AC+9AuI10ABB3aXRoRGVmYXVsdFZhbHVlc3EAfgALpMOnfnQACWNvbXBhbmlvbnNxAH4AC4gkn+p0AANtYXhzcQB+AAv+eQcYdAAJbWFwUmVzdWx0c3EAfgALAIp7vHQABXRhaWxzc3EAfgALJsVbHHQABnJlbW92ZXNxAH4AC2902pJ0AAd1cGRhdGVkc3EAfgALFm/rUnQABWFwcGx5c3EAfgALWHxpknQAAisrc3EAfgALi0myhHQAB2dyb3VwZWRzcQB+AAudoyAvdAAEZGlmZnNxAH4AC0wwTUF0AAdmbGF0TWFwc3EAfgALLOtdbHQACWdldE9yRWxzZXNxAH4AC6fM1FV0AAR0YWtlc3EAfgALznnmMnQAC3BhckNvbWJpbmVyc3EAfgALMEhs9XQAC3JlZHVjZVJpZ2h0c3EAfgALo/fof3QAB2dyb3VwQnlzcQB+AAsnCGqOdAACPT1zcQB+AAuWmT+2dAAFbWF4QnlzcQB+AAvk05rCdAAUc2l6ZU1hcEJ1Y2tldEJpdFNpemVzcQB+AAt5DSF5dAATc2xpY2VXaXRoS25vd25Cb3VuZHNxAH4AC0+1pDh0AAxublNpemVNYXBBZGRzcQB+AAvV3RqbdAAFY2xvbmVzcQB+AAvJHObWdAAHaW1wcm92ZXNxAH4AC+dX0GN0AAdzaXplbWFwc3EAfgALti7Fn3QABXNsaWNlc3EAfgALLalHu3QAB2RlZmF1bHRzcQB+AAvezN31dAAHZm9yZWFjaHNxAH4AC11co050AAImfnNxAH4AC7XPA6Z0AApkaXJlY3RSZWFkc3EAfgALzkPyJnQACXRocmVzaG9sZHNxAH4AC5/LE4J0AAZleGlzdHNzcQB+AAtRVkXadAARcmVkdWNlUmlnaHRPcHRpb25zcQB+AAsMP+n0dAAIdG9WZWN0b3JzcQB+AAvRdr2kdAAMdG9JbmRleGVkU2Vxc3EAfgALQ0p+mXQACEtWQ2xpZW50c3EAfgALyOQJk3QADGNvcHlUb0J1ZmZlcnNxAH4ACxG3Hzp0AAd0b0FycmF5c3EAfgALNCE2OHQABnJlZHVjZXNxAH4AC8iQyaB0AAdzdWJzZXRzc3EAfgALbDQwHHQABXRvU2Vxc3EAfgAL5qYPOHQADHppcFdpdGhJbmRleHNxAH4AC53MeNB0AA9zaXplSGludEJvdW5kZWRzcQB+AAsBXznwdAAMZm9yZWFjaEVudHJ5c3EAfgALgngf/3QACXRhYmxlU2l6ZXNxAH4AC63J9vB0AANwdXRzcQB+AAt7kcYNdAAVRGVmYXVsdFZhbHVlc0l0ZXJhYmxlc3EAfgALjssknnQABnZhbHVlc3NxAH4ACwHejC50AAtzaXplTWFwSW5pdHNxAH4AC2B3Fxt0AAh0b1N0cmluZ3NxAH4AC3LFj0V0AA5nZW5lcmljQnVpbGRlcnNxAH4AC1WZ/FN0AAtjb3B5VG9BcnJheXNxAH4AC3vZOP90AAdydW5XaXRoc3EAfgALF199jnQAA3NlcXNxAH4AC5I4O350AAErc3EAfgAL371ennQAAiE9c3EAfgALIDPpw3QADE1hcHBlZFZhbHVlc3NxAH4AC3UXnDV0AANnZXRzcQB+AAvA8LMndAAFcm91dGVzcQB+AAsTgnosdAAJdHJhbnNwb3Nlc3EAfgAL/C7tHHQAB2NvbGxlY3RzcQB+AAtvjyn5dAAKaGVhZE9wdGlvbnNxAH4ACzshJEB0AAhnZXRDbGFzc3NxAH4AC6GpvA10AAMtLT1zcQB+AAvpU1qMdAAKV2l0aEZpbHRlcnNxAH4AC9WIvZ10AAZ1cGRhdGVzcQB+AAtjnQSFdAAPaGFzRGVmaW5pdGVTaXplc3EAfgALUubdbXQACW1hcFZhbHVlc3NxAH4AC+9nBwd0AAtpbml0aWFsU2l6ZXNxAH4AC9eU7ep0AAMrKz1zcQB+AAvoJ6/+dAACLS1zcQB+AAsH6TO2dAAIZm9sZExlZnRzcQB+AAuonU2kdAAQaXNTaXplTWFwRGVmaW5lZHNxAH4AC70qTDV0AAhjb250YWluc3NxAH4AC4M153p0ABFzaXplTWFwQnVja2V0U2l6ZXNxAH4AC/IsT/10AAx0b0NvbGxlY3Rpb25zcQB+AAuZ1znUdAAHaXNFbXB0eXNxAH4AC7pavAd0AAJuZXNxAH4AC3Rg9N90AAl0cmFuc2Zvcm1zcQB+AAvJjWDudAAEaW5pdHNxAH4AC61K0IF0AAhyZXZlcnNlZHNxAH4AC6nvtHh0AApyZWR1Y2VMZWZ0c3EAfgAL5M5fFHQABGxpZnRzcQB+AAtc/R5DdAAOY3JlYXRlTmV3RW50cnlzcQB+AAt2e+FvdAARaGFzaFRhYmxlQ29udGVudHNzcQB+AAspBdxkdAACZXFzcQB+AAuroPlwdAAFd3JpdGVzcQB+AAuYI9iIdAAVc2l6ZU1hcEluaXRBbmRSZWJ1aWxkc3EAfgALFcBPBnQAA3N1bXNxAH4AC7PBgxt0ABFhbHdheXNJbml0U2l6ZU1hcHNxAH4AC6+WmTZ0AA50aGlzQ29sbGVjdGlvbnNxAH4AC2ahGVR0AAIjI3NxAH4AC0S25kh0AAhzY2FuTGVmdHNxAH4AC09tVw10AAhmaW5hbGl6ZXNxAH4AC9iv8CZ0AAV0YWJsZXNxAH4ACwxpdjx0AAVpbmRleHNxAH4AC5/ae9N0AARrZXlzc3EAfgAL2jgTG3QACGhhc2hDb2Rlc3EAfgAL7MOpnXQABnppcEFsbHNxAH4AC4qLOJF0AAdwcm9kdWN0c3EAfgALMO46BnQADXRhYmxlU2l6ZVNlZWRzcQB+AAv5H+frdAAEdmlld3NxAH4ACzlyUa10AAthcHBseU9yRWxzZXNyABN4c2J0aS5hcGkuU291cmNlQVBJuV6n+SkjOKQCAAJbAAtkZWZpbml0aW9uc3QAF1tMeHNidGkvYXBpL0RlZmluaXRpb247WwAIcGFja2FnZXN0ABRbTHhzYnRpL2FwaS9QYWNrYWdlO3hwdXIAF1tMeHNidGkuYXBpLkRlZmluaXRpb247iMlc57TjXg4CAAB4cAAAAAJzcgATeHNidGkuYXBpLkNsYXNzTGlrZYM0HKHfsJdsAgAETAAOZGVmaW5pdGlvblR5cGV0ABpMeHNidGkvYXBpL0RlZmluaXRpb25UeXBlO1sAEHNhdmVkQW5ub3RhdGlvbnN0ABNbTGphdmEvbGFuZy9TdHJpbmc7TAAIc2VsZlR5cGV0ABBMeHNidGkvYXBpL0xhenk7TAAJc3RydWN0dXJlcQB+Ad14cgAheHNidGkuYXBpLlBhcmFtZXRlcml6ZWREZWZpbml0aW9u+RFusdVQPOICAAFbAA50eXBlUGFyYW1ldGVyc3QAGltMeHNidGkvYXBpL1R5cGVQYXJhbWV0ZXI7eHIAFHhzYnRpLmFwaS5EZWZpbml0aW9uhyob6HFC40YCAARMAAZhY2Nlc3N0ABJMeHNidGkvYXBpL0FjY2VzcztbAAthbm5vdGF0aW9uc3QAF1tMeHNidGkvYXBpL0Fubm90YXRpb247TAAJbW9kaWZpZXJzdAAVTHhzYnRpL2FwaS9Nb2RpZmllcnM7TAAEbmFtZXEAfgAMeHBzcgAQeHNidGkuYXBpLlB1YmxpY7pYPa5sLWBCAgAAeHIAEHhzYnRpLmFwaS5BY2Nlc3PdYpr4HWMxSAIAAHhwdXIAF1tMeHNidGkuYXBpLkFubm90YXRpb24765frGRD2jUgCAAB4cAAAAABzcgATeHNidGkuYXBpLk1vZGlmaWVyc8cREyFpnNwkAgABQgAFZmxhZ3N4cAB0AAxyaW5ncy5BbnlNYXB1cgAaW0x4c2J0aS5hcGkuVHlwZVBhcmFtZXRlcjvZbSYPKJ3ytgIAAHhwAAAAAH5yABh4c2J0aS5hcGkuRGVmaW5pdGlvblR5cGUAAAAAAAAAABIAAHhyAA5qYXZhLmxhbmcuRW51bQAAAAAAAAAAEgAAeHB0AAhDbGFzc0RlZnVyABNbTGphdmEubGFuZy5TdHJpbmc7rdJW5+kde0cCAAB4cAAAAAN0ABpzY2FsYS5hbm5vdGF0aW9uLm1pZ3JhdGlvbnQAGnNjYWxhLmRlcHJlY2F0ZWRPdmVycmlkaW5ndAAec2NhbGEuYW5ub3RhdGlvbi51bnNwZWNpYWxpemVkc3IAE3hzYnRpLlNhZmVMYXp5JEltcGxQAi6Tl5dAPwIAA1oACGJpdG1hcCQwTAACX3R0ABJMamF2YS9sYW5nL09iamVjdDtMAARldmFsdAARTHNjYWxhL0Z1bmN0aW9uMDt4cgAWeHNidGkuYXBpLkFic3RyYWN0TGF6edN3tQFfu+egAgAAeHAAcHNyACB4c2J0aS5TYWZlTGF6eSQkYW5vbmZ1biRzdHJpY3QkMQAAAAAAAAAAAgABTAAHdmFsdWUkMXEAfgH5eHBzcgATeHNidGkuYXBpLkVtcHR5VHlwZbz9nkZJO4kkAgAAeHIAFHhzYnRpLmFwaS5TaW1wbGVUeXBlcnhiiCEjv0ACAAB4cgAOeHNidGkuYXBpLlR5cGU/atkhFkmqygIAAHhwc3EAfgH4AHBzcQB+Af1zcgATeHNidGkuYXBpLlN0cnVjdHVyZamq+YCTb9gAAgADTAAIZGVjbGFyZWRxAH4B3UwACWluaGVyaXRlZHEAfgHdTAAHcGFyZW50c3EAfgHdeHEAfgIBc3EAfgH4AHBzcQB+Af11cQB+AdgAAAAAc3EAfgH4AHBzcQB+Af11cQB+AdgAAAAAc3EAfgH4AHBzcQB+Af11cgARW0x4c2J0aS5hcGkuVHlwZTt0/6Vae/npQQIAAHhwAAAALnNyABd4c2J0aS5hcGkuUGFyYW1ldGVyaXplZBZs7mkDybt/AgACTAAIYmFzZVR5cGV0ABZMeHNidGkvYXBpL1NpbXBsZVR5cGU7WwANdHlwZUFyZ3VtZW50c3QAEVtMeHNidGkvYXBpL1R5cGU7eHEAfgIAc3IAFHhzYnRpLmFwaS5Qcm9qZWN0aW9u89KNVOlFpC0CAAJMAAJpZHEAfgAMTAAGcHJlZml4cQB+AhJ4cQB+AgB0AAdIYXNoTWFwc3IAE3hzYnRpLmFwaS5TaW5nbGV0b278p1/4z1bkRgIAAUwABHBhdGh0ABBMeHNidGkvYXBpL1BhdGg7eHEAfgIAc3IADnhzYnRpLmFwaS5QYXRomz1cCM6lJ4QCAAFbAApjb21wb25lbnRzdAAaW0x4c2J0aS9hcGkvUGF0aENvbXBvbmVudDt4cHVyABpbTHhzYnRpLmFwaS5QYXRoQ29tcG9uZW50O0PaCXQtZxZ0AgAAeHAAAAAEc3IADHhzYnRpLmFwaS5JZJgybIs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
+/Users/JohnDong/Desktop/rings/KVStore.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHAg0kc0AHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAACc3IAIHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoWw71InY4V88CAAJJAARoYXNoTAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwI8AyYXQABHNlbGZzcQB+AAucJcFQdAAHY29udGV4dHVxAH4ACQAAADJzcQB+AAtpezsrdAAGbm90aWZ5c3EAfgAL9u/SE3QAB1JlY2VpdmVzcQB+AAuAMOW2dAAEd2FpdHNxAH4ACyjWWsF0AA5jb3B5JGRlZmF1bHQkMnNxAH4AC0EOpfl0AA0kYXNJbnN0YW5jZU9mc3EAfgALkyLgqHQADHByb2R1Y3RBcml0eXNxAH4ACxkGJl90AAZlcXVhbHNzcQB+AAuD1QQvdAADR2V0c3EAfgALAXf1WXQAA1B1dHNxAH4ACzaKV490AAxhc0luc3RhbmNlT2ZzcQB+AAty9M8ldAAMc3luY2hyb25pemVkc3EAfgALmbcCXnQACktWU3RvcmVBUElzcQB+AAt6voPodAANJGlzSW5zdGFuY2VPZnNxAH4AC6xLkVF0AAdyZWNlaXZlc3EAfgALKpDoC3QACnByZVJlc3RhcnRzcQB+AAt2EVbvdAAFc3RvcmVzcQB+AAvOW4JcdAANYXJvdW5kUmVjZWl2ZXNxAH4ACz9R1Hd0AAhjYW5FcXVhbHNxAH4ACzNHWrF0AAtwb3N0UmVzdGFydHNxAH4AC+yR+9R0AAhwb3N0U3RvcHNxAH4AC41CiqJ0AA1wcm9kdWN0UHJlZml4c3EAfgAL42PxPHQACW5vdGlmeUFsbHNxAH4AC2xDWY10ABFhcm91bmRQb3N0UmVzdGFydHNxAH4AC/NvTsF0AANrZXlzcQB+AAuzLXoAdAAMaXNJbnN0YW5jZU9mc3EAfgAL0R87o3QAEGFyb3VuZFByZVJlc3RhcnRzcQB+AAt9oSa/dAAOYXJvdW5kUG9zdFN0b3BzcQB+AAufKYJfdAAGPGluaXQ+c3EAfgALF9a9k3QACHByZVN0YXJ0c3EAfgALfiegwXQACXVuaGFuZGxlZHNxAH4AC5ImSEZ0AAI9PXNxAH4AC4a0H7d0AAVjbG9uZXNxAH4ACzMynNx0AARjb3B5c3EAfgALjdY44nQABnNlbmRlcnNxAH4AC9TU5Lt0AAh0b1N0cmluZ3NxAH4AC6ceYJl0AAdLVlN0b3Jlc3EAfgALX6QA3nQAAiE9c3EAfgALAtmLM3QACGdldENsYXNzc3EAfgALJC2CeHQADmNvcHkkZGVmYXVsdCQxc3EAfgALQaGU3HQABXByb3Bzc3EAfgALCCGf8nQAAm5lc3EAfgALhHTf2HQABXZhbHVlc3EAfgALclYA/nQAEnN1cGVydmlzb3JTdHJhdGVneXNxAH4AC5XNvsh0AAJlcXNxAH4AC0A/G/h0AA9wcm9kdWN0SXRlcmF0b3JzcQB+AAsrLdecdAACIyNzcQB+AAv14kHIdAAIZmluYWxpemVzcQB+AAsySKobdAAOcHJvZHVjdEVsZW1lbnRzcQB+AAv8xfnPdAAIaGFzaENvZGVzcQB+AAsr2Pi4dAAOYXJvdW5kUHJlU3RhcnRzcgATeHNidGkuYXBpLlNvdXJjZUFQSblep/kpIzikAgACWwALZGVmaW5pdGlvbnN0ABdbTHhzYnRpL2FwaS9EZWZpbml0aW9uO1sACHBhY2thZ2VzdAAUW0x4c2J0aS9hcGkvUGFja2FnZTt4cHVyABdbTHhzYnRpLmFwaS5EZWZpbml0aW9uO4jJXOe0414OAgAAeHAAAAAFc3IAE3hzYnRpLmFwaS5DbGFzc0xpa2WDNByh37CXbAIABEwADmRlZmluaXRpb25UeXBldAAaTHhzYnRpL2FwaS9EZWZpbml0aW9uVHlwZTtbABBzYXZlZEFubm90YXRpb25zdAATW0xqYXZhL2xhbmcvU3RyaW5nO0wACHNlbGZUeXBldAAQTHhzYnRpL2FwaS9MYXp5O0wACXN0cnVjdHVyZXEAfgB/eHIAIXhzYnRpLmFwaS5QYXJhbWV0ZXJpemVkRGVmaW5pdGlvbvkRbrHVUDziAgABWwAOdHlwZVBhcmFtZXRlcnN0ABpbTHhzYnRpL2FwaS9UeXBlUGFyYW1ldGVyO3hyABR4c2J0aS5hcGkuRGVmaW5pdGlvbocqG+hxQuNGAgAETAAGYWNjZXNzdAASTHhzYnRpL2FwaS9BY2Nlc3M7WwALYW5ub3RhdGlvbnN0ABdbTHhzYnRpL2FwaS9Bbm5vdGF0aW9uO0wACW1vZGlmaWVyc3QAFUx4c2J0aS9hcGkvTW9kaWZpZXJzO0wABG5hbWVxAH4ADHhwc3IAEHhzYnRpLmFwaS5QdWJsaWO6WD2ubC1gQgIAAHhyABB4c2J0aS5hcGkuQWNjZXNz3WKa+B1jMUgCAAB4cHVyABdbTHhzYnRpLmFwaS5Bbm5vdGF0aW9uO+uX6xkQ9o1IAgAAeHAAAAAAc3IAE3hzYnRpLmFwaS5Nb2RpZmllcnPHERMhaZzcJAIAAUIABWZsYWdzeHAJdAAQcmluZ3MuS1ZTdG9yZUFQSXVyABpbTHhzYnRpLmFwaS5UeXBlUGFyYW1ldGVyO9ltJg8onfK2AgAAeHAAAAAAfnIAGHhzYnRpLmFwaS5EZWZpbml0aW9uVHlwZQAAAAAAAAAAEgAAeHIADmphdmEubGFuZy5FbnVtAAAAAAAAAAASAAB4cHQABVRyYWl0dXIAE1tMamF2YS5sYW5nLlN0cmluZzut0lbn6R17RwIAAHhwAAAAAHNyABN4c2J0aS5TYWZlTGF6eSRJbXBsUAIuk5eXQD8CAANaAAhiaXRtYXAkMEwAAl90dAASTGphdmEvbGFuZy9PYmplY3Q7TAAEZXZhbHQAEUxzY2FsYS9GdW5jdGlvbjA7eHIAFnhzYnRpLmFwaS5BYnN0cmFjdExhennTd7UBX7vnoAIAAHhwAHBzcgAgeHNidGkuU2FmZUxhenkkJGFub25mdW4kc3RyaWN0JDEAAAAAAAAAAAIAAUwAB3ZhbHVlJDFxAH4AmHhwc3IAE3hzYnRpLmFwaS5FbXB0eVR5cGW8/Z5GSTuJJAIAAHhyABR4c2J0aS5hcGkuU2ltcGxlVHlwZXJ4YoghI79AAgAAeHIADnhzYnRpLmFwaS5UeXBlP2rZIRZJqsoCAAB4cHNxAH4AlwBwc3EAfgCcc3IAE3hzYnRpLmFwaS5TdHJ1Y3R1cmWpqvmAk2/YAAIAA0wACGRlY2xhcmVkcQB+AH9MAAlpbmhlcml0ZWRxAH4Af0wAB3BhcmVudHNxAH4Af3hxAH4AoHNxAH4AlwBwc3EAfgCcdXEAfgB6AAAAAHNxAH4AlwBwc3EAfgCcdXEAfgB6AAAAAHNxAH4AlwBwc3EAfgCcdXIAEVtMeHNidGkuYXBpLlR5cGU7dP+lWnv56UECAAB4cAAAAAJzcgAUeHNidGkuYXBpLlByb2plY3Rpb27z0o1U6UWkLQIAAkwAAmlkcQB+AAxMAAZwcmVmaXh0ABZMeHNidGkvYXBpL1NpbXBsZVR5cGU7eHEAfgCfdAAGT2JqZWN0c3IAE3hzYnRpLmFwaS5TaW5nbGV0b278p1/4z1bkRgIAAUwABHBhdGh0ABBMeHNidGkvYXBpL1BhdGg7eHEAfgCfc3IADnhzYnRpLmFwaS5QYXRomz1cCM6lJ4QCAAFbAApjb21wb25lbnRzdAAaW0x4c2J0aS9hcGkvUGF0aENvbXBvbmVudDt4cHVyABpbTHhzYnRpLmFwaS5QYXRoQ29tcG9uZW50O0PaCXQtZxZ0AgAAeHAAAAADc3IADHhzYnRpLmFwaS5JZJgybIs3U8RAAgABTAACaWRxAH4ADHhyABd4c2J0aS5hcGkuUGF0aENvbXBvbmVudF+aIlsuhp+8AgAAeHB0AARqYXZhc3EAfgC8dAAEbGFuZ3NyAA54c2J0aS5hcGkuVGhpc9sJ7abMWkBcAgAAeHEAfgC9c3EAfgCwdAADQW55c3EAfgC0c3EAfgC3dXEAfgC6AAAAAnNxAH4AvHQABXNjYWxhcQB+AMNzcQB+AHxxAH4AiXVxAH4AigAAAABzcQB+AIwAdAAJcmluZ3MuUHV0dXEAfgCPAAAAAH5xAH4AkXQACENsYXNzRGVmdXEAfgCVAAAAAHNxAH4AlwBwc3EAfgCccQB+AKFzcQB+AJcAcHNxAH4AnHNxAH4ApHNxAH4AlwBwc3EAfgCcdXEAfgB6AAAAAHNxAH4AlwBwc3EAfgCcdXEAfgB6AAAAAHNxAH4AlwBwc3EAfgCcdXEAfgCuAAAAB3NxAH4AsHQADFNlcmlhbGl6YWJsZXNxAH4AtHNxAH4At3VxAH4AugAAAAJzcQB+ALxxAH4AynEAfgDDc3EAfgCwcQB+AOJzcQB+ALRzcQB+ALd1cQB+ALoAAAADc3EAfgC8cQB+AL9zcQB+ALx0AAJpb3EAfgDDc3EAfgCwdAAHUHJvZHVjdHEAfgDjc3EAfgCwdAAGRXF1YWxzcQB+AONzcQB+ALB0AApLVlN0b3JlQVBJc3EAfgC0c3EAfgC3dXEAfgC6AAAAAnNxAH4AvHQABXJpbmdzcQB+AMNzcQB+ALBxAH4As3NxAH4AtHNxAH4At3VxAH4AugAAAANzcQB+ALxxAH4Av3NxAH4AvHEAfgDBcQB+AMNzcQB+ALBxAH4AxXEAfgDjc3EAfgB8cQB+AIl1cQB+AIoAAAAAc3EAfgCMAHQACXJpbmdzLkdldHVxAH4AjwAAAABxAH4A0HVxAH4AlQAAAABzcQB+AJcAcHNxAH4AnHEAfgChc3EAfgCXAHBzcQB+AJxzcQB+AKRzcQB+AJcAcHNxAH4AnHVxAH4AegAAAABzcQB+AJcAcHNxAH4AnHVxAH4AegAAAABzcQB+AJcAcHNxAH4AnHVxAH4ArgAAAAdzcQB+ALBxAH4A4nNxAH4AtHNxAH4At3VxAH4AugAAAAJzcQB+ALxxAH4AynEAfgDDc3EAfgCwcQB+AOJzcQB+ALRzcQB+ALd1cQB+ALoAAAADc3EAfgC8cQB+AL9zcQB+ALx0AAJpb3EAfgDDc3EAfgCwcQB+AO9xAH4BFXNxAH4AsHQABkVxdWFsc3EAfgEVc3EAfgCwdAAKS1ZTdG9yZUFQSXNxAH4AtHNxAH4At3VxAH4AugAAAAJzcQB+ALx0AAVyaW5nc3EAfgDDc3EAfgCwcQB+ALNzcQB+ALRzcQB+ALd1cQB+ALoAAAADc3EAfgC8cQB+AL9zcQB+ALxxAH4AwXEAfgDDc3EAfgCwcQB+AMVxAH4BFXNxAH4AfHEAfgCJdXEAfgCKAAAAAHNxAH4AjAB0AA1yaW5ncy5LVlN0b3JldXEAfgCPAAAAAHEAfgDQdXEAfgCVAAAAAHNxAH4AlwBwc3EAfgCccQB+AKFzcQB+AJcAcHNxAH4AnHNxAH4ApHNxAH4AlwBwc3EAfgCcdXEAfgB6AAAAAHNxAH4AlwBwc3EAfgCcdXEAfgB6AAAAAHNxAH4AlwBwc3EAfgCcdXEAfgCuAAAAA3NxAH4AsHQABUFjdG9yc3EAfgC0c3EAfgC3dXEAfgC6AAAAA3NxAH4AvHQABGFra2FzcQB+ALx0AAVhY3RvcnEAfgDDc3EAfgCwcQB+ALNzcQB+ALRzcQB+ALd1cQB+ALoAAAADc3EAfgC8cQB+AL9zcQB+ALxxAH4AwXEAfgDDc3EAfgCwcQB+AMVzcQB+ALRzcQB+ALd1cQB+ALoAAAACc3EAfgC8cQB+AMpxAH4Aw3NxAH4AfHEAfgCJdXEAfgCKAAAAAHNxAH4AjAB0AA1yaW5ncy5LVlN0b3JldXEAfgCPAAAAAH5xAH4AkXQABk1vZHVsZXVxAH4AlQAAAABzcQB+AJcAcHNxAH4AnHEAfgChc3EAfgCXAHBzcQB+AJxzcQB+AKRzcQB+AJcAcHNxAH4AnHVxAH4AegAAAABzcQB+AJcAcHNxAH4AnHVxAH4AegAAAABzcQB+AJcAcHNxAH4AnHVxAH4ArgAAAAJzcQB+ALBxAH4As3NxAH4AtHNxAH4At3VxAH4AugAAAANzcQB+ALxxAH4Av3NxAH4AvHEAfgDBcQB+AMNzcQB+ALBxAH4AxXNxAH4AtHNxAH4At3VxAH4AugAAAAJzcQB+ALxxAH4AynEAfgDDdXIAFFtMeHNidGkuYXBpLlBhY2thZ2U7WxMZN3CnJ6ECAAB4cAAAAAFzcgAReHNidGkuYXBpLlBhY2thZ2V+WY/2rs45WAIAAUwABG5hbWVxAH4ADHhwdAAFcmluZ3NzcgAVeHNidGkuYXBpLkNvbXBpbGF0aW9u7frgw2rooEICAAJKAAlzdGFydFRpbWVbAAdvdXRwdXRzdAAaW0x4c2J0aS9hcGkvT3V0cHV0U2V0dGluZzt4cAAAAVggbPDFdXIAGltMeHNidGkuYXBpLk91dHB1dFNldHRpbmc7f2rC86eHpUICAAB4cAAAAAFzcgAXeHNidGkuYXBpLk91dHB1dFNldHRpbmd62ZpHdPsdewIAAkwAD291dHB1dERpcmVjdG9yeXEAfgAMTAAPc291cmNlRGlyZWN0b3J5cQB+AAx4cHQANy9Vc2Vycy9Kb2huRG9uZy9EZXNrdG9wL3JpbmdzL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEvdXIAAltCrPMX+AYIVOACAAB4cAAAABTxRMpamP/okUuzhlnU6jgFL7K4VA==
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHAxZxAAAHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAACc3IAIHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoWw71InY4V88CAAJJAARoYXNoTAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwqhHycnQABHNlbGZzcQB+AAvlAr2kdAAHY29udGV4dHVxAH4ACQAAAD1zcQB+AAuBG514dAAKTG9hZE1hc3RlcnNxAH4ACyaWGYx0AAZub3RpZnlzcQB+AAuGSpC9dAAHUmVjZWl2ZXNxAH4AC2uViTV0AAR3YWl0c3EAfgALx3gXlXQABXN0YXRzc3EAfgALx426cHQADmNvcHkkZGVmYXVsdCQyc3EAfgAL83UDT3QADSRhc0luc3RhbmNlT2ZzcQB+AAtqqPr2dAAIbGlzdGVuZXJzcQB+AAtna0SOdAAMcHJvZHVjdEFyaXR5c3EAfgALpuMEVnQABmVxdWFsc3NxAH4ACzGmlQt0AApkZWFjdGl2YXRlc3EAfgALJUZMn3QADGFzSW5zdGFuY2VPZnNxAH4ACwlp8cd0AAxzZW5kZXJOb2RlSURzcQB+AAt7GJYbdAAFYnVyc3RzcQB+AAsCxNP6dAAMc3luY2hyb25pemVkc3EAfgALJEECnnQACWJ1cnN0U2l6ZXNxAH4AC00gUH50AA0kaXNJbnN0YW5jZU9mc3EAfgALFD2o+XQAB3JlY2VpdmVzcQB+AAvTnbRFdAAKcHJlUmVzdGFydHNxAH4AC3X/25R0AA1hcm91bmRSZWNlaXZlc3EAfgALByna2XQACGNhbkVxdWFsc3EAfgAL8JlFvXQAC3Bvc3RSZXN0YXJ0c3EAfgALfd2V8XQABVN0YXJ0c3EAfgALXwd+/3QACHBvc3RTdG9wc3EAfgALTu+eFXQADXByb2R1Y3RQcmVmaXhzcQB+AAsXoRSVdAAJbm90aWZ5QWxsc3EAfgAL7BkhBHQAB3NlcnZlcnNzcQB+AAtNMud4dAAIbnVtTm9kZXNzcQB+AAv9k0sHdAARYXJvdW5kUG9zdFJlc3RhcnRzcQB+AAtwGnJ8dAAMaXNJbnN0YW5jZU9mc3EAfgALYQCCEXQAEGFyb3VuZFByZVJlc3RhcnRzcQB+AAvvcmX8dAAOYXJvdW5kUG9zdFN0b3BzcQB+AAv0+Od2dAAGPGluaXQ+c3EAfgAL/eyZZ3QACHByZVN0YXJ0c3EAfgALtDwpyHQACXVuaGFuZGxlZHNxAH4AC+7Xqs50AAI9PXNxAH4ACwBphYp0AAVjbG9uZXNxAH4ACwMO32R0AAtub2Rlc0FjdGl2ZXNxAH4AC+Odd4d0AARjb3B5c3EAfgALaKn4AnQACm1heFBlck5vZGVzcQB+AAuoHSSkdAAGc2VuZGVyc3EAfgALOCQEanQACHRvU3RyaW5nc3EAfgALwUbsKHQABEpvaW5zcQB+AAs8UKCKdAACIT1zcQB+AAtD/OMjdAAIQnVyc3RBY2tzcQB+AAs6j0iodAAIZ2V0Q2xhc3NzcQB+AAvYnTOLdAAOY29weSRkZWZhdWx0JDFzcQB+AAsK6s1MdAALc2VydmVyU3RhdHNzcQB+AAuO7Q7RdAAFcHJvcHNzcQB+AAuZDE6HdAACbmVzcQB+AAuiaN7ydAASc3VwZXJ2aXNvclN0cmF0ZWd5c3EAfgALW0/71XQAAmVxc3EAfgAL/jgxL3QAD3Byb2R1Y3RJdGVyYXRvcnNxAH4ACxo/HoV0AANsb2dzcQB+AAtgUIrLdAACIyNzcQB+AAvwtYn7dAAIZmluYWxpemVzcQB+AAu8nMX6dAAOcHJvZHVjdEVsZW1lbnRzcQB+AAvdlxoCdAAIaGFzaENvZGVzcQB+AAu+Dan8dAAOYXJvdW5kUHJlU3RhcnRzcQB+AAuVKI9/dAAGYWN0aXZlc3EAfgALkNmS4nQADUxvYWRNYXN0ZXJBUElzcgATeHNidGkuYXBpLlNvdXJjZUFQSblep/kpIzikAgACWwALZGVmaW5pdGlvbnN0ABdbTHhzYnRpL2FwaS9EZWZpbml0aW9uO1sACHBhY2thZ2VzdAAUW0x4c2J0aS9hcGkvUGFja2FnZTt4cHVyABdbTHhzYnRpLmFwaS5EZWZpbml0aW9uO4jJXOe0414OAgAAeHAAAAAGc3IAE3hzYnRpLmFwaS5DbGFzc0xpa2WDNByh37CXbAIABEwADmRlZmluaXRpb25UeXBldAAaTHhzYnRpL2FwaS9EZWZpbml0aW9uVHlwZTtbABBzYXZlZEFubm90YXRpb25zdAATW0xqYXZhL2xhbmcvU3RyaW5nO0wACHNlbGZUeXBldAAQTHhzYnRpL2FwaS9MYXp5O0wACXN0cnVjdHVyZXEAfgCVeHIAIXhzYnRpLmFwaS5QYXJhbWV0ZXJpemVkRGVmaW5pdGlvbvkRbrHVUDziAgABWwAOdHlwZVBhcmFtZXRlcnN0ABpbTHhzYnRpL2FwaS9UeXBlUGFyYW1ldGVyO3hyABR4c2J0aS5hcGkuRGVmaW5pdGlvbocqG+hxQuNGAgAETAAGYWNjZXNzdAASTHhzYnRpL2FwaS9BY2Nlc3M7WwALYW5ub3RhdGlvbnN0ABdbTHhzYnRpL2FwaS9Bbm5vdGF0aW9uO0wACW1vZGlmaWVyc3QAFUx4c2J0aS9hcGkvTW9kaWZpZXJzO0wABG5hbWVxAH4ADHhwc3IAEHhzYnRpLmFwaS5QdWJsaWO6WD2ubC1gQgIAAHhyABB4c2J0aS5hcGkuQWNjZXNz3WKa+B1jMUgCAAB4cHVyABdbTHhzYnRpLmFwaS5Bbm5vdGF0aW9uO+uX6xkQ9o1IAgAAeHAAAAAAc3IAE3hzYnRpLmFwaS5Nb2RpZmllcnPHERMhaZzcJAIAAUIABWZsYWdzeHAJdAATcmluZ3MuTG9hZE1hc3RlckFQSXVyABpbTHhzYnRpLmFwaS5UeXBlUGFyYW1ldGVyO9ltJg8onfK2AgAAeHAAAAAAfnIAGHhzYnRpLmFwaS5EZWZpbml0aW9uVHlwZQAAAAAAAAAAEgAAeHIADmphdmEubGFuZy5FbnVtAAAAAAAAAAASAAB4cHQABVRyYWl0dXIAE1tMamF2YS5sYW5nLlN0cmluZzut0lbn6R17RwIAAHhwAAAAAHNyABN4c2J0aS5TYWZlTGF6eSRJbXBsUAIuk5eXQD8CAANaAAhiaXRtYXAkMEwAAl90dAASTGphdmEvbGFuZy9PYmplY3Q7TAAEZXZhbHQAEUxzY2FsYS9GdW5jdGlvbjA7eHIAFnhzYnRpLmFwaS5BYnN0cmFjdExhennTd7UBX7vnoAIAAHhwAHBzcgAgeHNidGkuU2FmZUxhenkkJGFub25mdW4kc3RyaWN0JDEAAAAAAAAAAAIAAUwAB3ZhbHVlJDFxAH4Arnhwc3IAE3hzYnRpLmFwaS5FbXB0eVR5cGW8/Z5GSTuJJAIAAHhyABR4c2J0aS5hcGkuU2ltcGxlVHlwZXJ4YoghI79AAgAAeHIADnhzYnRpLmFwaS5UeXBlP2rZIRZJqsoCAAB4cHNxAH4ArQBwc3EAfgCyc3IAE3hzYnRpLmFwaS5TdHJ1Y3R1cmWpqvmAk2/YAAIAA0wACGRlY2xhcmVkcQB+AJVMAAlpbmhlcml0ZWRxAH4AlUwAB3BhcmVudHNxAH4AlXhxAH4AtnNxAH4ArQBwc3EAfgCydXEAfgCQAAAAAHNxAH4ArQBwc3EAfgCydXEAfgCQAAAAAHNxAH4ArQBwc3EAfgCydXIAEVtMeHNidGkuYXBpLlR5cGU7dP+lWnv56UECAAB4cAAAAAJzcgAUeHNidGkuYXBpLlByb2plY3Rpb27z0o1U6UWkLQIAAkwAAmlkcQB+AAxMAAZwcmVmaXh0ABZMeHNidGkvYXBpL1NpbXBsZVR5cGU7eHEAfgC1dAAGT2JqZWN0c3IAE3hzYnRpLmFwaS5TaW5nbGV0b278p1/4z1bkRgIAAUwABHBhdGh0ABBMeHNidGkvYXBpL1BhdGg7eHEAfgC1c3IADnhzYnRpLmFwaS5QYXRomz1cCM6lJ4QCAAFbAApjb21wb25lbnRzdAAaW0x4c2J0aS9hcGkvUGF0aENvbXBvbmVudDt4cHVyABpbTHhzYnRpLmFwaS5QYXRoQ29tcG9uZW50O0PaCXQtZxZ0AgAAeHAAAAADc3IADHhzYnRpLmFwaS5JZJgybIs3U8RAAgABTAACaWRxAH4ADHhyABd4c2J0aS5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
+/Users/JohnDong/Desktop/rings/RingService.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHB2Ir26AHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAACc3IAIHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoWw71InY4V88CAAJJAARoYXNoTAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwy+OfeHQABHNlbGZzcQB+AAvs/Bv4dAAHY29udGV4dHVxAH4ACQAAAQFzcQB+AAt+QQmpdAAKdG9JdGVyYWJsZXNxAH4ACzs1N5x0AAp3aXRoRmlsdGVyc3EAfgALM3ykznQAClJpbmdTZXJ2ZXJzcQB+AAszh9ihdAANdG9UcmF2ZXJzYWJsZXNxAH4AC8psrj10AAlmaW5kRW50cnlzcQB+AAtFNi92dAAMcHJpbnRTaXplTWFwc3EAfgALOre+cHQABm5vdGlmeXNxAH4ACzHGYBt0AA1EZWZhdWx0S2V5U2V0c3EAfgALeSTahXQABHJlYWRzcQB+AAsXnQWQdAAFRW50cnlzcQB+AAtRAWrzdAAEZmluZHNxAH4AC+0DLcV0AAdSZWNlaXZlc3EAfgALGfpiJnQABHNwYW5zcQB+AAutPEOMdAAHZmxhdHRlbnNxAH4AC71OXtd0AA9jYWxjU2l6ZU1hcFNpemVzcQB+AAvXwyg6dAAMZWxlbUhhc2hDb2Rlc3EAfgALQRUzwHQACHRvQnVmZmVyc3EAfgALIQPxjXQAC3JlbW92ZUVudHJ5c3EAfgALIHnKx3QABWNvdW50c3EAfgALLiI8gnQAB1JpbmdNYXBzcQB+AAsspXhmdAAIUmluZ0NlbGxzcQB+AAvTR7A0dAAJZ2VuZXJhdG9yc3EAfgALEa/6h3QADHJlZHVjZU9wdGlvbnNxAH4AC4GqGDd0ABNzbGljZVdpdGhLbm93bkRlbHRhc3EAfgALbSDb63QABHdhaXRzcQB+AAub1Rl+dAAIaW5jb21pbmdzcQB+AAvrCPGydAAFc3RhdHNzcQB+AAseyIeAdAAJZm9sZFJpZ2h0c3EAfgALus1BaXQACXRha2VXaGlsZXNxAH4AC1JAhZB0AAxzdHJpbmdQcmVmaXhzcQB+AAuL3///dAANJGFzSW5zdGFuY2VPZnNxAH4ACzJcGi10AAVlbXB0eXNxAH4AC5TM2F50AAdzcGxpdEF0c3EAfgALdH33M3QABW1pbkJ5c3EAfgALZhMtoXQACWFsbG9jYXRlZHNxAH4ACwjSVSN0ABBpbml0V2l0aENvbnRlbnRzc3EAfgALwfIm3HQABHNpemVzcQB+AAvuUZEAdAAFdW5pb25zcQB+AAvNiRQddAAJaW50ZXJzZWN0c3EAfgALM0Ed8HQABWluaXRzc3EAfgALIxpAoHQAA3ppcHNxAH4AC0mTNfR0AAdjb21wb3Nlc3EAfgALYA1nwXQABXRvU2V0c3EAfgALj3j/rHQACHN1YnNldE9mc3EAfgALvRT/JXQAAjpcc3EAfgALlaCuLHQAA21hcHNxAH4ACxOBHKl0AAljZWxsc3RvcmVzcQB+AAtzz3zvdAAJdGFrZVJpZ2h0c3EAfgAL8yYWUXQACWRyb3BXaGlsZXNxAH4AC8WJvkh0AAV0b01hcHNxAH4AC/fnVxh0AAlmaWx0ZXJOb3RzcQB+AAvvyhhydAAGZXF1YWxzc3EAfgAL8bw/iXQAA3BhcnNxAH4AC0VZVv10AAZ1bnppcDNzcQB+AAtHHkkXdAAEcmVwcnNxAH4AC51wTdN0AAtfbG9hZEZhY3RvcnNxAH4AC+FJVrx0AAllbmRwb2ludHNzcQB+AAtbXr3XdAAGdG9MaXN0c3EAfgALfwmMRnQAAis9c3EAfgAL93HE6HQACWFsbG9jQ2VsbHNxAH4ACwISDlx0AAVjbGVhcnNxAH4ACy+pNLF0AA9lbnRyaWVzSXRlcmF0b3JzcQB+AAvHUQfVdAASaXNUcmF2ZXJzYWJsZUFnYWluc3EAfgALiGNKUHQACGFkZEVudHJ5c3EAfgALPjgO4nQACmRpcnR5Y2VsbHNzcQB+AAvdhd9ndAAMRmlsdGVyZWRLZXlzc3EAfgALp3sNrHQABGhlYWRzcQB+AAsmMcmGdAAMYXNJbnN0YW5jZU9mc3EAfgALm0Veg3QADHNhbWVFbGVtZW50c3NxAH4ACyPwPj10AApmaWx0ZXJLZXlzc3EAfgALMp1/cHQACnVzZVNpemVNYXBzcQB+AAtgaNeadAAFdW56aXBzcQB+AAuCWPcRdAAGcmVzdWx0c3EAfgALXVGk03QAEHJlZHVjZUxlZnRPcHRpb25zcQB+AAvuzy/FdAALbG9jYWxXZWlnaHRzcQB+AAuHAiGPdAAJc2VlZHZhbHVlc3EAfgAL008bkXQABHB1c2hzcQB+AAtcleHydAABJnNxAH4AC5tJ7+F0AAxzeW5jaHJvbml6ZWRzcQB+AAskBASbdAAObm5TaXplTWFwUmVzZXRzcQB+AAtsD189dAAHc2xpZGluZ3NxAH4AC44z3r50AAt3aXRoRGVmYXVsdHNxAH4ACyRnM6t0AARTZWxmc3EAfgALE+H0wXQACXBhcnRpdGlvbnNxAH4AC7PV8Yp0AAlhZ2dyZWdhdGVzcQB+AAtmluXedAANJGlzSW5zdGFuY2VPZnNxAH4AC4keKPN0AAZmb3JhbGxzcQB+AAu4bfBGdAAKbmV3QnVpbGRlcnNxAH4ACwZShWV0AA52YWx1ZXNJdGVyYXRvcnNxAH4AC551pSF0AAdhbmRUaGVuc3EAfgALmySe5nQAB3JlY2VpdmVzcQB+AAulqn3fdAAIbWtTdHJpbmdzcQB+AAvHF4+jdAATdG90YWxTaXplTWFwQnVja2V0c3NxAH4AC1qHKTt0AApwcmVSZXN0YXJ0c3EAfgALyymGrHQABHByZXZzcQB+AAuKd5jpdAAGcmV0YWluc3EAfgALGYEGI3QAA21pbnNxAH4AC4XQCux0AAlzY2FuUmlnaHRzcQB+AAtemnq5dAALc2VyaWFsaXplVG9zcQB+AAuGpolNdAANYXJvdW5kUmVjZWl2ZXNxAH4ACyXf2up0AARmb2xkc3EAfgALZUr9wHQAAXxzcQB+AAsUDhEPdAAMa2V5c0l0ZXJhdG9yc3EAfgALLvUHz3QABHNjYW5zcQB+AAtQZHEvdAAIbm9uRW1wdHlzcQB+AAtSYpltdAAIY2FuRXF1YWxzcQB+AAuBwA18dAAPZ2V0T3JFbHNlVXBkYXRlc3EAfgALaVOJ9HQAC3Bvc3RSZXN0YXJ0c3EAfgALi3FaFXQABHRhaWxzcQB+AAt7nRVDdAACLT1zcQB+AAtZId3mdAAHY29tbWFuZHNxAH4ACyCYI6x0AApsYXN0T3B0aW9uc3EAfgALTplj2XQACWRyb3BSaWdodHNxAH4AC27c4Zp0AAhwb3N0U3RvcHNxAH4AC5k/2O10AAhpdGVyYXRvcnNxAH4AC5gL3/x0AARsYXN0c3EAfgALjKBHvXQABm9yRWxzZXNxAH4AC4kKygt0AA9jaG9vc2VFbXB0eUNlbGxzcQB+AAuwE5XndAAKZWxlbUVxdWFsc3NxAH4AC9ia0g90AAtkaXJlY3RXcml0ZXNxAH4AC/oRxVZ0AAlub3RpZnlBbGxzcQB+AAu9cGJadAACLzpzcQB+AAugfeaKdAAKdG9JdGVyYXRvcnNxAH4AC88Oqa90AAlhZGRTdHJpbmdzcQB+AAtIogW1dAAPbm5TaXplTWFwUmVtb3Zlc3EAfgALA+ir6HQAAnRvc3EAfgALz1aeKnQACG51bU5vZGVzc3EAfgALmQ618XQAEWFyb3VuZFBvc3RSZXN0YXJ0c3EAfgAL7DuFLXQABmtleVNldHNxAH4AC9d6l4p0AAxjb2xsZWN0Rmlyc3RzcQB+AAvad3UQdAAEZHJvcHNxAH4AC/vJUvR0AAEtc3EAfgALvLace3QADGlzSW5zdGFuY2VPZnNxAH4AC99wJc90ABBhcm91bmRQcmVSZXN0YXJ0c3EAfgALV1s/CHQABmZpbHRlcnNxAH4ACyWRZJp0AAtpc0RlZmluZWRBdHNxAH4AC9HF+JF0AA5maW5kT3JBZGRFbnRyeXNxAH4ACzPb3xR0AA5hcm91bmRQb3N0U3RvcHNxAH4AC6KmadR0AApjbGVhclRhYmxlc3EAfgALUcycTXQAAysrOnNxAH4AC7nnvXp0AAhzaXplSGludHNxAH4AC+zDYK10AA5zaXplTWFwRGlzYWJsZXNxAH4AC/YSjmR0AAY8aW5pdD5zcQB+AAvX2PKHdAAIdG9TdHJlYW1zcQB+AAtMxJOtdAAQd2l0aERlZmF1bHRWYWx1ZXNxAH4ACyi00k10AAhwcmVTdGFydHNxAH4ACyq5mQh0AAljb21wYW5pb25zcQB+AAun479XdAADbWF4c3EAfgALCSrBn3QACXVuaGFuZGxlZHNxAH4AC5wFFTB0AAltYXBSZXN1bHRzcQB+AAsNDrcGdAAFdGFpbHNzcQB+AAsF4iSLdAAGcmVtb3Zlc3EAfgAL9Xg1Q3QAB3VwZGF0ZWRzcQB+AAvdSsHfdAAFYXBwbHlzcQB+AAsPKS3WdAACKytzcQB+AAvWQWUidAAHZ3JvdXBlZHNxAH4AC0EFAcp0AARkaWZmc3EAfgALjeth0HQAB2ZsYXRNYXBzcQB+AAtgQI1NdAAJZ2V0T3JFbHNlc3EAfgALQb2mTXQABHRha2VzcQB+AAvkfjaJdAALcGFyQ29tYmluZXJzcQB+AAv5CPnGdAALcmVkdWNlUmlnaHRzcQB+AAucorYXdAAHZ3JvdXBCeXNxAH4AC2fq0R50AAI9PXNxAH4AC/zN0et0AAVtYXhCeXNxAH4AC0ARELt0ABRzaXplTWFwQnVja2V0Qml0U2l6ZXNxAH4AC5jp7790ABNzbGljZVdpdGhLbm93bkJvdW5kc3EAfgALR2Syj3QADG5uU2l6ZU1hcEFkZHNxAH4ACws8c150AAVjbG9uZXNxAH4AC9Lhfel0AAdpbXByb3Zlc3EAfgALRdZt/nQAB3NpemVtYXBzcQB+AAuJAkpSdAAFc2xpY2VzcQB+AAvUPNcpdAAHZGVmYXVsdHNxAH4AC/nHB3V0AAdmb3JlYWNoc3EAfgALMdBb2XQAAiZ+c3EAfgALQjRJ2nQACmRpcmVjdFJlYWRzcQB+AAvKY7o8dAAJdGhyZXNob2xkc3EAfgALzRumoHQABmV4aXN0c3NxAH4ACy0W5tN0ABFyZWR1Y2VSaWdodE9wdGlvbnNxAH4AC/V5RBN0AAh0b1ZlY3RvcnNxAH4AC5gsd7B0AAx0b0luZGV4ZWRTZXFzcQB+AAtNLZvkdAAMY29weVRvQnVmZmVyc3EAfgALKrwVu3QAB3RvQXJyYXlzcQB+AAvmh7l4dAAGcmVkdWNlc3EAfgALSWCDEXQAB3N1YnNldHNzcQB+AAvUeu9RdAAQY2hvb3NlQWN0aXZlQ2VsbHNxAH4ACzrPlpV0AAV0b1NlcXNxAH4AC1QLdXV0AARuZXh0c3EAfgAL6+aE73QADHppcFdpdGhJbmRleHNxAH4AC3vCDDF0AA9zaXplSGludEJvdW5kZWRzcQB+AAuw5lQJdAAMZm9yZWFjaEVudHJ5c3EAfgALHv0G3nQACXRhYmxlU2l6ZXNxAH4AC4QcTFp0AANwdXRzcQB+AAsBWkLYdAAGc2VuZGVyc3EAfgAL5mijknQAFURlZmF1bHRWYWx1ZXNJdGVyYWJsZXNxAH4AC+JlwmZ0AAZ2YWx1ZXNzcQB+AAtlmyd8dAALc2l6ZU1hcEluaXRzcQB+AAtR6YpYdAAIdG9TdHJpbmdzcQB+AAviPBfndAAOZ2VuZXJpY0J1aWxkZXJzcQB+AAvUrg/0dAALY29weVRvQXJyYXlzcQB+AAsb67nTdAAHcnVuV2l0aHNxAH4AC6CKd9R0AANzZXFzcQB+AAs6DprkdAABK3NxAH4AC1elVjV0AAIhPXNxAH4AC/UvPsF0AAxNYXBwZWRWYWx1ZXNzcQB+AAtNWjYqdAADZ2V0c3EAfgALM2WvNnQACXRyYW5zcG9zZXNxAH4AC4kD5vh0AAdjb2xsZWN0c3EAfgALI6go/3QACmhlYWRPcHRpb25zcQB+AAvyJGsOdAAIZ2V0Q2xhc3NzcQB+AAtOuAoudAADLS09c3EAfgALY44ejHQACldpdGhGaWx0ZXJzcQB+AAvqqabldAAGdXBkYXRlc3EAfgALQltFpnQAD2hhc0RlZmluaXRlU2l6ZXNxAH4ACw9AqiN0AAltYXBWYWx1ZXNzcQB+AAv04SgLdAALaW5pdGlhbFNpemVzcQB+AAvTNYBxdAADKys9c3EAfgALRv/RcHQABXByb3Bzc3EAfgALJWT523QACXRvdWNoQ2VsbHNxAH4AC+GXCeR0AAhteU5vZGVJRHNxAH4AC45kiDF0AAItLXNxAH4AC3i/T9V0AAhmb2xkTGVmdHNxAH4AC47sgDF0ABBpc1NpemVNYXBEZWZpbmVkc3EAfgALuxosA3QACGNvbnRhaW5zc3EAfgALd8ej5XQAEXNpemVNYXBCdWNrZXRTaXplc3EAfgALTSrPUXQADHRvQ29sbGVjdGlvbnNxAH4ACyH53FZ0AAdpc0VtcHR5c3EAfgALJcQ55nQAAm5lc3EAfgALDFbYnHQACXRyYW5zZm9ybXNxAH4AC6Yi8xJ0AARpbml0c3EAfgALKYvxXXQACHJldmVyc2Vkc3EAfgALdyxdiHQACnJlZHVjZUxlZnRzcQB+AAuzMHuIdAAEbGlmdHNxAH4AC9aBzhN0ABJzdXBlcnZpc29yU3RyYXRlZ3lzcQB+AAswTEz8dAAOY3JlYXRlTmV3RW50cnlzcQB+AAv7ttFmdAARaGFzaFRhYmxlQ29udGVudHNzcQB+AAs4uYpwdAACZXFzcQB+AAvQJ8dRdAAFd3JpdGVzcQB+AAs6Pd/udAAVc2l6ZU1hcEluaXRBbmRSZWJ1aWxkc3EAfgALiOufWXQAA3N1bXNxAH4AC3XrDp90AANsb2dzcQB+AAvUHW/wdAARYWx3YXlzSW5pdFNpemVNYXBzcQB+AAvvijmLdAAOdGhpc0NvbGxlY3Rpb25zcQB+AAthoS/QdAACIyNzcQB+AAu/V6ZrdAAIc2NhbkxlZnRzcQB+AAtTyvV3dAAIZmluYWxpemVzcQB+AAuSJfhOdAAFdGFibGVzcQB+AAt0ZgH2dAAFaW5kZXhzcQB+AAt/DD+3dAAEa2V5c3NxAH4AC29VbQN0AAhoYXNoQ29kZXNxAH4AC/RGSUN0AAdyd2NoZWNrc3EAfgALcnx7PnQABnppcEFsbHNxAH4AC5GvOLx0AAdwcm9kdWN0c3EAfgALs9481XQADXRhYmxlU2l6ZVNlZWRzcQB+AAtOmZOAdAAOYXJvdW5kUHJlU3RhcnRzcQB+AAvbh+LSdAAEdmlld3NxAH4AC0Q9doR0AAthcHBseU9yRWxzZXNyABN4c2J0aS5hcGkuU291cmNlQVBJuV6n+SkjOKQCAAJbAAtkZWZpbml0aW9uc3QAF1tMeHNidGkvYXBpL0RlZmluaXRpb247WwAIcGFja2FnZXN0ABRbTHhzYnRpL2FwaS9QYWNrYWdlO3hwdXIAF1tMeHNidGkuYXBpLkRlZmluaXRpb247iMlc57TjXg4CAAB4cAAAAARzcgATeHNidGkuYXBpLkNsYXNzTGlrZYM0HKHfsJdsAgAETAAOZGVmaW5pdGlvblR5cGV0ABpMeHNidGkvYXBpL0RlZmluaXRpb25UeXBlO1sAEHNhdmVkQW5ub3RhdGlvbnN0ABNbTGphdmEvbGFuZy9TdHJpbmc7TAAIc2VsZlR5cGV0ABBMeHNidGkvYXBpL0xhenk7TAAJc3RydWN0dXJlcQB+Ah14cgAheHNidGkuYXBpLlBhcmFtZXRlcml6ZWREZWZpbml0aW9u+RFusdVQPOICAAFbAA50eXBlUGFyYW1ldGVyc3QAGltMeHNidGkvYXBpL1R5cGVQYXJhbWV0ZXI7eHIAFHhzYnRpLmFwaS5EZWZpbml0aW9uhyob6HFC40YCAARMAAZhY2Nlc3N0ABJMeHNidGkvYXBpL0FjY2VzcztbAAthbm5vdGF0aW9uc3QAF1tMeHNidGkvYXBpL0Fubm90YXRpb247TAAJbW9kaWZpZXJzdAAVTHhzYnRpL2FwaS9Nb2RpZmllcnM7TAAEbmFtZXEAfgAMeHBzcgAQeHNidGkuYXBpLlB1YmxpY7pYPa5sLWBCAgAAeHIAEHhzYnRpLmFwaS5BY2Nlc3PdYpr4HWMxSAIAAHhwdXIAF1tMeHNidGkuYXBpLkFubm90YXRpb24765frGRD2jUgCAAB4cAAAAABzcgATeHNidGkuYXBpLk1vZGlmaWVyc8cREyFpnNwkAgABQgAFZmxhZ3N4cAB0AA5yaW5ncy5SaW5nQ2VsbHVyABpbTHhzYnRpLmFwaS5UeXBlUGFyYW1ldGVyO9ltJg8onfK2AgAAeHAAAAAAfnIAGHhzYnRpLmFwaS5EZWZpbml0aW9uVHlwZQAAAAAAAAAAEgAAeHIADmphdmEubGFuZy5FbnVtAAAAAAAAAAASAAB4cHQACENsYXNzRGVmdXIAE1tMamF2YS5sYW5nLlN0cmluZzut0lbn6R17RwIAAHhwAAAAAHNyABN4c2J0aS5TYWZlTGF6eSRJbXBsUAIuk5eXQD8CAANaAAhiaXRtYXAkMEwAAl90dAASTGphdmEvbGFuZy9PYmplY3Q7TAAEZXZhbHQAEUxzY2FsYS9GdW5jdGlvbjA7eHIAFnhzYnRpLmFwaS5BYnN0cmFjdExhennTd7UBX7vnoAIAAHhwAHBzcgAgeHNidGkuU2FmZUxhenkkJGFub25mdW4kc3RyaWN0JDEAAAAAAAAAAAIAAUwAB3ZhbHVlJDFxAH4CNnhwc3IAE3hzYnRpLmFwaS5FbXB0eVR5cGW8/Z5GSTuJJAIAAHhyABR4c2J0aS5hcGkuU2ltcGxlVHlwZXJ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0aWxzc3EAfgJOdAAJSGFzaFRhYmxlcQB+AoV1cQB+AkwAAAABcQB+Ao5zcQB+AoBzcQB+Ak50AAtBYnN0cmFjdE1hcHEAfgKFdXEAfgJMAAAAAnEAfgKOcQB+ApZzcQB+AoBzcQB+Ak50AANNYXBxAH4ChXVxAH4CTAAAAAJxAH4CjnEAfgKWc3EAfgKAc3EAfgJOdAAHTWFwTGlrZXEAfgKFdXEAfgJMAAAAA3EAfgKOcQB+ApZxAH4CgnNxAH4CgHNxAH4CTnQACUNsb25lYWJsZXEAfgKFdXEAfgJMAAAAAXEAfgKCc3EAfgJOdAAJQ2xvbmVhYmxlcQB+Ap9zcQB+Ak50AAlDbG9uZWFibGVzcQB+AlJzcQB+AlV1cQB+AlgAAAADc3EAfgJacQB+Al1zcQB+AlpxAH4CX3EAfgJhc3EAfgKAc3EAfgJOdAAKU2hyaW5rYWJsZXNxAH4CUnNxAH4CVXVxAH4CWAAAAARzcQB+AlpxAH4CaHNxAH4CWnEAfgKKc3EAfgJadAAHZ2VuZXJpY3EAfgJhdXEAfgJMAAAAAXEAfgKOc3EAfgKAc3EAfgJOdAAHQnVpbGRlcnEAfgKFdXEAfgJMAAAAAnEAfgKzcQB+AoJzcQB+AoBzcQB+Ak50AAhHcm93YWJsZXEAfgLudXEAfgJMAAAAAXEAfgKzc3EAfgJOdAAJQ2xlYXJhYmxlcQB+Au5zcQB+AoBzcQB+Ak50AAhJdGVyYWJsZXEAfgKFdXEAfgJMAAAAAXEAfgKzc3EAfgKAc3EAfgJOdAALVHJhdmVyc2FibGVxAH4ChXVxAH4CTAAAAAFxAH4Cs3NxAH4CTnQAB011dGFibGVxAH4Cn3NxAH4CgHNxAH4CTnQAC0Fic3RyYWN0TWFwcQB+Aq11cQB+AkwAAAACcQB+Ao5xAH4ClnNxAH4CgHNxAH4CTnQAA01hcHEAfgKtdXEAfgJMAAAAAnEAfgKOcQB+ApZzcQB+AoBzcQB+Ak50AAdNYXBMaWtlcQB+Aq11cQB+AkwAAAADcQB+Ao5xAH4ClnEAfgKCc3EAfgKAc3EAfgJOdAAMU3VidHJhY3RhYmxlcQB+Au51cQB+AkwAAAACcQB+Ao5xAH4CgnNxAH4CgHNxAH4CTnQAD1BhcnRpYWxGdW5jdGlvbnEAfgKfdXEAfgJMAAAAAnEAfgKOcQB+ApZzcQB+AoBzcQB+Ak50AAlGdW5jdGlvbjFxAH4Cn3VxAH4CTAAAAAJxAH4CjnEAfgKWc3EAfgKAc3EAfgJOdAAGR2VuTWFwcQB+Aq11cQB+AkwAAAACcQB+Ao5xAH4ClnNxAH4CgHNxAH4CTnQACkdlbk1hcExpa2VxAH4CrXVxAH4CTAAAAANxAH4CjnEAfgKWcQB+AoJzcQB+AoBzcQB+Ak50ABBBYnN0cmFjdEl0ZXJhYmxlcQB+Aq11cQB+AkwAAAABcQB+ArNzcQB+AoBzcQB+Ak50AAhJdGVyYWJsZXEAfgKtdXEAfgJMAAAAAXEAfgKzc3EAfgKAc3EAfgJOdAAMSXRlcmFibGVMaWtlcQB+Aq11cQB+AkwAAAACcQB+ArNxAH4CgnNxAH4CTnQABkVxdWFsc3EAfgKfc3EAfgKAc3EAfgJOdAALR2VuSXRlcmFibGVxAH4CrXVxAH4CTAAAAAFxAH4Cs3NxAH4CgHNxAH4CTnQAD0dlbkl0ZXJhYmxlTGlrZXEAfgKtdXEAfgJMAAAAAnEAfgKzcQB+AoJzcQB+AoBzcQB+Ak50ABNBYnN0cmFjdFRyYXZlcnNhYmxlcQB+Aq11cQB+AkwAAAABcQB+ArNzcQB+AoBzcQB+Ak50AAtUcmF2ZXJzYWJsZXEAfgKtdXEAfgJMAAAAAXEAfgKzc3EAfgKAc3EAfgJOdAAOR2VuVHJhdmVyc2FibGVxAH4CrXVxAH4CTAAAAAFxAH4Cs3NxAH4CgHNxAH4CTnQAGkdlbmVyaWNUcmF2ZXJzYWJsZVRlbXBsYXRlcQB+Au51cQB+AkwAAAACcQB+ArNzcQB+Ak50AAhJdGVyYWJsZXEAfgKFc3EAfgKAc3EAfgJOdAAPVHJhdmVyc2FibGVMaWtlcQB+Aq11cQB+AkwAAAACcQB+ArNxAH4CgnNxAH4CgHNxAH4CTnQAEkdlblRyYXZlcnNhYmxlTGlrZXEAfgKtdXEAfgJMAAAAAnEAfgKzcQB+AoJzcQB+AoBzcQB+Ak50AA5QYXJhbGxlbGl6YWJsZXEAfgKtdXEAfgJMAAAAAnEAfgKzcQB+ArdzcQB+AoBzcQB+Ak50AA9UcmF2ZXJzYWJsZU9uY2VxAH4CrXVxAH4CTAAAAAFxAH4Cs3NxAH4CgHNxAH4CTnQAEkdlblRyYXZlcnNhYmxlT25jZXEAfgKtdXEAfgJMAAAAAXEAfgKzc3EAfgKAc3EAfgJOdAANRmlsdGVyTW9uYWRpY3EAfgLudXEAfgJMAAAAAnEAfgKzcQB+AoJzcQB+AoBzcQB+Ak50AA1IYXNOZXdCdWlsZGVycQB+Au51cQB+AkwAAAACcQB+ArNxAH4CgnNxAH4CTnEAfgJRcQB+AuZzcQB+Ak5xAH4CY3EAfgKfc3EAfgIacQB+Aid1cQB+AigAAAAAc3EAfgIqAHQAEHJpbmdzLlJpbmdTZXJ2ZXJ1cQB+Ai0AAAAAcQB+AjF1cQB+AjMAAAAAc3EAfgI1AHBzcQB+AjpxAH4CP3NxAH4CNQBwc3EAfgI6c3EAfgJCc3EAfgI1AHBzcQB+Ajp1cQB+AhgAAAAAc3EAfgI1AHBzcQB+Ajp1cQB+AhgAAAAAc3EAfgI1AHBzcQB+Ajp1cQB+AkwAAAADc3EAfgJOdAAFQWN0b3JzcQB+AlJzcQB+AlV1cQB+AlgAAAADc3EAfgJadAAEYWtrYXNxAH4CWnQABWFjdG9ycQB+AmFzcQB+Ak5xAH4CUXNxAH4CUnNxAH4CVXVxAH4CWAAAAANzcQB+AlpxAH4CXXNxAH4CWnEAfgJfcQB+AmFzcQB+Ak5xAH4CY3NxAH4CUnNxAH4CVXVxAH4CWAAAAAJzcQB+AlpxAH4CaHEAfgJhc3EAfgIacQB+Aid1cQB+AigAAAAAc3EAfgIqAHQAEHJpbmdzLlJpbmdTZXJ2ZXJ1cQB+Ai0AAAAAfnEAfgIvdAAGTW9kdWxldXEAfgIzAAAAAHNxAH4CNQBwc3EAfgI6cQB+Aj9zcQB+AjUAcHNxAH4COnNxAH4CQnNxAH4CNQBwc3EAfgI6dXEAfgIYAAAAAHNxAH4CNQBwc3EAfgI6dXEAfgIYAAAAAHNxAH4CNQBwc3EAfgI6dXEAfgJMAAAAAnNxAH4CTnEAfgJRc3EAfgJSc3EAfgJVdXEAfgJYAAAAA3NxAH4CWnEAfgJdc3EAfgJacQB+Al9xAH4CYXNxAH4CTnEAfgJjc3EAfgJSc3EAfgJVdXEAfgJYAAAAAnNxAH4CWnEAfgJocQB+AmF1cgAUW0x4c2J0aS5hcGkuUGFja2FnZTtbExk3cKcnoQIAAHhwAAAAAXNyABF4c2J0aS5hcGkuUGFja2FnZX5Zj/auzjlYAgABTAAEbmFtZXEAfgAMeHB0AAVyaW5nc3NyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWCBs8MV1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5cQB+AAxMAA9zb3VyY2VEaXJlY3RvcnlxAH4ADHhwdAA3L1VzZXJzL0pvaG5Eb25nL0Rlc2t0b3AvcmluZ3MvdGFyZ2V0L3NjYWxhLTIuMTEvY2xhc3Nlc3QAAS91cgACW0Ks8xf4BghU4AIAAHhwAAAAFES92YpXmUWA9lxOrzqstIO/Bdb7
+/Users/JohnDong/Desktop/rings/Stats.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHCMIxiPAHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAAAdXEAfgAJAAAAHHNyACB4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaFsO9SJ2OFfPAgACSQAEaGFzaEwABG5hbWV0ABJMamF2YS9sYW5nL1N0cmluZzt4cEWHcy10AAZub3RpZnlzcQB+AAyFBXX8dAAIbWVzc2FnZXNzcQB+AAzWPlpxdAAEd2FpdHNxAH4ADEr3JU50AA0kYXNJbnN0YW5jZU9mc3EAfgAM/pBifHQACWFsbG9jYXRlZHNxAH4ADP7YYxZ0AAZlcXVhbHNzcQB+AAz4sPAVdAACKz1zcQB+AAwsC9LydAAHdG91Y2hlc3NxAH4ADE1rjb50AAxhc0luc3RhbmNlT2ZzcQB+AAwNMMxNdAAMc3luY2hyb25pemVkc3EAfgAMLImrDnQADSRpc0luc3RhbmNlT2ZzcQB+AAxlIynHdAAGZXJyb3Jzc3EAfgAM42aGpXQACW5vdGlmeUFsbHNxAH4ADB7L7dJ0AAxpc0luc3RhbmNlT2ZzcQB+AAxojZxTdAAGPGluaXQ+c3EAfgAMC9+2d3QAAj09c3EAfgAMORJciHQABWNsb25lc3EAfgAMmJlei3QABmNoZWNrc3NxAH4ADF/XUs10AAh0b1N0cmluZ3NxAH4ADAYmLrZ0AAIhPXNxAH4ADO2qps50AAhnZXRDbGFzc3NxAH4ADORpLU90AAZtaXNzZXNzcQB+AAzBMuB3dAACbmVzcQB+AAx2DpMUdAAFU3RhdHNzcQB+AAwHVTzTdAACZXFzcQB+AAwAFjYmdAACIyNzcQB+AAxQ3uZWdAAIZmluYWxpemVzcQB+AAwCOUf1dAAIaGFzaENvZGVzcgATeHNidGkuYXBpLlNvdXJjZUFQSblep/kpIzikAgACWwALZGVmaW5pdGlvbnN0ABdbTHhzYnRpL2FwaS9EZWZpbml0aW9uO1sACHBhY2thZ2VzdAAUW0x4c2J0aS9hcGkvUGFja2FnZTt4cHVyABdbTHhzYnRpLmFwaS5EZWZpbml0aW9uO4jJXOe0414OAgAAeHAAAAABc3IAE3hzYnRpLmFwaS5DbGFzc0xpa2WDNByh37CXbAIABEwADmRlZmluaXRpb25UeXBldAAaTHhzYnRpL2FwaS9EZWZpbml0aW9uVHlwZTtbABBzYXZlZEFubm90YXRpb25zdAATW0xqYXZhL2xhbmcvU3RyaW5nO0wACHNlbGZUeXBldAAQTHhzYnRpL2FwaS9MYXp5O0wACXN0cnVjdHVyZXEAfgBPeHIAIXhzYnRpLmFwaS5QYXJhbWV0ZXJpemVkRGVmaW5pdGlvbvkRbrHVUDziAgABWwAOdHlwZVBhcmFtZXRlcnN0ABpbTHhzYnRpL2FwaS9UeXBlUGFyYW1ldGVyO3hyABR4c2J0aS5hcGkuRGVmaW5pdGlvbocqG+hxQuNGAgAETAAGYWNjZXNzdAASTHhzYnRpL2FwaS9BY2Nlc3M7WwALYW5ub3RhdGlvbnN0ABdbTHhzYnRpL2FwaS9Bbm5vdGF0aW9uO0wACW1vZGlmaWVyc3QAFUx4c2J0aS9hcGkvTW9kaWZpZXJzO0wABG5hbWVxAH4ADXhwc3IAEHhzYnRpLmFwaS5QdWJsaWO6WD2ubC1gQgIAAHhyABB4c2J0aS5hcGkuQWNjZXNz3WKa+B1jMUgCAAB4cHVyABdbTHhzYnRpLmFwaS5Bbm5vdGF0aW9uO+uX6xkQ9o1IAgAAeHAAAAAAc3IAE3hzYnRpLmFwaS5Nb2RpZmllcnPHERMhaZzcJAIAAUIABWZsYWdzeHAAdAALcmluZ3MuU3RhdHN1cgAaW0x4c2J0aS5hcGkuVHlwZVBhcmFtZXRlcjvZbSYPKJ3ytgIAAHhwAAAAAH5yABh4c2J0aS5hcGkuRGVmaW5pdGlvblR5cGUAAAAAAAAAABIAAHhyAA5qYXZhLmxhbmcuRW51bQAAAAAAAAAAEgAAeHB0AAhDbGFzc0RlZnVyABNbTGphdmEubGFuZy5TdHJpbmc7rdJW5+kde0cCAAB4cAAAAABzcgATeHNidGkuU2FmZUxhenkkSW1wbFACLpOXl0A/AgADWgAIYml0bWFwJDBMAAJfdHQAEkxqYXZhL2xhbmcvT2JqZWN0O0wABGV2YWx0ABFMc2NhbGEvRnVuY3Rpb24wO3hyABZ4c2J0aS5hcGkuQWJzdHJhY3RMYXp503e1AV+756ACAAB4cABwc3IAIHhzYnRpLlNhZmVMYXp5JCRhbm9uZnVuJHN0cmljdCQxAAAAAAAAAAACAAFMAAd2YWx1ZSQxcQB+AGh4cHNyABN4c2J0aS5hcGkuRW1wdHlUeXBlvP2eRkk7iSQCAAB4cgAUeHNidGkuYXBpLlNpbXBsZVR5cGVyeGKIISO/QAIAAHhyAA54c2J0aS5hcGkuVHlwZT9q2SEWSarKAgAAeHBzcQB+AGcAcHNxAH4AbHNyABN4c2J0aS5hcGkuU3RydWN0dXJlqar5gJNv2AACAANMAAhkZWNsYXJlZHEAfgBPTAAJaW5oZXJpdGVkcQB+AE9MAAdwYXJlbnRzcQB+AE94cQB+AHBzcQB+AGcAcHNxAH4AbHVxAH4ASgAAAABzcQB+AGcAcHNxAH4AbHVxAH4ASgAAAABzcQB+AGcAcHNxAH4AbHVyABFbTHhzYnRpLmFwaS5UeXBlO3T/pVp7+elBAgAAeHAAAAACc3IAFHhzYnRpLmFwaS5Qcm9qZWN0aW9u89KNVOlFpC0CAAJMAAJpZHEAfgANTAAGcHJlZml4dAAWTHhzYnRpL2FwaS9TaW1wbGVUeXBlO3hxAH4Ab3QABk9iamVjdHNyABN4c2J0aS5hcGkuU2luZ2xldG9u/Kdf+M9W5EYCAAFMAARwYXRodAAQTHhzYnRpL2FwaS9QYXRoO3hxAH4Ab3NyAA54c2J0aS5hcGkuUGF0aJs9XAjOpSeEAgABWwAKY29tcG9uZW50c3QAGltMeHNidGkvYXBpL1BhdGhDb21wb25lbnQ7eHB1cgAaW0x4c2J0aS5hcGkuUGF0aENvbXBvbmVudDtD2gl0LWcWdAIAAHhwAAAAA3NyAAx4c2J0aS5hcGkuSWSYMmyLN1PEQAIAAUwAAmlkcQB+AA14cgAXeHNidGkuYXBpLlBhdGhDb21wb25lbnRfmiJbLoafvAIAAHhwdAAEamF2YXNxAH4AjHQABGxhbmdzcgAOeHNidGkuYXBpLlRoaXPbCe2mzFpAXAIAAHhxAH4AjXNxAH4AgHQAA0FueXNxAH4AhHNxAH4Ah3VxAH4AigAAAAJzcQB+AIx0AAVzY2FsYXEAfgCTdXIAFFtMeHNidGkuYXBpLlBhY2thZ2U7WxMZN3CnJ6ECAAB4cAAAAAFzcgAReHNidGkuYXBpLlBhY2thZ2V+WY/2rs45WAIAAUwABG5hbWVxAH4ADXhwdAAFcmluZ3NzcgAVeHNidGkuYXBpLkNvbXBpbGF0aW9u7frgw2rooEICAAJKAAlzdGFydFRpbWVbAAdvdXRwdXRzdAAaW0x4c2J0aS9hcGkvT3V0cHV0U2V0dGluZzt4cAAAAVggbPDFdXIAGltMeHNidGkuYXBpLk91dHB1dFNldHRpbmc7f2rC86eHpUICAAB4cAAAAAFzcgAXeHNidGkuYXBpLk91dHB1dFNldHRpbmd62ZpHdPsdewIAAkwAD291dHB1dERpcmVjdG9yeXEAfgANTAAPc291cmNlRGlyZWN0b3J5cQB+AA14cHQANy9Vc2Vycy9Kb2huRG9uZy9EZXNrdG9wL3JpbmdzL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEvdXIAAltCrPMX+AYIVOACAAB4cAAAABRAr4TrgM5B0DO4jYvfgby2d6kLdQ==
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHDA9iSPAHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAABc3IAIHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoWw71InY4V88CAAJJAARoYXNoTAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwB23t9HQAB3RpbWVvdXR1cQB+AAkAAAAcc3EAfgALfAnHD3QAC1Rlc3RIYXJuZXNzc3EAfgALUKJp2HQABm5vdGlmeXNxAH4AC5Qh37x0AAR3YWl0c3EAfgALBTtCV3QADSRhc0luc3RhbmNlT2ZzcQB+AAsiLKvddAAGc3lzdGVtc3EAfgALuV3U3XQABm1hc3RlcnNxAH4AC4CY+l90AAZlcXVhbHNzcQB+AAuWXQ1kdAAMYXNJbnN0YW5jZU9mc3EAfgALLXwg6XQAA3J1bnNxAH4ACwNEujl0AAxzeW5jaHJvbml6ZWRzcQB+AAvT/1VldAAJYnVyc3RTaXplc3EAfgALIa5r1XQADSRpc0luc3RhbmNlT2ZzcQB+AAvIsW3qdAAEbWFpbnNxAH4AC0YaH9J0AAlub3RpZnlBbGxzcQB+AAv5wWzpdAAIbnVtTm9kZXNzcQB+AAs5FYotdAAMaXNJbnN0YW5jZU9mc3EAfgALbCIxzXQACm9wc1Blck5vZGVzcQB+AAuqQrwPdAAMcnVuVW50aWxEb25lc3EAfgALvSFZh3QAAj09c3EAfgAL5FhGoHQABWNsb25lc3EAfgALyMrHR3QACHRvU3RyaW5nc3EAfgAL6VfB4XQAAiE9c3EAfgALLqfUo3QACGdldENsYXNzc3EAfgAL5co3F3QAAm5lc3EAfgALE5dkLnQAAmVxc3EAfgALl6d0UnQAAiMjc3EAfgALmrwrKXQACGZpbmFsaXplc3EAfgALJ1yf/HQACGhhc2hDb2Rlc3IAE3hzYnRpLmFwaS5Tb3VyY2VBUEm5Xqf5KSM4pAIAAlsAC2RlZmluaXRpb25zdAAXW0x4c2J0aS9hcGkvRGVmaW5pdGlvbjtbAAhwYWNrYWdlc3QAFFtMeHNidGkvYXBpL1BhY2thZ2U7eHB1cgAXW0x4c2J0aS5hcGkuRGVmaW5pdGlvbjuIyVzntONeDgIAAHhwAAAAAXNyABN4c2J0aS5hcGkuQ2xhc3NMaWtlgzQcod+wl2wCAARMAA5kZWZpbml0aW9uVHlwZXQAGkx4c2J0aS9hcGkvRGVmaW5pdGlvblR5cGU7WwAQc2F2ZWRBbm5vdGF0aW9uc3QAE1tMamF2YS9sYW5nL1N0cmluZztMAAhzZWxmVHlwZXQAEEx4c2J0aS9hcGkvTGF6eTtMAAlzdHJ1Y3R1cmVxAH4AUXhyACF4c2J0aS5hcGkuUGFyYW1ldGVyaXplZERlZmluaXRpb275EW6x1VA84gIAAVsADnR5cGVQYXJhbWV0ZXJzdAAaW0x4c2J0aS9hcGkvVHlwZVBhcmFtZXRlcjt4cgAUeHNidGkuYXBpLkRlZmluaXRpb26HKhvocULjRgIABEwABmFjY2Vzc3QAEkx4c2J0aS9hcGkvQWNjZXNzO1sAC2Fubm90YXRpb25zdAAXW0x4c2J0aS9hcGkvQW5ub3RhdGlvbjtMAAltb2RpZmllcnN0ABVMeHNidGkvYXBpL01vZGlmaWVycztMAARuYW1lcQB+AAx4cHNyABB4c2J0aS5hcGkuUHVibGljulg9rmwtYEICAAB4cgAQeHNidGkuYXBpLkFjY2Vzc91imvgdYzFIAgAAeHB1cgAXW0x4c2J0aS5hcGkuQW5ub3RhdGlvbjvrl+sZEPaNSAIAAHhwAAAAAHNyABN4c2J0aS5hcGkuTW9kaWZpZXJzxxETIWmc3CQCAAFCAAVmbGFnc3hwAHQAEXJpbmdzLlRlc3RIYXJuZXNzdXIAGltMeHNidGkuYXBpLlR5cGVQYXJhbWV0ZXI72W0mDyid8rYCAAB4cAAAAAB+cgAYeHNidGkuYXBpLkRlZmluaXRpb25UeXBlAAAAAAAAAAASAAB4cgAOamF2YS5sYW5nLkVudW0AAAAAAAAAABIAAHhwdAAGTW9kdWxldXIAE1tMamF2YS5sYW5nLlN0cmluZzut0lbn6R17RwIAAHhwAAAAAHNyABN4c2J0aS5TYWZlTGF6eSRJbXBsUAIuk5eXQD8CAANaAAhiaXRtYXAkMEwAAl90dAASTGphdmEvbGFuZy9PYmplY3Q7TAAEZXZhbHQAEUxzY2FsYS9GdW5jdGlvbjA7eHIAFnhzYnRpLmFwaS5BYnN0cmFjdExhennTd7UBX7vnoAIAAHhwAHBzcgAgeHNidGkuU2FmZUxhenkkJGFub25mdW4kc3RyaWN0JDEAAAAAAAAAAAIAAUwAB3ZhbHVlJDFxAH4Aanhwc3IAE3hzYnRpLmFwaS5FbXB0eVR5cGW8/Z5GSTuJJAIAAHhyABR4c2J0aS5hcGkuU2ltcGxlVHlwZXJ4YoghI79AAgAAeHIADnhzYnRpLmFwaS5UeXBlP2rZIRZJqsoCAAB4cHNxAH4AaQBwc3EAfgBuc3IAE3hzYnRpLmFwaS5TdHJ1Y3R1cmWpqvmAk2/YAAIAA0wACGRlY2xhcmVkcQB+AFFMAAlpbmhlcml0ZWRxAH4AUUwAB3BhcmVudHNxAH4AUXhxAH4AcnNxAH4AaQBwc3EAfgBudXEAfgBMAAAAAXNyAA14c2J0aS5hcGkuRGVmUr6f4ny0NmkCAAJMAApyZXR1cm5UeXBldAAQTHhzYnRpL2FwaS9UeXBlO1sAD3ZhbHVlUGFyYW1ldGVyc3QAGltMeHNidGkvYXBpL1BhcmFtZXRlckxpc3Q7eHEAfgBScQB+AFt1cQB+AFwAAAAAc3EAfgBeAHEAfgApdXEAfgBhAAAAAHNyABR4c2J0aS5hcGkuUHJvamVjdGlvbvPSjVTpRaQtAgACTAACaWRxAH4ADEwABnByZWZpeHQAFkx4c2J0aS9hcGkvU2ltcGxlVHlwZTt4cQB+AHF0AARVbml0c3IAE3hzYnRpLmFwaS5TaW5nbGV0b278p1/4z1bkRgIAAUwABHBhdGh0ABBMeHNidGkvYXBpL1BhdGg7eHEAfgBxc3IADnhzYnRpLmFwaS5QYXRomz1cCM6lJ4QCAAFbAApjb21wb25lbnRzdAAaW0x4c2J0aS9hcGkvUGF0aENvbXBvbmVudDt4cHVyABpbTHhzYnRpLmFwaS5QYXRoQ29tcG9uZW50O0PaCXQtZxZ0AgAAeHAAAAACc3IADHhzYnRpLmFwaS5JZJgybIs3U8RAAgABTAACaWRxAH4ADHhyABd4c2J0aS5hcGkuUGF0aENvbXBvbmVudF+aIlsuhp+8AgAAeHB0AAVzY2FsYXNyAA54c2J0aS5hcGkuVGhpc9sJ7abMWkBcAgAAeHEAfgCPdXIAGltMeHNidGkuYXBpLlBhcmFtZXRlckxpc3Q79dM6HfKzcO4CAAB4cAAAAAFzcgAXeHNidGkuYXBpLlBhcmFtZXRlckxpc3TWxbwcZEl04wIAAloACmlzSW1wbGljaXRbAApwYXJhbWV0ZXJzdAAcW0x4c2J0aS9hcGkvTWV0aG9kUGFyYW1ldGVyO3hwAHVyABxbTHhzYnRpLmFwaS5NZXRob2RQYXJhbWV0ZXI7z7jFXaXdtW0CAAB4cAAAAAFzcgAZeHNidGkuYXBpLk1ldGhvZFBhcmFtZXRlch9FrhfTSbDqAgAEWgAKaGFzRGVmYXVsdEwACG1vZGlmaWVydAAdTHhzYnRpL2FwaS9QYXJhbWV0ZXJNb2RpZmllcjtMAARuYW1lcQB+AAxMAAN0cGVxAH4AfHhwAH5yABt4c2J0aS5hcGkuUGFyYW1ldGVyTW9kaWZpZXIAAAAAAAAAABIAAHhxAH4AZHQABVBsYWludAAEYXJnc3NyABd4c2J0aS5hcGkuUGFyYW1ldGVyaXplZBZs7mkDybt/AgACTAAIYmFzZVR5cGVxAH4Ag1sADXR5cGVBcmd1bWVudHN0ABFbTHhzYnRpL2FwaS9UeXBlO3hxAH4AcXNxAH4AgnQABUFycmF5cQB+AIh1cgARW0x4c2J0aS5hcGkuVHlwZTt0/6Vae/npQQIAAHhwAAAAAXNxAH4AgnQABlN0cmluZ3NxAH4AhnNxAH4AiXVxAH4AjAAAAANzcQB+AI50AARqYXZhc3EAfgCOdAAEbGFuZ3EAfgCTc3EAfgBpAHBzcQB+AG51cQB+AEwAAAAAc3EAfgBpAHBzcQB+AG51cQB+AKcAAAACc3EAfgCCdAAGT2JqZWN0cQB+AKtzcQB+AIJ0AANBbnlxAH4AiHVyABRbTHhzYnRpLmFwaS5QYWNrYWdlO1sTGTdwpyehAgAAeHAAAAABc3IAEXhzYnRpLmFwaS5QYWNrYWdlflmP9q7OOVgCAAFMAARuYW1lcQB+AAx4cHQABXJpbmdzc3IAFXhzYnRpLmFwaS5Db21waWxhdGlvbu364MNq6KBCAgACSgAJc3RhcnRUaW1lWwAHb3V0cHV0c3QAGltMeHNidGkvYXBpL091dHB1dFNldHRpbmc7eHAAAAFYIGzwxXVyABpbTHhzYnRpLmFwaS5PdXRwdXRTZXR0aW5nO39qwvOnh6VCAgAAeHAAAAABc3IAF3hzYnRpLmFwaS5PdXRwdXRTZXR0aW5netmaR3T7HXsCAAJMAA9vdXRwdXREaXJlY3RvcnlxAH4ADEwAD3NvdXJjZURpcmVjdG9yeXEAfgAMeHB0ADcvVXNlcnMvSm9obkRvbmcvRGVza3RvcC9yaW5ncy90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABL3VyAAJbQqzzF/gGCFTgAgAAeHAAAAAUhN0BMMp+OATrD0JlFxWkUyXuSBk=
+external apis:
+0 items
+source infos:
+7 items
+/Users/JohnDong/Desktop/rings/KVAppService.scala -> 
+AAAAAAAAAAA=
+/Users/JohnDong/Desktop/rings/KVClient.scala -> 
+AAAAAAAAAAA=
+/Users/JohnDong/Desktop/rings/KVStore.scala -> 
+AAAAAAAAAAA=
+/Users/JohnDong/Desktop/rings/LoadMaster.scala -> 
+AAAAAAAAAAA=
+/Users/JohnDong/Desktop/rings/RingService.scala -> 
+AAAAAAAAAAA=
+/Users/JohnDong/Desktop/rings/Stats.scala -> 
+AAAAAAAAAAA=
+/Users/JohnDong/Desktop/rings/TestHarness.scala -> 
+AAAAAAAAAAA=
+compilations:
+1 items
+0 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWCBs8MV1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANy9Vc2Vycy9Kb2huRG9uZy9EZXNrdG9wL3JpbmdzL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv

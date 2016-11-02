@@ -1,0 +1,100 @@
+[0m[[0mdebug[0m] [0m[0m
+[0m[[0mdebug[0m] [0mInitial source changes: [0m
+[0m[[0mdebug[0m] [0m	removed:Set()[0m
+[0m[[0mdebug[0m] [0m	added: Set(/Users/JohnDong/Desktop/rings/LoadMaster.scala, /Users/JohnDong/Desktop/rings/RingService.scala, /Users/JohnDong/Desktop/rings/KVAppService.scala, /Users/JohnDong/Desktop/rings/Stats.scala, /Users/JohnDong/Desktop/rings/TestHarness.scala, /Users/JohnDong/Desktop/rings/KVStore.scala, /Users/JohnDong/Desktop/rings/KVClient.scala)[0m
+[0m[[0mdebug[0m] [0m	modified: Set()[0m
+[0m[[0mdebug[0m] [0mInvalidated products: Set()[0m
+[0m[[0mdebug[0m] [0mExternal API changes: API Changes: Set()[0m
+[0m[[0mdebug[0m] [0mModified binary dependencies: Set()[0m
+[0m[[0mdebug[0m] [0mInitial directly invalidated sources: Set(/Users/JohnDong/Desktop/rings/LoadMaster.scala, /Users/JohnDong/Desktop/rings/RingService.scala, /Users/JohnDong/Desktop/rings/KVAppService.scala, /Users/JohnDong/Desktop/rings/Stats.scala, /Users/JohnDong/Desktop/rings/TestHarness.scala, /Users/JohnDong/Desktop/rings/KVStore.scala, /Users/JohnDong/Desktop/rings/KVClient.scala)[0m
+[0m[[0mdebug[0m] [0m[0m
+[0m[[0mdebug[0m] [0mSources indirectly invalidated by:[0m
+[0m[[0mdebug[0m] [0m	product: Set()[0m
+[0m[[0mdebug[0m] [0m	binary dep: Set()[0m
+[0m[[0mdebug[0m] [0m	external source: Set()[0m
+[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(/Users/JohnDong/Desktop/rings/LoadMaster.scala, /Users/JohnDong/Desktop/rings/RingService.scala, /Users/JohnDong/Desktop/rings/KVAppService.scala, /Users/JohnDong/Desktop/rings/Stats.scala, /Users/JohnDong/Desktop/rings/TestHarness.scala, /Users/JohnDong/Desktop/rings/KVStore.scala, /Users/JohnDong/Desktop/rings/KVClient.scala)[0m
+[0m[[0mdebug[0m] [0mRecompiling all 7 sources: invalidated sources (7) exceeded 50.0% of all sources[0m
+[0m[[0minfo[0m] [0mCompiling 7 Scala sources to /Users/JohnDong/Desktop/rings/target/scala-2.11/classes...[0m
+[0m[[0mdebug[0m] [0mGetting compiler-interface from component compiler for Scala 2.11.7[0m
+[0m[[0mdebug[0m] [0mGetting compiler-interface from component compiler for Scala 2.11.7[0m
+[0m[[0mdebug[0m] [0mRunning cached compiler 1198cc1a, interfacing (CompilerInterface) with Scala compiler version 2.11.7[0m
+[0m[[0mdebug[0m] [0mCalling Scala compiler with arguments  (CompilerInterface):[0m
+[0m[[0mdebug[0m] [0m	-bootclasspath[0m
+[0m[[0mdebug[0m] [0m	/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/classes:/Users/JohnDong/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7.jar[0m
+[0m[[0mdebug[0m] [0m	-classpath[0m
+[0m[[0mdebug[0m] [0m	/Users/JohnDong/Desktop/rings/target/scala-2.11/classes:/Users/JohnDong/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.3.12.jar:/Users/JohnDong/.ivy2/cache/com.typesafe/config/bundles/config-1.2.1.jar[0m
+[0m[[33mwarn[0m] [0mthere were three feature warnings; re-run with -feature for details[0m
+[0m[[33mwarn[0m] [0mone warning found[0m
+[0m[[0mdebug[0m] [0mScala compilation took 9.202668751 s[0m
+[0m[[0mdebug[0m] [0mInvalidating /Users/JohnDong/Desktop/rings/LoadMaster.scala...[0m
+[0m[[0mdebug[0m] [0mInvalidating (transitively) by inheritance from /Users/JohnDong/Desktop/rings/LoadMaster.scala...[0m
+[0m[[0mdebug[0m] [0mInitial set of included nodes: Set(/Users/JohnDong/Desktop/rings/LoadMaster.scala)[0m
+[0m[[0mdebug[0m] [0mInvalidated by transitive inheritance dependency: Set(/Users/JohnDong/Desktop/rings/LoadMaster.scala)[0m
+[0m[[0mdebug[0m] [0mThe /Users/JohnDong/Desktop/rings/LoadMaster.scala source file has the following implicit definitions changed:[0m
+[0m[[0mdebug[0m] [0m	self, context.[0m
+[0m[[0mdebug[0m] [0mAll member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0mThe following member ref dependencies of /Users/JohnDong/Desktop/rings/LoadMaster.scala are invalidated:[0m
+[0m[[0mdebug[0m] [0m	/Users/JohnDong/Desktop/rings/KVAppService.scala[0m
+[0m[[0mdebug[0m] [0m	/Users/JohnDong/Desktop/rings/RingService.scala[0m
+[0m[[0mdebug[0m] [0m	/Users/JohnDong/Desktop/rings/TestHarness.scala[0m
+[0m[[0mdebug[0m] [0mInvalidating /Users/JohnDong/Desktop/rings/RingService.scala...[0m
+[0m[[0mdebug[0m] [0mInvalidating (transitively) by inheritance from /Users/JohnDong/Desktop/rings/RingService.scala...[0m
+[0m[[0mdebug[0m] [0mInitial set of included nodes: Set(/Users/JohnDong/Desktop/rings/RingService.scala)[0m
+[0m[[0mdebug[0m] [0mInvalidated by transitive inheritance dependency: Set(/Users/JohnDong/Desktop/rings/RingService.scala)[0m
+[0m[[0mdebug[0m] [0mThe /Users/JohnDong/Desktop/rings/RingService.scala source file has the following implicit definitions changed:[0m
+[0m[[0mdebug[0m] [0m	self, context.[0m
+[0m[[0mdebug[0m] [0mAll member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0mThe following member ref dependencies of /Users/JohnDong/Desktop/rings/RingService.scala are invalidated:[0m
+[0m[[0mdebug[0m] [0m	/Users/JohnDong/Desktop/rings/KVAppService.scala[0m
+[0m[[0mdebug[0m] [0mInvalidating /Users/JohnDong/Desktop/rings/KVStore.scala...[0m
+[0m[[0mdebug[0m] [0mInvalidating (transitively) by inheritance from /Users/JohnDong/Desktop/rings/KVStore.scala...[0m
+[0m[[0mdebug[0m] [0mInitial set of included nodes: Set(/Users/JohnDong/Desktop/rings/KVStore.scala)[0m
+[0m[[0mdebug[0m] [0mInvalidated by transitive inheritance dependency: Set(/Users/JohnDong/Desktop/rings/KVStore.scala)[0m
+[0m[[0mdebug[0m] [0mThe /Users/JohnDong/Desktop/rings/KVStore.scala source file has the following implicit definitions changed:[0m
+[0m[[0mdebug[0m] [0m	self, context.[0m
+[0m[[0mdebug[0m] [0mAll member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0mThe following member ref dependencies of /Users/JohnDong/Desktop/rings/KVStore.scala are invalidated:[0m
+[0m[[0mdebug[0m] [0m	/Users/JohnDong/Desktop/rings/KVAppService.scala[0m
+[0m[[0mdebug[0m] [0m	/Users/JohnDong/Desktop/rings/KVClient.scala[0m
+[0m[[0mdebug[0m] [0mInvalidating /Users/JohnDong/Desktop/rings/KVClient.scala...[0m
+[0m[[0mdebug[0m] [0mInvalidating (transitively) by inheritance from /Users/JohnDong/Desktop/rings/KVClient.scala...[0m
+[0m[[0mdebug[0m] [0mInitial set of included nodes: Set(/Users/JohnDong/Desktop/rings/KVClient.scala)[0m
+[0m[[0mdebug[0m] [0mInvalidated by transitive inheritance dependency: Set(/Users/JohnDong/Desktop/rings/KVClient.scala)[0m
+[0m[[0mdebug[0m] [0mThe /Users/JohnDong/Desktop/rings/KVClient.scala source file has the following implicit definitions changed:[0m
+[0m[[0mdebug[0m] [0m	timeout.[0m
+[0m[[0mdebug[0m] [0mAll member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0mThe following member ref dependencies of /Users/JohnDong/Desktop/rings/KVClient.scala are invalidated:[0m
+[0m[[0mdebug[0m] [0m	/Users/JohnDong/Desktop/rings/RingService.scala[0m
+[0m[[0mdebug[0m] [0mInvalidating /Users/JohnDong/Desktop/rings/Stats.scala...[0m
+[0m[[0mdebug[0m] [0mInvalidating (transitively) by inheritance from /Users/JohnDong/Desktop/rings/Stats.scala...[0m
+[0m[[0mdebug[0m] [0mInitial set of included nodes: Set(/Users/JohnDong/Desktop/rings/Stats.scala)[0m
+[0m[[0mdebug[0m] [0mInvalidated by transitive inheritance dependency: Set(/Users/JohnDong/Desktop/rings/Stats.scala)[0m
+[0m[[0mdebug[0m] [0mThe /Users/JohnDong/Desktop/rings/Stats.scala source file has the following regular definitions changed:[0m
+[0m[[0mdebug[0m] [0m	notify, messages, wait, $asInstanceOf, allocated, equals, +=, touches, asInstanceOf, synchronized, $isInstanceOf, errors, notifyAll, isInstanceOf, <init>, ==, clone, checks, toString, !=, getClass, misses, ne, Stats, eq, ##, finalize, hashCode.[0m
+[0m[[0mdebug[0m] [0mAll member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0mThe following modified names cause invalidation of /Users/JohnDong/Desktop/rings/TestHarness.scala: Set(<init>, Stats)[0m
+[0m[[0mdebug[0m] [0mThe following modified names cause invalidation of /Users/JohnDong/Desktop/rings/RingService.scala: Set(messages, allocated, touches, asInstanceOf, errors, isInstanceOf, <init>, !=, misses, Stats)[0m
+[0m[[0mdebug[0m] [0mThe following modified names cause invalidation of /Users/JohnDong/Desktop/rings/LoadMaster.scala: Set(messages, +=, asInstanceOf, isInstanceOf, <init>, ==, toString, ne, Stats, eq)[0m
+[0m[[0mdebug[0m] [0mInvalidating /Users/JohnDong/Desktop/rings/KVAppService.scala...[0m
+[0m[[0mdebug[0m] [0mInvalidating (transitively) by inheritance from /Users/JohnDong/Desktop/rings/KVAppService.scala...[0m
+[0m[[0mdebug[0m] [0mInitial set of included nodes: Set(/Users/JohnDong/Desktop/rings/KVAppService.scala)[0m
+[0m[[0mdebug[0m] [0mInvalidated by transitive inheritance dependency: Set(/Users/JohnDong/Desktop/rings/KVAppService.scala)[0m
+[0m[[0mdebug[0m] [0mThe /Users/JohnDong/Desktop/rings/KVAppService.scala source file has the following regular definitions changed:[0m
+[0m[[0mdebug[0m] [0m	notify, wait, $asInstanceOf, productArity, equals, endpoints, AppServiceAPI, asInstanceOf, Command, synchronized, $isInstanceOf, canEqual, productPrefix, notifyAll, View, isInstanceOf, <init>, apply, ==, clone, Prime, copy, toString, !=, getClass, copy$default$1, KVAppService, ne, eq, productIterator, ##, finalize, productElement, hashCode.[0m
+[0m[[0mdebug[0m] [0mAll member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0mThe following modified names cause invalidation of /Users/JohnDong/Desktop/rings/TestHarness.scala: Set(<init>, apply, KVAppService)[0m
+[0m[[0mdebug[0m] [0mThe following modified names cause invalidation of /Users/JohnDong/Desktop/rings/RingService.scala: Set(endpoints, asInstanceOf, isInstanceOf, <init>, apply, !=)[0m
+[0m[[0mdebug[0m] [0mThe following modified names cause invalidation of /Users/JohnDong/Desktop/rings/LoadMaster.scala: Set(asInstanceOf, isInstanceOf, <init>, apply, ==, toString, ne, eq)[0m
+[0m[[0mdebug[0m] [0mInvalidating /Users/JohnDong/Desktop/rings/TestHarness.scala...[0m
+[0m[[0mdebug[0m] [0mInvalidating (transitively) by inheritance from /Users/JohnDong/Desktop/rings/TestHarness.scala...[0m
+[0m[[0mdebug[0m] [0mInitial set of included nodes: Set(/Users/JohnDong/Desktop/rings/TestHarness.scala)[0m
+[0m[[0mdebug[0m] [0mInvalidated by transitive inheritance dependency: Set(/Users/JohnDong/Desktop/rings/TestHarness.scala)[0m
+[0m[[0mdebug[0m] [0mThe /Users/JohnDong/Desktop/rings/TestHarness.scala source file has the following implicit definitions changed:[0m
+[0m[[0mdebug[0m] [0m	timeout.[0m
+[0m[[0mdebug[0m] [0mAll member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0mNew invalidations:[0m
+[0m[[0mdebug[0m] [0m	Set()[0m
+[0m[[0mdebug[0m] [0mInitial set of included nodes: Set()[0m
+[0m[[0mdebug[0m] [0mPreviously invalidated, but (transitively) depend on new invalidations:[0m
+[0m[[0mdebug[0m] [0m	Set()[0m
+[0m[[0mdebug[0m] [0mAll newly invalidated sources after taking into account (previously) recompiled sources:Set()[0m
