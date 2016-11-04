@@ -21,8 +21,8 @@ class RingMap extends scala.collection.mutable.HashMap[BigInt, RingCell]
 
 class RingServer (val myNodeID: Int, val numNodes: Int, storeServers: Seq[ActorRef], burstSize: Int) extends Actor {
   val generator = new scala.util.Random
-  val cellstore = new KVClient(storeServers)
-  val dirtycells = new AnyMap
+  val cellstore = new KVClient(myNodeID, storeServers)
+  val dirtycells = new IntMap
   val localWeight: Int = 70
   val log = Logging(context.system, this)
 
@@ -40,6 +40,12 @@ class RingServer (val myNodeID: Int, val numNodes: Int, storeServers: Seq[ActorR
         command
       case View(e) =>
         endpoints = Some(e)
+      case DirtyData(key) =>
+        cleanCache(key)
+  }
+
+  private def cleanCache(key: BigInt) = {
+    cellstore.clearEntry(key)
   }
 
   private def command() = {
@@ -127,8 +133,8 @@ class RingServer (val myNodeID: Int, val numNodes: Int, storeServers: Seq[ActorR
       Some(result.get.asInstanceOf[RingCell])
   }
 
-  private def write(key: BigInt, value: RingCell, dirtyset: AnyMap): Option[RingCell] = {
-    val coercedMap: AnyMap = dirtyset.asInstanceOf[AnyMap]
+  private def write(key: BigInt, value: RingCell, dirtyset: IntMap): Option[RingCell] = {
+    val coercedMap: IntMap = dirtyset.asInstanceOf[IntMap]
     val result = cellstore.write(key, value, coercedMap)
     if (result.isEmpty) None else
       Some(result.get.asInstanceOf[RingCell])
@@ -146,7 +152,7 @@ class RingServer (val myNodeID: Int, val numNodes: Int, storeServers: Seq[ActorR
       Some(result.get.asInstanceOf[RingCell])
   }
 
-  private def push(dirtyset: AnyMap) = {
+  private def push(dirtyset: IntMap) = {
     cellstore.push(dirtyset)
   }
 }
