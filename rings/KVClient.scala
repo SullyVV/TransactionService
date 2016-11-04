@@ -26,7 +26,7 @@ class OpsResult(var oID: Int, var res:Int) // res: true->success, false->failure
   *   1. when collection votes
   **/
 class KVClient (clientID: Int, stores: Seq[ActorRef]) {
-  private val cache = new IntMap
+  private var cache = new IntMap
   private val snapshotCache = new IntMap
   implicit val timeout = Timeout(5 seconds)
   private val opsLog = new scala.collection.mutable.ArrayBuffer[Operation]
@@ -41,6 +41,7 @@ class KVClient (clientID: Int, stores: Seq[ActorRef]) {
     // create a snapshot when begin
     // record begin and commit in case client fails when doing ops in cache
     for ((k,v) <- cache) {
+      snapshotCache.clear()
       snapshotCache.put(k, v)
     }
     opsLog += new Operation(oID, 2, -1)
@@ -112,6 +113,8 @@ class KVClient (clientID: Int, stores: Seq[ActorRef]) {
       if (v == false) {
         // inform all participants to abort
         notifyParticipants(opsLog, false)
+        // recover to the snapshot
+        cache = snapshotCache
         cleanUp()
         return false
       }
