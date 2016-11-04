@@ -4,7 +4,7 @@ import akka.actor.{Actor, ActorSystem, ActorRef, Props}
 import akka.event.Logging
 
 sealed trait LoadMasterAPI
-case class Start(maxPerNode: Int) extends LoadMasterAPI
+case class Start() extends LoadMasterAPI
 case class BurstAck(senderNodeID: Int, stats: Stats) extends LoadMasterAPI
 case class Join() extends LoadMasterAPI
 
@@ -29,13 +29,16 @@ class LoadMaster (val numNodes: Int, val servers: Seq[ActorRef], val burstSize: 
   val serverStats = for (s <- servers) yield new Stats
 
   def receive = {
-    case Start(totalPerNode) =>
+    case Start() =>
       log.info("Master starting bursts")
-      maxPerNode = totalPerNode
-      for (s <- servers) {
-        s ! Prime()
-        burst(s)
-      }
+      transaction()
+      Thread.sleep(500)
+      sender ! true
+//      maxPerNode = totalPerNode
+//      for (s <- servers) {
+//        s ! Prime()
+//        burst(s)
+//      }
 
     case BurstAck(senderNodeID: Int, stats: Stats) =>
       serverStats(senderNodeID) += stats
@@ -53,7 +56,13 @@ class LoadMaster (val numNodes: Int, val servers: Seq[ActorRef], val burstSize: 
     case Join() =>
       listener = Some(sender)
   }
-
+  def transaction() = {
+    for (i <- 0 until servers.size) {
+      servers(i) ! TransactionBegin()
+      servers(i) ! TransactionWrite(1)
+      servers(i) ! TransactionCommit()
+    }
+  }
   def burst(server: ActorRef): Unit = {
 //    log.info(s"send a burst to node $target")
     for (i <- 1 to burstSize)

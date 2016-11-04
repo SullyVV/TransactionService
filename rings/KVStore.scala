@@ -15,13 +15,18 @@ class writeElement(val key: BigInt, var value: Int)
  * (BigInt), and the values are of type Any.
  */
 // write means + 1 ---> easy to test
-class KVStore(KVClient: Seq[ActorRef]) extends Actor {
+class KVStore extends Actor {
   // get all an array of all clients' ActorRef
   private val store = new scala.collection.mutable.HashMap[BigInt, StoredData]
   // in writeLog, transaction ID = clientID, here we consider each client to be single threaded
   private val writeLog = new mutable.HashMap[Int, scala.collection.mutable.ArrayBuffer[writeElement]]
   val generator = new scala.util.Random
+  var endpoints: Option[Seq[ActorRef]] = None
+
+
   override def receive = {
+    case View(k) =>
+      endpoints = Some(k)
     case GetLock(clientID, key) =>
       if(lock(clientID, key)) {
         // return success
@@ -53,7 +58,7 @@ class KVStore(KVClient: Seq[ActorRef]) extends Actor {
       tmp.value = value
       sender ! store.put(key, tmp)
     case Get(key) =>
-      sender ! store.get(key)
+      sender ! store(key).value
   }
 
 
@@ -68,10 +73,6 @@ class KVStore(KVClient: Seq[ActorRef]) extends Actor {
         store(currWriteElement.key).value = currWriteElement.value
       }
     }
-    // unlock all locks
-    for (currWriteElement <- writeLog(clientID)) {
-      store(currWriteElement.key).lockOwner = -1
-    }
     // clear this transaction's entry in writeLog
     writeLog -= clientID
   }
@@ -80,11 +81,16 @@ class KVStore(KVClient: Seq[ActorRef]) extends Actor {
     // TODO: DirtyData in ringServer
     //we assume client stays up at this moment
     for (i <- cacheHolder) {
-      KVClient(i) ! DirtyData(key)
+      val list = endpoints.get
+      list(i) ! DirtyData(key)
     }
   }
 
   def lock(clientID: Int, key: BigInt): Boolean = {
+    if (!store.contains(key)) {
+      // default value starts with 0
+      store.put(key, new StoredData(key, 0, new scala.collection.mutable.ArrayBuffer[Int], -1))
+    }
     if (store(key).lockOwner != -1) {
       // ask original lockOwner see if is still live (it is possible that client fails after getting locks)
       // this is a typical problem in 2PL --> safe but not alive
@@ -93,6 +99,7 @@ class KVStore(KVClient: Seq[ActorRef]) extends Actor {
       store(key).lockOwner = clientID
       return true
     }
+
   }
 
   def unlock(key: BigInt): Boolean = {
@@ -102,7 +109,9 @@ class KVStore(KVClient: Seq[ActorRef]) extends Actor {
 }
 
 object KVStore {
-  def props(KVClient: Seq[ActorRef]): Props = {
-     Props(classOf[KVStore],KVClient)
+  def props(): Props = {
+     Props(classOf[KVStore])
   }
 }
+
+

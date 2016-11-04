@@ -1,8 +1,12 @@
 package rings
 
+import java.text.SimpleDateFormat
+import java.util.Date
+
 import scala.concurrent.duration._
 import scala.concurrent.Await
 import akka.actor.ActorRef
+import akka.event.Logging
 import akka.pattern.ask
 import akka.util.Timeout
 
@@ -34,28 +38,32 @@ class KVClient (clientID: Int, stores: Seq[ActorRef]) {
   private val locksHolder = new scala.collection.mutable.ArrayBuffer[BigInt]
   private val votesTable = new mutable.HashMap[BigInt, Boolean]
   private var oID = 0
+  private val dateFormat = new SimpleDateFormat ("mm:ss")
   import scala.concurrent.ExecutionContext.Implicits.global
 
   /** transaction begin */
   def begin() = {
     // create a snapshot when begin
     // record begin and commit in case client fails when doing ops in cache
+    println(s"client$clientID transaction begins")
     for ((k,v) <- cache) {
       snapshotCache.clear()
       snapshotCache.put(k, v)
     }
+    println(s"client$clientID snapshot is $snapshotCache")
     opsLog += new Operation(oID, 2, -1)
-    println(s"Transaction begins")
   }
 
   /** transaction read */
   def transactionRead(key: BigInt) = {
+    println(s"client$clientID read key: $key")
     opsLog += new Operation(oID, 0, key)
     oID = oID + 1
   }
 
   /** transaction write */
   def transactionWrite(key: BigInt) = {
+    println(s"client$clientID write key: $key")
     opsLog += new Operation(oID, 1, key)
     oID = oID + 1
   }
@@ -78,11 +86,15 @@ class KVClient (clientID: Int, stores: Seq[ActorRef]) {
   /** transaction commit */
   def transactionCommit(): Boolean = {
     // acquire locks of all involved data, single fail->abort, 2PL
+    println(s"client$clientID commit")
     if (!Lock(opsLog)) {
       cleanUp()
+      println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[31mError: client: $clientID failed in acquire locks\033[0m")
       return false
+    } else {
+      println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[32mSuccess: client: $clientID success in acquire locks\033[0m")
     }
-    // after acquire locks of all involved keys, do ops on local cache
+    // after acquire locks of all involved keys, do ops in local cache
     for (i <- 0 until opsLog.size) {
       val currentOperation = opsLog(i)
       if (currentOperation.ops == 0 || currentOperation.ops == 1) {
@@ -110,17 +122,19 @@ class KVClient (clientID: Int, stores: Seq[ActorRef]) {
     }
     // traverse all element in votesTable, if find any false, abort
     for ((k,v) <- votesTable) {
-      if (v == false) {
+      if (!v) {
         // inform all participants to abort
         notifyParticipants(opsLog, false)
         // recover to the snapshot
         cache = snapshotCache
         cleanUp()
+        println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[31mError: client: $clientID participants votes for abort\033[0m")
         return false
       }
     }
     notifyParticipants(opsLog, true)
     cleanUp()
+    println(s"client $clientID cache is: $cache")
     return true
   }
 
@@ -132,10 +146,7 @@ class KVClient (clientID: Int, stores: Seq[ActorRef]) {
       tmp = cache(key)
     } else {
       // cache doesnt have data, go get the data from server
-      tmp = directRead(key).get
-      if (tmp == None) {
-        tmp = 0
-      }
+      tmp = directRead(key)
       cache.put(key, tmp)
     }
     return tmp
@@ -160,6 +171,8 @@ class KVClient (clientID: Int, stores: Seq[ActorRef]) {
         val future = ask(route(opsLog(i).key), GetLock(clientID, opsLog(i).key))
         val done = Await.result(future, timeout.duration).asInstanceOf[Boolean]
         if (done == false) {
+          // before return false, have to free all obtained locks
+
           return false
         } else {
           locksHolder += opsLog(i).key
@@ -182,16 +195,16 @@ class KVClient (clientID: Int, stores: Seq[ActorRef]) {
     }
   }
 
-  /** Cached read */
-  def read(key: BigInt): Option[Any] = {
-    var value = cache.get(key)
-    if (value.isEmpty) {
-      value = directRead(key)
-      if (value.isDefined)
-        cache.put(key, value.get)
-    }
-    value
-  }
+//  /** Cached read */
+//  def read(key: BigInt): Option[Any] = {
+//    var value: Int = cache.get(key)
+//    if (value.isEmpty) {
+//      value = directRead(key)
+//      if (value.isDefined)
+//        cache.put(key, value.get)
+//    }
+//    value
+//  }
 
   /** Cached write: place new value in the local cache, record the update in dirtyset. */
   def write(key: BigInt, value: Int, dirtyset: IntMap) = {
@@ -214,13 +227,13 @@ class KVClient (clientID: Int, stores: Seq[ActorRef]) {
   }
 
   /** Direct read, bypass the cache: always a synchronous read from the store, leaving the cache unchanged. */
-  def directRead(key: BigInt): Option[Int] = {
-    val future = ask(route(key), Get(key)).mapTo[Option[Int]]
+  def directRead(key: BigInt): Int = {
+    val future = ask(route(key), Get(key)).mapTo[Int]
     Await.result(future, timeout.duration)
   }
 
   /** Direct write, bypass the cache: always a synchronous write to the store, leaving the cache unchanged. */
-  def directWrite(key: BigInt, value: Any) = {
+  def directWrite(key: BigInt, value: Int) = {
     val future = ask(route(key), Put(key,value)).mapTo[Option[Any]]
     Await.result(future, timeout.duration)
   }
@@ -228,6 +241,8 @@ class KVClient (clientID: Int, stores: Seq[ActorRef]) {
   /** clear entry, called by ring server when their cached data is modified by others */
   def clearEntry(key: BigInt) = {
     cache -= key
+    println(s"client $clientID cleared entry for key: $key")
+    println(s"client $clientID new cache is: $cache")
   }
 
   import java.security.MessageDigest

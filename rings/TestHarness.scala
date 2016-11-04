@@ -11,29 +11,32 @@ import akka.util.Timeout
 object TestHarness {
   val system = ActorSystem("Rings")
   implicit val timeout = Timeout(60 seconds)
-  val numNodes = 10
-  val burstSize = 1000
-  val opsPerNode = 10000
-
+  val numClient = 2
+  val numServer = 5
   // Service tier: create app servers and a Seq of per-node Stats
-  val master = KVAppService(system, numNodes, burstSize)
+  val master = KVAppService(system, numClient, numServer)
 
   def main(args: Array[String]): Unit = run()
 
   def run(): Unit = {
-    val s = System.currentTimeMillis
-    runUntilDone
-    val runtime = System.currentTimeMillis - s
-    val throughput = (opsPerNode * numNodes)/runtime
-
-    println(s"Done in $runtime ms ($throughput Kops/sec)")
+    val future = ask(master, Start())
+    Await.result(future, timeout.duration).asInstanceOf[Boolean]
     system.shutdown()
+//    val s = System.currentTimeMillis
+//    runUntilDone
+//    val runtime = System.currentTimeMillis - s
+//    //val throughput = (opsPerNode * numNodes)/runtime
+//
+//    //println(s"Done in $runtime ms ($throughput Kops/sec)")
+
   }
 
   def runUntilDone() = {
-    master ! Start(opsPerNode)
+    master ! Start()
     val future = ask(master, Join()).mapTo[Stats]
     val done = Await.result(future, 60 seconds)
   }
+
+
 
 }

@@ -13,6 +13,11 @@ case class DirtyData(key: BigInt) extends AppServiceAPI
 case class CommitDecision(clientID: Int, decision: Boolean) extends AppServiceAPI
 case class Put(key: BigInt, value: Int) extends AppServiceAPI
 case class Get(key: BigInt) extends AppServiceAPI
+case class TransactionBegin() extends AppServiceAPI
+case class TransactionRead(key: BigInt) extends AppServiceAPI
+case class TransactionWrite(key: BigInt) extends AppServiceAPI
+case class TransactionCommit() extends AppServiceAPI
+
 /**
  * This object instantiates the service tiers and a load-generating master, and
  * links all the actors together by passing around ActorRef references.
@@ -24,15 +29,19 @@ case class Get(key: BigInt) extends AppServiceAPI
 
 object KVAppService {
 
-  def apply(system: ActorSystem, numNodes: Int, ackEach: Int): ActorRef = {
+  def apply(system: ActorSystem, numClient: Int, numServer: Int): ActorRef = {
 
     /** Storage tier: create K/V store servers */
-    val stores = for (i <- 0 until numNodes)
+    val stores = for (i <- 0 until numServer)
       yield system.actorOf(KVStore.props(), "RingStore" + i)
 
     /** Service tier: create app servers */
-    val servers = for (i <- 0 until numNodes)
-      yield system.actorOf(RingServer.props(i, numNodes, stores, ackEach), "RingServer" + i)
+    val servers = for (i <- 0 until numClient)
+      yield system.actorOf(RingServer.props(i, numClient, stores,1), "RingServer" + i)
+
+    for (store <- stores) {
+      store ! View(servers)
+    }
 
     /** If you want to initialize a different service instead, that previous line might look like this:
       * yield system.actorOf(GroupServer.props(i, numNodes, stores, ackEach), "GroupServer" + i)
@@ -40,13 +49,8 @@ object KVAppService {
       * Following the "rings" example.
       */
 
-
-    /** Tells each server the list of servers and their ActorRefs wrapped in a message. */
-    for (server <- servers)
-      server ! View(servers)
-
     /** Load-generating master */
-    val master = system.actorOf(LoadMaster.props(numNodes, servers, ackEach), "LoadMaster")
+    val master = system.actorOf(LoadMaster.props(numClient, servers, 1), "LoadMaster")
     master
   }
 }
