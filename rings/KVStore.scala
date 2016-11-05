@@ -90,15 +90,23 @@ class KVStore extends Actor {
   }
 
   def lock(clientID: Int, opsArray: scala.collection.mutable.ArrayBuffer[Operation]): Boolean = {
-    for (ops <- opsArray) {
-      if (!store.contains(ops.key)) {
-        store.put(ops.key, new StoredData(ops.key, 0, new scala.collection.mutable.ArrayBuffer[Int], -1))
-      }
-      if (store(ops.key).lockOwner == -1 || store(ops.key).lockOwner == clientID) {
-        store(ops.key).lockOwner = clientID
-      } else {
-        // lock of this value is taken by others
+    // we must gurantee "all or none" on all lock request for one transaction on one server
+    // check first
+    for (op <- opsArray) {
+      if (store.contains(op.key) && store(op.key).lockOwner != -1) {
         return false
+      }
+    }
+    // assign lock second
+    for (op <- opsArray) {
+      if (!store.contains(op.key)) {
+        store.put(op.key, new StoredData(op.key, 0, new scala.collection.mutable.ArrayBuffer[Int], -1))
+      }
+      if (store(op.key).lockOwner == -1) {
+        println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[44mSuccess: client $clientID lock key: ${op.key}\033[0m")
+        store(op.key).lockOwner = clientID
+      } else {
+        println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[36mSuccess: client $clientID already has key: ${op.key}\033[0m")
       }
     }
     return true

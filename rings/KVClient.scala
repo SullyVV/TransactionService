@@ -94,9 +94,9 @@ class KVClient (clientID: Int, stores: Seq[ActorRef]) {
     println(s"client$clientID commit")
     groupAcquires(opsLog)
     if (!Lock(acquireTable)) {
+      println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[31mFailed: client ${clientID} failed in acquire locks\033[0m")
       unLock(locksHolder)
       cleanUp()
-      println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[31mFailed: client ${clientID} failed in acquire locks\033[0m")
       return false
     } else {
       println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[32mSuccess: client ${clientID} success in acquire locks\033[0m")
@@ -188,6 +188,7 @@ class KVClient (clientID: Int, stores: Seq[ActorRef]) {
   /** Data lock **/
   def Lock(acquireTable: mutable.HashMap[ActorRef, scala.collection.mutable.ArrayBuffer[Operation]]): Boolean = {
     for ((k,v) <- acquireTable) {
+
       val future = ask(k, GetLock(clientID, v))
       val done = Await.result(future, timeout.duration).asInstanceOf[Boolean]
       if (done == false) {
@@ -200,18 +201,25 @@ class KVClient (clientID: Int, stores: Seq[ActorRef]) {
         }
       }
     }
+    println(s"client ${clientID} has got all required locks which are: ${locksHolder}")
     return true
   }
 
   /** Data unlock **/
   def unLock(lockHolder: scala.collection.mutable.ArrayBuffer[BigInt]): Unit = {
+    println(s"client ${clientID} try to unlock incomplete locks in acquire phase")
+    println(lockHolder)
     for (lock <- lockHolder) {
+        println(s"client ${clientID} try to unlock ${lock} in acquire phase")
         val future = ask(route(lock), UnLock(clientID, lock))
         val done = Await.result(future, timeout.duration).asInstanceOf[Boolean]
         if (done == true) {
-          locksHolder -= lock
+          println(s"client ${clientID} unlock ${lock} in acquire phase successfully")
+        } else {
+          println(s"client ${clientID} unlock ${lock} in acquire phase failure")
         }
     }
+    lockHolder.clear()
   }
 
 
