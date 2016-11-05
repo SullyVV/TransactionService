@@ -19,6 +19,7 @@ class IntMap extends scala.collection.mutable.HashMap[BigInt, Int]
   **/
 class Operation(var oID: Int, var ops: Int, var key: BigInt)
 class OpsResult(var oID: Int, var res:Int) // res: true->success, false->failure
+class WriteElement(var key: BigInt, var value: Int)
 /**
  * KVClient implements a client's interface to a KVStore, with an optional writeback cache.
  * Instantiate one KVClient for each actor that is a client of the KVStore.  The values placed
@@ -34,11 +35,12 @@ class KVClient (clientID: Int, stores: Seq[ActorRef]) {
   private val snapshotCache = new IntMap
   implicit val timeout = Timeout(5 seconds)
   private val opsLog = new scala.collection.mutable.ArrayBuffer[Operation]
-  private val resLog = new scala.collection.mutable.HashMap[Int, OpsResult]
   private val locksHolder = new scala.collection.mutable.ArrayBuffer[BigInt]
-  private val votesTable = new mutable.HashMap[BigInt, Boolean]
+  private val votesTable = new mutable.HashMap[ActorRef, Boolean]
   private var oID = 0
   private val dateFormat = new SimpleDateFormat ("mm:ss")
+  private val commitTable = new mutable.HashMap[ActorRef, scala.collection.mutable.ArrayBuffer[WriteElement]]
+  private val acquireTable = new mutable.HashMap[ActorRef, scala.collection.mutable.ArrayBuffer[Operation]]
   import scala.concurrent.ExecutionContext.Implicits.global
 
   /** transaction begin */
@@ -52,6 +54,7 @@ class KVClient (clientID: Int, stores: Seq[ActorRef]) {
     }
     println(s"client$clientID snapshot is $snapshotCache")
     opsLog += new Operation(oID, 2, -1)
+    oID = oID + 1
   }
 
   /** transaction read */
@@ -72,12 +75,12 @@ class KVClient (clientID: Int, stores: Seq[ActorRef]) {
   def transactionAbort() = {
     // do nothing but clear everything like nothing happens
     opsLog += new Operation(oID, 4, -1)
+    oID = oID + 1
     cleanUp()
   }
 
   /** clean up **/
   def cleanUp() = {
-    unLock(opsLog)
     opsLog.clear()
     votesTable.clear()
     oID = 0
@@ -86,17 +89,20 @@ class KVClient (clientID: Int, stores: Seq[ActorRef]) {
   /** transaction commit */
   def transactionCommit(): Boolean = {
     // acquire locks of all involved data, single fail->abort, 2PL
+    opsLog += new Operation(oID, 3, -1)
+    oID = oID + 1
     println(s"client$clientID commit")
-    if (!Lock(opsLog)) {
+    groupAcquires(opsLog)
+    if (!Lock(acquireTable)) {
+      unLock(locksHolder)
       cleanUp()
-      println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[31mError: client: $clientID failed in acquire locks\033[0m")
+      println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[31mFailed: client ${clientID} failed in acquire locks\033[0m")
       return false
     } else {
-      println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[32mSuccess: client: $clientID success in acquire locks\033[0m")
+      println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[32mSuccess: client ${clientID} success in acquire locks\033[0m")
     }
     // after acquire locks of all involved keys, do ops in local cache
-    for (i <- 0 until opsLog.size) {
-      val currentOperation = opsLog(i)
+    for (currentOperation <- opsLog) {
       if (currentOperation.ops == 0 || currentOperation.ops == 1) {
         var tmp = getCurrValue(currentOperation.key)
         if (currentOperation.ops == 1) {
@@ -106,36 +112,56 @@ class KVClient (clientID: Int, stores: Seq[ActorRef]) {
       }
     }
     // after all operations in local cache, now we need to do 2PC for all write ops, get votes from all participants
-    for (i <- 0 until opsLog.size) {
-      val key = opsLog(i).key
-      if (opsLog(i).ops == 1) {
-        // handle write operation only
-        val value = cache(key)
-        val future = ask(route(key), Commit(clientID, key, value))
-        val done = Await.result(future, timeout.duration).asInstanceOf[Boolean]
-        // here we must use a data structure to keep the votes from everyone
-        votesTable.put(key, done)
-      } else {
-        // for read operation, no need for votes, default true
-        votesTable.put(key, true)
-      }
+    groupWrites(opsLog)
+    for ((k,v) <- commitTable) {
+      val future = ask(k, Commit(clientID, v))
+      val done = Await.result(future, timeout.duration).asInstanceOf[Boolean]
+      votesTable.put(k, done)
     }
+
     // traverse all element in votesTable, if find any false, abort
     for ((k,v) <- votesTable) {
       if (!v) {
         // inform all participants to abort
-        notifyParticipants(opsLog, false)
+        notifyParticipants(clientID, votesTable, false) // we should piggy back the unlock info with the notification
         // recover to the snapshot
         cache = snapshotCache
         cleanUp()
-        println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[31mError: client: $clientID participants votes for abort\033[0m")
+        println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[31mError: client: $clientID, participants ${k} votes for abort\033[0m")
         return false
       }
     }
-    notifyParticipants(opsLog, true)
+    notifyParticipants(clientID, votesTable, true)
     cleanUp()
-    println(s"client $clientID cache is: $cache")
+    println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[35mCache info: client ${clientID} cache is: ${cache} \033[0m")
     return true
+  }
+
+  /** group acquires by store server**/
+  def groupAcquires(opsLog: scala.collection.mutable.ArrayBuffer[Operation]) = {
+    for (op <- opsLog) {
+      if (op.ops == 0 || op.ops == 1) {
+        val tmp = route(op.key)
+        if (!acquireTable.contains(tmp)) {
+          acquireTable.put(tmp, new mutable.ArrayBuffer[Operation])
+        }
+        acquireTable(tmp) += new Operation(op.oID, op.ops, op.key)
+      }
+    }
+  }
+
+  /** group Writes by store server**/
+  def groupWrites(opsLog: scala.collection.mutable.ArrayBuffer[Operation]) = {
+    for (op <- opsLog) {
+      if (op.ops == 1) {
+        // only need to handle write when collecting votes
+        val tmp = route(op.key)
+        if (!commitTable.contains(tmp)) {
+          commitTable.put(tmp, new mutable.ArrayBuffer[WriteElement])
+        }
+        commitTable(tmp) += new WriteElement(op.key, cache(op.key))
+      }
+    }
   }
 
   /** get current value of the key **/
@@ -153,29 +179,24 @@ class KVClient (clientID: Int, stores: Seq[ActorRef]) {
   }
 
   /** Notify all participants about the result **/
-  def notifyParticipants(opsLog: scala.collection.mutable.ArrayBuffer[Operation], decision: Boolean) = {
-    // TODO: CommitDecision msg in server
-    for (i <- 0 until opsLog.size) {
-      if (opsLog(i).ops == 1) {
-        // only write ops need commit, so only write ops need notification
-        route(opsLog(i).key) ! CommitDecision(clientID, decision)
-      }
+  def notifyParticipants(clientID: Int, voteTable: mutable.HashMap[ActorRef, Boolean], decision: Boolean) = {
+    for ((k,v) <- voteTable) {
+      k ! CommitDecision(clientID, decision)
     }
   }
 
   /** Data lock **/
-  def Lock(opsLog: scala.collection.mutable.ArrayBuffer[Operation]): Boolean = {
-    // TODO: GetLock msg in server
-    for (i <- 0 until opsLog.size) {
-      if (opsLog(i).ops == 0 || opsLog(i).ops== 1) {
-        val future = ask(route(opsLog(i).key), GetLock(clientID, opsLog(i).key))
-        val done = Await.result(future, timeout.duration).asInstanceOf[Boolean]
-        if (done == false) {
-          // before return false, have to free all obtained locks
-
-          return false
-        } else {
-          locksHolder += opsLog(i).key
+  def Lock(acquireTable: mutable.HashMap[ActorRef, scala.collection.mutable.ArrayBuffer[Operation]]): Boolean = {
+    for ((k,v) <- acquireTable) {
+      val future = ask(k, GetLock(clientID, v))
+      val done = Await.result(future, timeout.duration).asInstanceOf[Boolean]
+      if (done == false) {
+        return false
+      } else {
+        for (op <- v) {
+          if (!locksHolder.contains(op.key)) {
+            locksHolder += op.key
+          }
         }
       }
     }
@@ -183,17 +204,16 @@ class KVClient (clientID: Int, stores: Seq[ActorRef]) {
   }
 
   /** Data unlock **/
-  def unLock(opsLog: scala.collection.mutable.ArrayBuffer[Operation]): Unit = {
-    for (i <- 0 until opsLog.size) {
-      if (opsLog(i).key != -1) {
-        val future = ask(route(opsLog(i).key), UnLock(opsLog(i).key))
+  def unLock(lockHolder: scala.collection.mutable.ArrayBuffer[BigInt]): Unit = {
+    for (lock <- lockHolder) {
+        val future = ask(route(lock), UnLock(clientID, lock))
         val done = Await.result(future, timeout.duration).asInstanceOf[Boolean]
         if (done == true) {
-          locksHolder -= opsLog(i).key
+          locksHolder -= lock
         }
-      }
     }
   }
+
 
 //  /** Cached read */
 //  def read(key: BigInt): Option[Any] = {

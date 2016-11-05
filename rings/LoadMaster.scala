@@ -57,11 +57,59 @@ class LoadMaster (val numNodes: Int, val servers: Seq[ActorRef], val burstSize: 
       listener = Some(sender)
   }
   def transaction() = {
-    for (i <- 0 until servers.size) {
-      servers(i) ! TransactionBegin()
-      servers(i) ! TransactionWrite(1)
-      servers(i) ! TransactionCommit()
-    }
+    /*************  deadlock check *************/
+//    servers(0) ! TransactionBegin()
+//    servers(1) ! TransactionBegin()
+//    servers(0) ! TransactionWrite(0)
+//    servers(1) ! TransactionWrite(1)
+//    //Thread.sleep(100)
+//    servers(0) ! TransactionRead(1)
+//    servers(1) ! TransactionRead(0)
+//    //Thread.sleep(100)
+//    servers(0) ! TransactionCommit()
+//    servers(1) ! TransactionCommit()
+    /********************************************/
+    /*************  update check *************/
+//      servers(0) ! TransactionBegin()
+//      servers(0) ! TransactionWrite(1)
+//      servers(0) ! TransactionRead(2)
+//      servers(0) ! TransactionWrite(2)
+//      servers(0) ! TransactionCommit()
+//      //Thread.sleep(500)
+//      servers(1) ! TransactionBegin()
+//      servers(1) ! TransactionWrite(2)
+//      servers(1) ! TransactionWrite(3)
+//      servers(1) ! TransactionRead(1)
+//      servers(1) ! TransactionCommit()
+    /********************************************/
+    /*************  lock release check *************/
+          servers(0) ! TransactionBegin()
+          servers(0) ! TransactionWrite(1)
+          Thread.sleep(5)
+          servers(1) ! TransactionBegin()
+          servers(1) ! TransactionWrite(2)
+          servers(1) ! TransactionWrite(3)
+          servers(1) ! TransactionWrite(4)
+          servers(1) ! TransactionCommit()
+          Thread.sleep(5)
+          servers(0) ! TransactionRead(2)
+          servers(0) ! TransactionCommit()
+
+
+    /********************************************/
+
+    //      servers(0) ! TransactionRead(2)
+    //      servers(0) ! TransactionWrite(2)
+    //      servers(0) ! TransactionCommit()
+    //      //Thread.sleep(500)
+    //      servers(1) ! TransactionBegin()
+    //      servers(1) ! TransactionWrite(2)
+    //      servers(1) ! TransactionWrite(3)
+    //      servers(1) ! TransactionRead(1)
+    //      servers(1) ! TransactionCommit()
+    /********************************************/
+
+
   }
   def burst(server: ActorRef): Unit = {
 //    log.info(s"send a burst to node $target")

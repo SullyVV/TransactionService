@@ -6,9 +6,9 @@ sealed trait AppServiceAPI
 case class Prime() extends AppServiceAPI
 case class Command() extends AppServiceAPI
 case class View(endpoints: Seq[ActorRef]) extends AppServiceAPI
-case class GetLock(clientID: Int, key: BigInt) extends AppServiceAPI
-case class UnLock(key: BigInt) extends AppServiceAPI
-case class Commit(clientID: Int, key: BigInt, value: Int) extends AppServiceAPI
+case class GetLock(clientID: Int, opsArray: scala.collection.mutable.ArrayBuffer[Operation]) extends AppServiceAPI
+case class UnLock(clientID: Int, key: BigInt) extends AppServiceAPI
+case class Commit(clientID: Int, writeArray: scala.collection.mutable.ArrayBuffer[WriteElement]) extends AppServiceAPI
 case class DirtyData(key: BigInt) extends AppServiceAPI
 case class CommitDecision(clientID: Int, decision: Boolean) extends AppServiceAPI
 case class Put(key: BigInt, value: Int) extends AppServiceAPI
