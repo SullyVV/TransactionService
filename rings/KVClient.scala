@@ -36,6 +36,7 @@ class KVClient (clientID: Int, stores: Seq[ActorRef]) {
   implicit val timeout = Timeout(5 seconds)
   private val opsLog = new scala.collection.mutable.ArrayBuffer[Operation]
   private val locksHolder = new scala.collection.mutable.ArrayBuffer[BigInt]
+  //private val locksHolder = new scala.collection.mutable.ArrayBuffer[BigInt]
   private val votesTable = new mutable.HashMap[ActorRef, Boolean]
   private var oID = 0
   private val dateFormat = new SimpleDateFormat ("mm:ss")
@@ -47,26 +48,22 @@ class KVClient (clientID: Int, stores: Seq[ActorRef]) {
   def begin() = {
     // create a snapshot when begin
     // record begin and commit in case client fails when doing ops in cache
-    println(s"client$clientID transaction begins")
     for ((k,v) <- cache) {
       snapshotCache.clear()
       snapshotCache.put(k, v)
     }
-    println(s"client$clientID snapshot is $snapshotCache")
     opsLog += new Operation(oID, 2, -1)
     oID = oID + 1
   }
 
   /** transaction read */
   def transactionRead(key: BigInt) = {
-    println(s"client$clientID read key: $key")
     opsLog += new Operation(oID, 0, key)
     oID = oID + 1
   }
 
   /** transaction write */
   def transactionWrite(key: BigInt) = {
-    println(s"client$clientID write key: $key")
     opsLog += new Operation(oID, 1, key)
     oID = oID + 1
   }
@@ -93,14 +90,23 @@ class KVClient (clientID: Int, stores: Seq[ActorRef]) {
     oID = oID + 1
     println(s"client$clientID commit")
     groupAcquires(opsLog)
-    if (!Lock(acquireTable)) {
+
+    /** retry version of acquire locks **/
+    while (!Lock(acquireTable)) {
       println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[31mFailed: client ${clientID} failed in acquire locks\033[0m")
       unLock(locksHolder)
-      cleanUp()
-      return false
-    } else {
-      println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[32mSuccess: client ${clientID} success in acquire locks\033[0m")
+      Thread.sleep(5) // rest for 5 ms between each request
     }
+    println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[32mSuccess: client ${clientID} success in acquire locks\033[0m")
+    /** non-retry version of acquire locks ------> abort directly without waiting and retry **/
+//    if (!Lock(acquireTable)) {
+//      println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[31mFailed: client ${clientID} failed in acquire locks\033[0m")
+//      unLock(locksHolder)
+//      cleanUp()
+//      return false
+//    } else {
+//      println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[32mSuccess: client ${clientID} success in acquire locks\033[0m")
+//    }
     // after acquire locks of all involved keys, do ops in local cache
     for (currentOperation <- opsLog) {
       if (currentOperation.ops == 0 || currentOperation.ops == 1) {
@@ -123,17 +129,21 @@ class KVClient (clientID: Int, stores: Seq[ActorRef]) {
     for ((k,v) <- votesTable) {
       if (!v) {
         // inform all participants to abort
-        notifyParticipants(clientID, votesTable, false) // we should piggy back the unlock info with the notification
+        //notifyParticipants(clientID, votesTable, false) // we should piggy back the unlock info with the notification
+        notifyParticipants(clientID, acquireTable, false)
         // recover to the snapshot
         cache = snapshotCache
         cleanUp()
+        println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[35mCache info: client ${clientID} transaction failure: cache is: ${cache} \033[0m")
         println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[31mError: client: $clientID, participants ${k} votes for abort\033[0m")
         return false
       }
     }
-    notifyParticipants(clientID, votesTable, true)
+    // should use lockTable when notify, for decision waiter, they can commit write the change and free the lock, for lock holder, they can free the lock
+    //notifyParticipants(clientID, votesTable, true)
+    notifyParticipants(clientID, acquireTable, true)
     cleanUp()
-    println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[35mCache info: client ${clientID} cache is: ${cache} \033[0m")
+    println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[35mCache info: client ${clientID} transaction success: cache is: ${cache} \033[0m")
     return true
   }
 
@@ -179,8 +189,14 @@ class KVClient (clientID: Int, stores: Seq[ActorRef]) {
   }
 
   /** Notify all participants about the result **/
-  def notifyParticipants(clientID: Int, voteTable: mutable.HashMap[ActorRef, Boolean], decision: Boolean) = {
-    for ((k,v) <- voteTable) {
+//  def notifyParticipants(clientID: Int, voteTable: mutable.HashMap[ActorRef, Boolean], decision: Boolean) = {
+//    for ((k,v) <- voteTable) {
+//      k ! CommitDecision(clientID, decision)
+//    }
+//  }
+
+  def notifyParticipants(clientID: Int, acquireTable: mutable.HashMap[ActorRef, scala.collection.mutable.ArrayBuffer[Operation]], decision: Boolean) = {
+   for ((k, v) <- acquireTable) {
       k ! CommitDecision(clientID, decision)
     }
   }

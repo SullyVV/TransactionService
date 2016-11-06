@@ -59,7 +59,7 @@ class KVStore extends Actor {
 
 
   def notificationHandler(clientID: Int, decision: Boolean)= {
-    if (decision == true) {
+    if (decision == true && writeLog.contains(clientID)) {
       // if decision is true, write to disk
       for (currWriteElement <- writeLog(clientID)) {
         multicast(clientID, store(currWriteElement.key).cacheOwner, currWriteElement.key)
