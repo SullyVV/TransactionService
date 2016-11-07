@@ -57,6 +57,17 @@ class LoadMaster (val numNodes: Int, val servers: Seq[ActorRef], val burstSize: 
       listener = Some(sender)
   }
   def transaction() = {
+    /*************  client 0 in partition ******/
+    //for (i <- 0 until 100) {
+      servers(0) ! TransactionBegin()
+      servers(0) ! TransactionWrite(1)
+      servers(0) ! TransactionCommit()
+      Thread.sleep(10)
+      servers(1) ! TransactionBegin()
+      servers(1) ! TransactionWrite(1)
+      servers(1) ! TransactionCommit()
+    //}
+
     /*************  deadlock check *************/
 //    servers(0) ! TransactionBegin()
 //    servers(1) ! TransactionBegin()
@@ -103,17 +114,17 @@ class LoadMaster (val numNodes: Int, val servers: Seq[ActorRef], val burstSize: 
 //          servers(0) ! TransactionCommit()
 
     /******* same client two transaction test*******/
-              servers(0) ! TransactionBegin
-              servers(0) ! TransactionWrite(1)
-              servers(0) ! TransactionWrite(2)
-              servers(0) ! TransactionWrite(3)
-              servers(0) ! TransactionCommit()
-              //Thread.sleep(500)
-              servers(0) ! TransactionBegin()
-              servers(0) ! TransactionWrite(1)
-              servers(0) ! TransactionWrite(2)
-              servers(0) ! TransactionWrite(3)
-              servers(0) ! TransactionCommit()
+//              servers(0) ! TransactionBegin
+//              servers(0) ! TransactionWrite(1)
+//              servers(0) ! TransactionWrite(2)
+//              servers(0) ! TransactionWrite(3)
+//              servers(0) ! TransactionCommit()
+//              //Thread.sleep(500)
+//              servers(0) ! TransactionBegin()
+//              servers(0) ! TransactionWrite(1)
+//              servers(0) ! TransactionWrite(2)
+//              servers(0) ! TransactionWrite(3)
+//              servers(0) ! TransactionCommit()
     /********************************************/
     /********************************************/
 //          servers(0) ! TransactionBegin

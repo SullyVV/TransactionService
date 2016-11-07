@@ -47,7 +47,9 @@ class RingServer (val myNodeID: Int, val numNodes: Int, storeServers: Seq[ActorR
         cleanCache(key)
         sender ! true
       case Partitioned() =>
+        println(s"client ${myNodeID} is notified as partitioned before")
         cleanClient()
+
   }
 
   private def cleanClient() = {

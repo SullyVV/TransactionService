@@ -38,9 +38,19 @@ class KVClient (clientID: Int, stores: Seq[ActorRef], system: ActorSystem) {
   private val commitTable = new mutable.HashMap[ActorRef, scala.collection.mutable.ArrayBuffer[WriteElement]]
   private val acquireTable = new mutable.HashMap[ActorRef, scala.collection.mutable.ArrayBuffer[Operation]]
   private val heartbeatTable = new mutable.ArrayBuffer[ActorRef]
-  system.scheduler.schedule(0 milliseconds, 50 milliseconds) {
-    heartbeat()
+  private var isPartitioned = false
+  system.scheduler.schedule(0 milliseconds, 5 milliseconds) {
+    if (!isPartitioned) {
+      heartbeat()
+    }
   }
+  // simulate disconnect using a scheduler, handle partition condition in commit
+//  system.scheduler.scheduleOnce(5 milliseconds) {
+//    if (clientID == 0) {
+//      println(s"client ${clientID} is partitioned")
+//      isPartitioned = true
+//    }
+//  }
   /** HeartBeat Function **/
   def heartbeat(): Unit = {
     for (storeServer <- heartbeatTable ) {
@@ -92,77 +102,91 @@ class KVClient (clientID: Int, stores: Seq[ActorRef], system: ActorSystem) {
 
   /** transaction commit */
   def transactionCommit(): Boolean = {
-    // acquire locks of all involved data, single fail->abort, 2PL
-    opsLog += new Operation(oID, 3, -1)
-    oID = oID + 1
-    println(s"client$clientID commit")
-    groupAcquires(opsLog)
-    /** retry version of acquire locks **/
-    while (!Lock(acquireTable)) {
-      println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[31mFailed: client ${clientID} failed in acquire locks\033[0m")
-      unLock(locksHolder)
-      Thread.sleep(5) // rest for 5 ms between each request
-    }
-    // after acquire all needed locks, put all related store server's ActorRef into the heartbeat table
-    for ((k,v) <- acquireTable) {
-      heartbeatTable += k
-    }
-    println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[32mSuccess: client ${clientID} success in acquire locks\033[0m")
-    /** non-retry version of acquire locks ------> abort directly without waiting and retry **/
-//    if (!Lock(acquireTable)) {
-//      println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[31mFailed: client ${clientID} failed in acquire locks\033[0m")
-//      unLock(locksHolder)
-//      cleanUp()
-//      return false
-//    } else {
-//      println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[32mSuccess: client ${clientID} success in acquire locks\033[0m")
-//    }
-    // after acquire locks of all involved keys, do ops in local cache
-    for (currentOperation <- opsLog) {
-      if (currentOperation.ops == 0 || currentOperation.ops == 1) {
-        var tmp = getCurrValue(currentOperation.key)
-        if (currentOperation.ops == 1) {
-          tmp = tmp + 1
+      // acquire locks of all involved data, single fail->abort, 2PL
+      opsLog += new Operation(oID, 3, -1)
+      oID = oID + 1
+      println(s"client$clientID commit")
+      groupAcquires(opsLog)
+
+      /** retry version of acquire locks **/
+      while (!Lock(acquireTable)) {
+        println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[31mFailed: client ${clientID} failed in acquire locks\033[0m")
+        unLock(locksHolder)
+        Thread.sleep(5) // rest for 5 ms between each request
+      }
+      // after acquire all needed locks, put all related store server's ActorRef into the heartbeat table
+      for ((k, v) <- acquireTable) {
+        heartbeatTable += k
+      }
+      println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[32mSuccess: client ${clientID} success in acquire locks\033[0m")
+
+//      /*** simulate client0 fails after get all required locks ***/
+//      if (clientID == 0) {
+//        isPartitioned = true
+//        println(s"client ${clientID} is partitioned after lock")
+//        /***** ignore recovery at this time ***/
+//        Thread.sleep(10)
+//        isPartitioned = false
+//        println(s"client ${clientID} recovers after partition")
+//      }
+//      /************************************************************/
+
+      // do all operations in local cache first
+      for (currentOperation <- opsLog) {
+        if (currentOperation.ops == 0 || currentOperation.ops == 1) {
+          var tmp = getCurrValue(currentOperation.key)
+          if (currentOperation.ops == 1) {
+            tmp = tmp + 1
+          }
+          cache.put(currentOperation.key, tmp)
         }
-        cache.put(currentOperation.key, tmp)
-      }
-    }
-
-    // after all operations in local cache, now we need to do 2PC for all write ops, get votes from all participants
-    groupWrites(opsLog)
-    for ((k,v) <- commitTable) {
-      val future = ask(k, Commit(clientID, v))
-      val done = Await.result(future, timeout.duration).asInstanceOf[AckMsg]
-      if (done.par) {
-        clearClient()
-        multicastPartition()
-        return false
-      } else {
-        votesTable.put(k, done.result)
       }
 
-    }
-
-    // traverse all element in votesTable, if find any false, abort
-    for ((k,v) <- votesTable) {
-      if (!v) {
-        // inform all participants to abort
-        //notifyParticipants(clientID, votesTable, false) // we should piggy back the unlock info with the notification
-        notifyParticipants(clientID, acquireTable, false)
-        // recover to the snapshot
-        cache = snapshotCache
-        cleanUp()
-        println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[35mCache info: client ${clientID} transaction failure: cache is: ${cache} \033[0m")
-        println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[31mError: client: $clientID, participants ${k} votes for abort\033[0m")
-        return false
+      // after all operations in local cache, now we need to do 2PC for all write ops, get votes from all participants
+      groupWrites(opsLog)
+      for ((k, v) <- commitTable) {
+        val future = ask(k, Commit(clientID, v))
+        val done = Await.result(future, timeout.duration).asInstanceOf[AckMsg]
+        if (done.par) {
+          clearClient()
+          multicastPartition()
+          return false
+        } else {
+          votesTable.put(k, done.result)
+        }
       }
+
+      /*** simulate client0 fails after obtained votes from all store servers ***/
+    if (clientID == 0) {
+      isPartitioned = true
+      println(s"client ${clientID} is partitioned after getting votes")
+      /** *** ignore recovery at this time ***/
+      Thread.sleep(30)
+      isPartitioned = false
+      println(s"client ${clientID} recovers after partition")
     }
-    // should use lockTable when notify, for decision waiter, they can commit write the change and free the lock, for lock holder, they can free the lock
-    //notifyParticipants(clientID, votesTable, true)
-    notifyParticipants(clientID, acquireTable, true)
-    cleanUp()
-    println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[35mCache info: client ${clientID} transaction success: cache is: ${cache} \033[0m")
-    return true
+      /************************************************************/
+
+      // traverse all element in votesTable, if find any false, abort
+      for ((k, v) <- votesTable) {
+        if (!v) {
+          // inform all participants to abort
+          //notifyParticipants(clientID, votesTable, false) // we should piggy back the unlock info with the notification
+          notifyParticipants(clientID, acquireTable, false)
+          // recover to the snapshot
+          cache = snapshotCache
+          cleanUp()
+          println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[35mCache info: client ${clientID} transaction failure: cache is: ${cache} \033[0m")
+          println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[31mError: client: $clientID, participants ${k} votes for abort\033[0m")
+          return false
+        }
+      }
+      // should use lockTable when notify, for decision waiter, they can commit write the change and free the lock, for lock holder, they can free the lock
+      //notifyParticipants(clientID, votesTable, true)
+      notifyParticipants(clientID, acquireTable, true)
+      cleanUp()
+      println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[35mCache info: client ${clientID} transaction success: cache is: ${cache} \033[0m")
+      return true
   }
 
   /** group acquires by store server**/
@@ -322,6 +346,7 @@ class KVClient (clientID: Int, stores: Seq[ActorRef], system: ActorSystem) {
 
   /** clear client, triggered when server tell me that i failed before and my resources are reclaimed*/
   def clearClient() = {
+    println(s"client ${clientID} is cleaned")
     opsLog.clear()
     locksHolder.clear()
     votesTable.clear()
@@ -329,6 +354,8 @@ class KVClient (clientID: Int, stores: Seq[ActorRef], system: ActorSystem) {
     acquireTable.clear()
     heartbeatTable.clear()
     cache = snapshotCache
+    println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[35mCache info: client ${clientID} transaction failure (partitioned): cache is: ${cache} \033[0m")
+
   }
 
   import java.security.MessageDigest

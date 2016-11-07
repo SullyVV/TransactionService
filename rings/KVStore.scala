@@ -39,11 +39,10 @@ class KVStore extends Actor {
   private val store = new scala.collection.mutable.HashMap[BigInt, StoredData]
   // in writeLog, transaction ID = clientID, here we consider each client to be single threaded
   private val writeLog = new mutable.HashMap[Int, scala.collection.mutable.ArrayBuffer[WriteElement]]
-  private val partitionedList = new mutable.ArrayBuffer[Int]
   val generator = new scala.util.Random
   var endpoints: Option[Seq[ActorRef]] = None
   val heartbeatTable = new mutable.HashMap[Int, Long]
-  val validPeriod:Long = 100
+  val validPeriod:Long = 5
   private val dateFormat = new SimpleDateFormat ("mm:ss")
   override def receive = {
     case PartitionedClient(clientID) => {
@@ -53,37 +52,30 @@ class KVStore extends Actor {
       }
     }
     case HeartBeat(clientID) =>
-      if (partitionedList.contains(clientID)) {
+      if (!checkLiveness(clientID)) {
+        println(s"client ${clientID} recovers and send another heartbeat to me")
         val list = endpoints.get
         list(clientID) ! Partitioned()
-        partitionedList -= clientID
       } else {
         heartbeatTable(clientID) = System.currentTimeMillis()
       }
     case View(k) =>
       endpoints = Some(k)
     case GetLock(clientID, opsArray) =>
-      if (partitionedList.contains(clientID)) {
-        partitionedList -= clientID
-        sender ! new AckMsg(false, true)
-      } else if(lock(clientID, opsArray)) {
+      if(lock(clientID, opsArray)) {
         sender ! new AckMsg(true, false)
       } else {
         sender ! new AckMsg(false, false)
       }
     case UnLock(clientID, key) =>
-      if (partitionedList.contains(clientID)) {
-        partitionedList -= clientID
-        sender ! new AckMsg(false, true)
-      } else if (unlock(clientID, key)) {
+      if (unlock(clientID, key)) {
         sender ! new AckMsg(true, false)
       } else {
         sender ! new AckMsg(false, false)
       }
     case Commit(clientID, writeArray) =>
       // commit or not depends on whether write log successfully, lets see 95% success and 5% failure
-      if (partitionedList.contains(clientID)) {
-        partitionedList -= clientID
+      if (!checkLiveness(clientID)) {
         sender ! new AckMsg(false, true)
       } else {
         val rand = generator.nextInt(100)
@@ -94,14 +86,11 @@ class KVStore extends Actor {
           sender ! new AckMsg(true, false)
         }
       }
-
-
     case CommitDecision(clientID, decision) =>
       // commit decision not in ask pattern
-      if (partitionedList.contains(clientID)) {
+      if (!checkLiveness(clientID)) {
         val list = endpoints.get
         list(clientID) ! Partitioned()
-        partitionedList -= clientID
       } else {
         notificationHandler(clientID, decision)
       }
@@ -139,12 +128,19 @@ class KVStore extends Actor {
     for ((k,v) <- store) {
       if (v.lockOwner == clientID) {
         v.lockOwner = -1
-        println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[33mSuccess: client $clientID unlock key: ${k} in partitioned reclaim phase\033[0m")
+        println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[33mSuccess: client $clientID key: ${k} reclaimed because it is partitioned\033[0m")
       }
     }
     heartbeatTable -= clientID
     writeLog -= clientID
-
+  }
+  def checkLiveness(clientID: Int): Boolean = {
+    for ((k,v) <- store) {
+      if (v.lockOwner == clientID) {
+        return true
+      }
+    }
+    return false
   }
 
   def multicast(clientID: Int, cacheHolder: scala.collection.mutable.ArrayBuffer[Int], key: BigInt) = {
@@ -168,18 +164,11 @@ class KVStore extends Actor {
           return false
         } else {
           // exceeds validPeriod, old holder is partitioned, reclaim all its locks and clear its write log
-          reclaimHandler(clientID)
-          partitionedList += clientID
+          println(s"detect client ${currentLockOwner} is partitioned when client ${clientID} acquiring lock for key ${op.key}")
+          reclaimHandler(currentLockOwner)
         }
       }
     }
-
-//    for (op <- opsArray) {
-//      if (store.contains(op.key) && store(op.key).lockOwner != -1) {
-//        return false
-//      }
-//    }
-    // assign lock second
     for (op <- opsArray) {
       if (!store.contains(op.key)) {
         store.put(op.key, new StoredData(op.key, 0, new scala.collection.mutable.ArrayBuffer[Int], -1))

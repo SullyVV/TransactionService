@@ -11,7 +11,7 @@ import akka.util.Timeout
 object TestHarness {
   val system = ActorSystem("Rings")
   implicit val timeout = Timeout(1000 seconds)
-  val numClient = 10
+  val numClient = 2
   val numServer = 2
   // Service tier: create app servers and a Seq of per-node Stats
   val master = KVAppService(system, numClient, numServer)
