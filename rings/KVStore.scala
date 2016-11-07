@@ -60,7 +60,6 @@ class KVStore extends Actor {
       } else {
         heartbeatTable(clientID) = System.currentTimeMillis()
       }
-      //heartbeatTable(clientID) = System.currentTimeMillis()
     case View(k) =>
       endpoints = Some(k)
     case GetLock(clientID, opsArray) =>
@@ -140,7 +139,7 @@ class KVStore extends Actor {
     for ((k,v) <- store) {
       if (v.lockOwner == clientID) {
         v.lockOwner = -1
-        println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[33mSuccess: client $clientID unlock key: ${k} in reclaim phase\033[0m")
+        println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[33mSuccess: client $clientID unlock key: ${k} in partitioned reclaim phase\033[0m")
       }
     }
     heartbeatTable -= clientID
@@ -192,6 +191,7 @@ class KVStore extends Actor {
         println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[36mSuccess: client $clientID already has key: ${op.key}\033[0m")
       }
     }
+    heartbeatTable.put(clientID, System.currentTimeMillis())
     return true
   }
 

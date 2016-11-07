@@ -102,19 +102,31 @@ class LoadMaster (val numNodes: Int, val servers: Seq[ActorRef], val burstSize: 
 //          servers(0) ! TransactionRead(2)
 //          servers(0) ! TransactionCommit()
 
-
+    /******* same client two transaction test*******/
+              servers(0) ! TransactionBegin
+              servers(0) ! TransactionWrite(1)
+              servers(0) ! TransactionWrite(2)
+              servers(0) ! TransactionWrite(3)
+              servers(0) ! TransactionCommit()
+              //Thread.sleep(500)
+              servers(0) ! TransactionBegin()
+              servers(0) ! TransactionWrite(1)
+              servers(0) ! TransactionWrite(2)
+              servers(0) ! TransactionWrite(3)
+              servers(0) ! TransactionCommit()
     /********************************************/
-          servers(0) ! TransactionBegin
-          servers(0) ! TransactionRead(2)
-          servers(0) ! TransactionWrite(2)
-          servers(0) ! TransactionWrite(4)
-          servers(0) ! TransactionCommit()
-          //Thread.sleep(500)
-          servers(1) ! TransactionBegin()
-          servers(1) ! TransactionWrite(2)
-          servers(1) ! TransactionWrite(3)
-          servers(1) ! TransactionRead(1)
-          servers(1) ! TransactionCommit()
+    /********************************************/
+//          servers(0) ! TransactionBegin
+//          servers(0) ! TransactionRead(2)
+//          servers(0) ! TransactionWrite(2)
+//          servers(0) ! TransactionWrite(4)
+//          servers(0) ! TransactionCommit()
+//          //Thread.sleep(500)
+//          servers(1) ! TransactionBegin()
+//          servers(1) ! TransactionWrite(2)
+//          servers(1) ! TransactionWrite(3)
+//          servers(1) ! TransactionRead(1)
+//          servers(1) ! TransactionCommit()
     /********************************************/
 
 

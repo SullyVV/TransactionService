@@ -37,14 +37,14 @@ class KVClient (clientID: Int, stores: Seq[ActorRef], system: ActorSystem) {
   private val dateFormat = new SimpleDateFormat ("mm:ss")
   private val commitTable = new mutable.HashMap[ActorRef, scala.collection.mutable.ArrayBuffer[WriteElement]]
   private val acquireTable = new mutable.HashMap[ActorRef, scala.collection.mutable.ArrayBuffer[Operation]]
-
+  private val heartbeatTable = new mutable.ArrayBuffer[ActorRef]
   system.scheduler.schedule(0 milliseconds, 50 milliseconds) {
     heartbeat()
   }
   /** HeartBeat Function **/
   def heartbeat(): Unit = {
-    for ((k,v) <- acquireTable) {
-      k ! HeartBeat(clientID)
+    for (storeServer <- heartbeatTable ) {
+      storeServer ! HeartBeat(clientID)
     }
   }
   /** transaction begin */
@@ -83,6 +83,10 @@ class KVClient (clientID: Int, stores: Seq[ActorRef], system: ActorSystem) {
   def cleanUp() = {
     opsLog.clear()
     votesTable.clear()
+    locksHolder.clear()
+    commitTable.clear()
+    acquireTable.clear()
+    heartbeatTable.clear()
     oID = 0
   }
 
@@ -93,12 +97,15 @@ class KVClient (clientID: Int, stores: Seq[ActorRef], system: ActorSystem) {
     oID = oID + 1
     println(s"client$clientID commit")
     groupAcquires(opsLog)
-
     /** retry version of acquire locks **/
     while (!Lock(acquireTable)) {
       println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[31mFailed: client ${clientID} failed in acquire locks\033[0m")
       unLock(locksHolder)
       Thread.sleep(5) // rest for 5 ms between each request
+    }
+    // after acquire all needed locks, put all related store server's ActorRef into the heartbeat table
+    for ((k,v) <- acquireTable) {
+      heartbeatTable += k
     }
     println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[32mSuccess: client ${clientID} success in acquire locks\033[0m")
     /** non-retry version of acquire locks ------> abort directly without waiting and retry **/
@@ -320,6 +327,7 @@ class KVClient (clientID: Int, stores: Seq[ActorRef], system: ActorSystem) {
     votesTable.clear()
     commitTable.clear()
     acquireTable.clear()
+    heartbeatTable.clear()
     cache = snapshotCache
   }
 
