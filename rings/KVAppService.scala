@@ -17,7 +17,9 @@ case class TransactionBegin() extends AppServiceAPI
 case class TransactionRead(key: BigInt) extends AppServiceAPI
 case class TransactionWrite(key: BigInt) extends AppServiceAPI
 case class TransactionCommit() extends AppServiceAPI
-
+case class AliveCheck(key: BigInt) extends AppServiceAPI
+case class DeadClient() extends AppServiceAPI
+case class HeartBeat(clientID: Int) extends AppServiceAPI
 /**
  * This object instantiates the service tiers and a load-generating master, and
  * links all the actors together by passing around ActorRef references.
@@ -37,7 +39,7 @@ object KVAppService {
 
     /** Service tier: create app servers */
     val servers = for (i <- 0 until numClient)
-      yield system.actorOf(RingServer.props(i, numClient, stores,1), "RingServer" + i)
+      yield system.actorOf(RingServer.props(i, numClient, stores,1,system), "RingServer" + i)
 
     for (store <- stores) {
       store ! View(servers)

@@ -21,17 +21,16 @@ class RingMap extends scala.collection.mutable.HashMap[BigInt, RingCell]
  * @param burstSize number of commands per burst
  */
 
-class RingServer (val myNodeID: Int, val numNodes: Int, storeServers: Seq[ActorRef], burstSize: Int) extends Actor {
+class RingServer (val myNodeID: Int, val numNodes: Int, storeServers: Seq[ActorRef], burstSize: Int, system: ActorSystem) extends Actor {
   val generator = new scala.util.Random
-  val kvclient = new KVClient(myNodeID, storeServers)
+  val kvclient = new KVClient(myNodeID, storeServers, system)
   val dirtycells = new IntMap
   val localWeight: Int = 70
   val log = Logging(context.system, this)
-
+  val isAlive = true
   var stats = new Stats
   var allocated: Int = 0
   var endpoints: Option[Seq[ActorRef]] = None
-
 
   def receive() = {
       case TransactionBegin() =>
@@ -52,10 +51,19 @@ class RingServer (val myNodeID: Int, val numNodes: Int, storeServers: Seq[ActorR
         endpoints = Some(e)
       case DirtyData(key) =>
         cleanCache(key)
+        sender ! true
+      case AliveCheck(key) =>
+        sender ! isAlive
+      case DeadClient() =>
+        cleanClient()
+  }
+
+  private def cleanClient() = {
+    kvclient.clearClient()
   }
 
   private def cleanCache(key: BigInt) = {
-    kvclient.clearEntry(key)
+    kvclient.clearClient()
   }
 
   private def tBegin() = {
@@ -76,7 +84,7 @@ class RingServer (val myNodeID: Int, val numNodes: Int, storeServers: Seq[ActorR
 }
 
 object RingServer {
-  def props(myNodeID: Int, numNodes: Int, storeServers: Seq[ActorRef], burstSize: Int): Props = {
-    Props(classOf[RingServer], myNodeID, numNodes, storeServers, burstSize)
+  def props(myNodeID: Int, numNodes: Int, storeServers: Seq[ActorRef], burstSize: Int, system: ActorSystem): Props = {
+    Props(classOf[RingServer], myNodeID, numNodes, storeServers, burstSize, system)
   }
 }

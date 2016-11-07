@@ -5,12 +5,13 @@ import java.util.Date
 
 import scala.concurrent.duration._
 import scala.concurrent.Await
-import akka.actor.ActorRef
-import akka.event.Logging
+import akka.actor.{ActorRef, ActorSystem}
 import akka.pattern.ask
 import akka.util.Timeout
-
 import scala.collection.mutable
+import scala.concurrent.ExecutionContext
+import ExecutionContext.Implicits.global
+import scala.concurrent.ExecutionContext.Implicits.global
 
 class IntMap extends scala.collection.mutable.HashMap[BigInt, Int]
 /**
@@ -27,10 +28,8 @@ class WriteElement(var key: BigInt, var value: Int)
  **/
 
 
-/**   0. when do ops in cache
-  *   1. when collection votes
-  **/
-class KVClient (clientID: Int, stores: Seq[ActorRef]) {
+
+class KVClient (clientID: Int, stores: Seq[ActorRef], system: ActorSystem) {
   private var cache = new IntMap
   private val snapshotCache = new IntMap
   implicit val timeout = Timeout(5 seconds)
@@ -42,7 +41,17 @@ class KVClient (clientID: Int, stores: Seq[ActorRef]) {
   private val dateFormat = new SimpleDateFormat ("mm:ss")
   private val commitTable = new mutable.HashMap[ActorRef, scala.collection.mutable.ArrayBuffer[WriteElement]]
   private val acquireTable = new mutable.HashMap[ActorRef, scala.collection.mutable.ArrayBuffer[Operation]]
-  import scala.concurrent.ExecutionContext.Implicits.global
+
+  system.scheduler.schedule(0 milliseconds, 50 milliseconds) {
+    heartbeat()
+  }
+
+  /** HeartBeat Function **/
+  def heartbeat(): Unit = {
+    for ((k,v) <- acquireTable) {
+      k ! HeartBeat(clientID)
+    }
+  }
 
   /** transaction begin */
   def begin() = {
@@ -117,6 +126,7 @@ class KVClient (clientID: Int, stores: Seq[ActorRef]) {
         cache.put(currentOperation.key, tmp)
       }
     }
+
     // after all operations in local cache, now we need to do 2PC for all write ops, get votes from all participants
     groupWrites(opsLog)
     for ((k,v) <- commitTable) {
@@ -204,10 +214,9 @@ class KVClient (clientID: Int, stores: Seq[ActorRef]) {
   /** Data lock **/
   def Lock(acquireTable: mutable.HashMap[ActorRef, scala.collection.mutable.ArrayBuffer[Operation]]): Boolean = {
     for ((k,v) <- acquireTable) {
-
       val future = ask(k, GetLock(clientID, v))
       val done = Await.result(future, timeout.duration).asInstanceOf[Boolean]
-      if (done == false) {
+      if (!done) {
         return false
       } else {
         for (op <- v) {
@@ -229,7 +238,7 @@ class KVClient (clientID: Int, stores: Seq[ActorRef]) {
         println(s"client ${clientID} try to unlock ${lock} in acquire phase")
         val future = ask(route(lock), UnLock(clientID, lock))
         val done = Await.result(future, timeout.duration).asInstanceOf[Boolean]
-        if (done == true) {
+        if (done) {
           println(s"client ${clientID} unlock ${lock} in acquire phase successfully")
         } else {
           println(s"client ${clientID} unlock ${lock} in acquire phase failure")
@@ -287,6 +296,11 @@ class KVClient (clientID: Int, stores: Seq[ActorRef]) {
     cache -= key
     println(s"client $clientID cleared entry for key: $key")
     println(s"client $clientID new cache is: $cache")
+  }
+
+  /** clear client, triggered when server tell me that i failed before and my resources are reclaimed*/
+  def clearClient() = {
+
   }
 
   import java.security.MessageDigest

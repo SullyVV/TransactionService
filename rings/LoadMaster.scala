@@ -69,7 +69,13 @@ class LoadMaster (val numNodes: Int, val servers: Seq[ActorRef], val burstSize: 
 //    servers(0) ! TransactionCommit()
 //    servers(1) ! TransactionCommit()
     /********************************************/
+
     /*************  update check *************/
+    for (i <- 0 until 3) {
+      servers(i) ! TransactionBegin()
+      servers(i) ! TransactionWrite(1)
+      servers(i) ! TransactionCommit()
+    }
 //    servers(0) ! TransactionBegin()
 //    servers(0) ! TransactionWrite(1)
 //    servers(0) ! TransactionWrite(2)
@@ -84,17 +90,17 @@ class LoadMaster (val numNodes: Int, val servers: Seq[ActorRef], val burstSize: 
 
     /********************************************/
     /*************  lock release check *************/
-          servers(0) ! TransactionBegin()
-          servers(0) ! TransactionWrite(1)
-          //Thread.sleep(50)
-          servers(1) ! TransactionBegin()
-          servers(1) ! TransactionWrite(2)
-          servers(1) ! TransactionWrite(3)
-          servers(1) ! TransactionWrite(1)
-          servers(1) ! TransactionCommit()
-          //Thread.sleep(1)
-          servers(0) ! TransactionRead(2)
-          servers(0) ! TransactionCommit()
+//          servers(0) ! TransactionBegin()
+//          servers(0) ! TransactionWrite(1)
+//          //Thread.sleep(50)
+//          servers(1) ! TransactionBegin()
+//          servers(1) ! TransactionWrite(2)
+//          servers(1) ! TransactionWrite(3)
+//          servers(1) ! TransactionWrite(1)
+//          servers(1) ! TransactionCommit()
+//          //Thread.sleep(1)
+//          servers(0) ! TransactionRead(2)
+//          servers(0) ! TransactionCommit()
 
 
     /********************************************/
