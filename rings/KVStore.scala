@@ -16,6 +16,7 @@ import scala.collection.mutable
 
 sealed trait KVStoreAPI
 class StoredData(var key: BigInt, var value: Int, var cacheOwner: scala.collection.mutable.ArrayBuffer[Int], var lockOwner: Int)   // default lockOwner ID is -1
+class AckMsg(var result: Boolean, var par: Boolean)
 /**
  * KVStore is a local key-value store based on actors.  Each store actor controls a portion of
  * the key space and maintains a hash of values for the keys in its portion.  The keys are 128 bits
@@ -45,41 +46,66 @@ class KVStore extends Actor {
   val validPeriod:Long = 100
   private val dateFormat = new SimpleDateFormat ("mm:ss")
   override def receive = {
+    case PartitionedClient(clientID) => {
+      if (writeLog.contains(clientID)) {
+        // writelog contains clientID means that this client is still valid in that server
+        reclaimHandler(clientID)
+      }
+    }
     case HeartBeat(clientID) =>
-//      if (partitionedList.contains(clientID)) {
-//        val list = endpoints.get
-//        list(clientID) ! Partitioned()
-//      } else {
-//        heartbeatTable(clientID) = System.currentTimeMillis()
-//      }
-      heartbeatTable(clientID) = System.currentTimeMillis()
+      if (partitionedList.contains(clientID)) {
+        val list = endpoints.get
+        list(clientID) ! Partitioned()
+        partitionedList -= clientID
+      } else {
+        heartbeatTable(clientID) = System.currentTimeMillis()
+      }
+      //heartbeatTable(clientID) = System.currentTimeMillis()
     case View(k) =>
       endpoints = Some(k)
     case GetLock(clientID, opsArray) =>
-      if(lock(clientID, opsArray)) {
-        sender ! true
+      if (partitionedList.contains(clientID)) {
+        partitionedList -= clientID
+        sender ! new AckMsg(false, true)
+      } else if(lock(clientID, opsArray)) {
+        sender ! new AckMsg(true, false)
       } else {
-        sender ! false
+        sender ! new AckMsg(false, false)
       }
     case UnLock(clientID, key) =>
-      if (unlock(clientID, key)) {
-        sender ! true
+      if (partitionedList.contains(clientID)) {
+        partitionedList -= clientID
+        sender ! new AckMsg(false, true)
+      } else if (unlock(clientID, key)) {
+        sender ! new AckMsg(true, false)
       } else {
-        sender ! false
+        sender ! new AckMsg(false, false)
       }
     case Commit(clientID, writeArray) =>
       // commit or not depends on whether write log successfully, lets see 95% success and 5% failure
+      if (partitionedList.contains(clientID)) {
+        partitionedList -= clientID
+        sender ! new AckMsg(false, true)
+      } else {
         val rand = generator.nextInt(100)
         if (rand > 95) { // fail
-          sender ! false
+          sender ! new AckMsg(false, false)
         }  else {// success
           writeLog.put(clientID, writeArray)
-          sender ! true
+          sender ! new AckMsg(true, false)
         }
+      }
+
 
     case CommitDecision(clientID, decision) =>
       // commit decision not in ask pattern
-      notificationHandler(clientID, decision)
+      if (partitionedList.contains(clientID)) {
+        val list = endpoints.get
+        list(clientID) ! Partitioned()
+        partitionedList -= clientID
+      } else {
+        notificationHandler(clientID, decision)
+      }
 
     case Put(key, value) =>
       val tmp = store(key)
@@ -117,7 +143,9 @@ class KVStore extends Actor {
         println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[33mSuccess: client $clientID unlock key: ${k} in reclaim phase\033[0m")
       }
     }
+    heartbeatTable -= clientID
     writeLog -= clientID
+
   }
 
   def multicast(clientID: Int, cacheHolder: scala.collection.mutable.ArrayBuffer[Int], key: BigInt) = {
@@ -141,8 +169,8 @@ class KVStore extends Actor {
           return false
         } else {
           // exceeds validPeriod, old holder is partitioned, reclaim all its locks and clear its write log
-          partitionedList += clientID
           reclaimHandler(clientID)
+          partitionedList += clientID
         }
       }
     }

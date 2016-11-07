@@ -41,29 +41,22 @@ class RingServer (val myNodeID: Int, val numNodes: Int, storeServers: Seq[ActorR
         tWrite(key)
       case TransactionCommit() =>
         tCommit()
-//      case Prime() =>
-//        allocCell
-//      //     rwcheck(myNodeID, new RingCell(0,0))
-//      case Command() =>
-//        incoming(sender)
-//        command
       case View(e) =>
         endpoints = Some(e)
       case DirtyData(key) =>
         cleanCache(key)
         sender ! true
-      case AliveCheck(key) =>
-        sender ! isAlive
-      case DeadClient() =>
+      case Partitioned() =>
         cleanClient()
   }
 
   private def cleanClient() = {
+    // means this client ever has an partition, release everything and set back to snapshot
     kvclient.clearClient()
   }
 
   private def cleanCache(key: BigInt) = {
-    kvclient.clearClient()
+    kvclient.clearEntry(key)
   }
 
   private def tBegin() = {

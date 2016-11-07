@@ -9,8 +9,6 @@ import akka.actor.{ActorRef, ActorSystem}
 import akka.pattern.ask
 import akka.util.Timeout
 import scala.collection.mutable
-import scala.concurrent.ExecutionContext
-import ExecutionContext.Implicits.global
 import scala.concurrent.ExecutionContext.Implicits.global
 
 class IntMap extends scala.collection.mutable.HashMap[BigInt, Int]
@@ -26,8 +24,6 @@ class WriteElement(var key: BigInt, var value: Int)
  * Instantiate one KVClient for each actor that is a client of the KVStore.  The values placed
  * in the store are of type Any: it is up to the client app to cast to/from the app's value types.
  **/
-
-
 
 class KVClient (clientID: Int, stores: Seq[ActorRef], system: ActorSystem) {
   private var cache = new IntMap
@@ -45,14 +41,12 @@ class KVClient (clientID: Int, stores: Seq[ActorRef], system: ActorSystem) {
   system.scheduler.schedule(0 milliseconds, 50 milliseconds) {
     heartbeat()
   }
-
   /** HeartBeat Function **/
   def heartbeat(): Unit = {
     for ((k,v) <- acquireTable) {
       k ! HeartBeat(clientID)
     }
   }
-
   /** transaction begin */
   def begin() = {
     // create a snapshot when begin
@@ -131,8 +125,15 @@ class KVClient (clientID: Int, stores: Seq[ActorRef], system: ActorSystem) {
     groupWrites(opsLog)
     for ((k,v) <- commitTable) {
       val future = ask(k, Commit(clientID, v))
-      val done = Await.result(future, timeout.duration).asInstanceOf[Boolean]
-      votesTable.put(k, done)
+      val done = Await.result(future, timeout.duration).asInstanceOf[AckMsg]
+      if (done.par) {
+        clearClient()
+        multicastPartition()
+        return false
+      } else {
+        votesTable.put(k, done.result)
+      }
+
     }
 
     // traverse all element in votesTable, if find any false, abort
@@ -211,12 +212,22 @@ class KVClient (clientID: Int, stores: Seq[ActorRef], system: ActorSystem) {
     }
   }
 
+  def multicastPartition() = {
+    for ((k, v) <- acquireTable) {
+      k ! PartitionedClient(clientID)
+    }
+  }
+
   /** Data lock **/
   def Lock(acquireTable: mutable.HashMap[ActorRef, scala.collection.mutable.ArrayBuffer[Operation]]): Boolean = {
     for ((k,v) <- acquireTable) {
       val future = ask(k, GetLock(clientID, v))
-      val done = Await.result(future, timeout.duration).asInstanceOf[Boolean]
-      if (!done) {
+      val done = Await.result(future, timeout.duration).asInstanceOf[AckMsg]
+      if (done.par) { // means it is in a partition
+        clearClient() // clear itself and tell all store servers about his keys
+        multicastPartition()
+        return false
+      }  else if (!done.result) {
         return false
       } else {
         for (op <- v) {
@@ -237,8 +248,12 @@ class KVClient (clientID: Int, stores: Seq[ActorRef], system: ActorSystem) {
     for (lock <- lockHolder) {
         println(s"client ${clientID} try to unlock ${lock} in acquire phase")
         val future = ask(route(lock), UnLock(clientID, lock))
-        val done = Await.result(future, timeout.duration).asInstanceOf[Boolean]
-        if (done) {
+        val done = Await.result(future, timeout.duration).asInstanceOf[AckMsg]
+        if (done.par) {
+          clearClient()
+          multicastPartition()
+        }
+        if (done.result) {
           println(s"client ${clientID} unlock ${lock} in acquire phase successfully")
         } else {
           println(s"client ${clientID} unlock ${lock} in acquire phase failure")
@@ -300,7 +315,12 @@ class KVClient (clientID: Int, stores: Seq[ActorRef], system: ActorSystem) {
 
   /** clear client, triggered when server tell me that i failed before and my resources are reclaimed*/
   def clearClient() = {
-
+    opsLog.clear()
+    locksHolder.clear()
+    votesTable.clear()
+    commitTable.clear()
+    acquireTable.clear()
+    cache = snapshotCache
   }
 
   import java.security.MessageDigest

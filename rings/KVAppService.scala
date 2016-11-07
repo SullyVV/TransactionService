@@ -20,6 +20,8 @@ case class TransactionCommit() extends AppServiceAPI
 case class AliveCheck(key: BigInt) extends AppServiceAPI
 case class DeadClient() extends AppServiceAPI
 case class HeartBeat(clientID: Int) extends AppServiceAPI
+case class Partitioned() extends AppServiceAPI
+case class PartitionedClient(clientID: Int) extends AppServiceAPI
 /**
  * This object instantiates the service tiers and a load-generating master, and
  * links all the actors together by passing around ActorRef references.
