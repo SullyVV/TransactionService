@@ -39,10 +39,8 @@ class KVClient (clientID: Int, stores: Seq[ActorRef], system: ActorSystem) {
   private val acquireTable = new mutable.HashMap[ActorRef, scala.collection.mutable.ArrayBuffer[Operation]]
   private val heartbeatTable = new mutable.ArrayBuffer[ActorRef]
   private var isPartitioned = false
-  system.scheduler.schedule(0 milliseconds, 5 milliseconds) {
-    if (!isPartitioned) {
+  system.scheduler.schedule(0 milliseconds,10  milliseconds) {
       heartbeat()
-    }
   }
   // simulate disconnect using a scheduler, handle partition condition in commit
 //  system.scheduler.scheduleOnce(5 milliseconds) {
@@ -156,16 +154,16 @@ class KVClient (clientID: Int, stores: Seq[ActorRef], system: ActorSystem) {
         }
       }
 
-      /*** simulate client0 fails after obtained votes from all store servers ***/
-    if (clientID == 0) {
-      isPartitioned = true
-      println(s"client ${clientID} is partitioned after getting votes")
-      /** *** ignore recovery at this time ***/
-      Thread.sleep(30)
-      isPartitioned = false
-      println(s"client ${clientID} recovers after partition")
-    }
-      /************************************************************/
+//      /*** simulate client0 fails after obtained votes from all store servers ***/
+//    if (clientID == 0) {
+//      isPartitioned = true
+//      println(s"client ${clientID} is partitioned after getting votes")
+//      /** *** ignore recovery at this time ***/
+//      Thread.sleep(30)
+//      isPartitioned = false
+//      println(s"client ${clientID} recovers after partition")
+//    }
+//      /************************************************************/
 
       // traverse all element in votesTable, if find any false, abort
       for ((k, v) <- votesTable) {

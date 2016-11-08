@@ -1,7 +1,21 @@
 package rings
 
-import akka.actor.{Actor, ActorSystem, ActorRef, Props}
+import akka.actor.{Actor, ActorRef, ActorSystem, Props}
 import akka.event.Logging
+import akka.util.Timeout
+
+import scala.concurrent.Await
+import java.text.SimpleDateFormat
+import java.util.Date
+
+import scala.concurrent.duration._
+import scala.concurrent.Await
+import akka.actor.{ActorRef, ActorSystem}
+import akka.pattern.ask
+import akka.util.Timeout
+import scala.collection.mutable
+import scala.concurrent.ExecutionContext.Implicits.global
+
 
 sealed trait LoadMasterAPI
 case class Start() extends LoadMasterAPI
@@ -19,12 +33,14 @@ case class Join() extends LoadMasterAPI
   * @param burstSize How many commands per burst
   */
 
-class LoadMaster (val numNodes: Int, val servers: Seq[ActorRef], val burstSize: Int) extends Actor {
+class LoadMaster (val numNodes: Int, val servers: Seq[ActorRef], val burstSize: Int, val stores: Seq[ActorRef]) extends Actor {
   val log = Logging(context.system, this)
   var active: Boolean = true
   var listener: Option[ActorRef] = None
   var nodesActive = numNodes
   var maxPerNode: Int = 0
+  implicit val timeout = Timeout(1000 seconds)
+  private val reportTable = new mutable.HashMap[BigInt, Int]
 
   val serverStats = for (s <- servers) yield new Stats
 
@@ -32,14 +48,22 @@ class LoadMaster (val numNodes: Int, val servers: Seq[ActorRef], val burstSize: 
     case Start() =>
       log.info("Master starting bursts")
       transaction()
-      Thread.sleep(500)
+      Thread.sleep(5000)
       sender ! true
 //      maxPerNode = totalPerNode
 //      for (s <- servers) {
 //        s ! Prime()
 //        burst(s)
 //      }
-
+    case Report() =>
+      for (store <- stores) {
+        val future = ask(store, CheckReport())
+        val done = Await.result(future, timeout.duration).asInstanceOf[scala.collection.mutable.HashMap[BigInt, Int]]
+        for ((k,v) <- done) {
+          reportTable.put(k, v)
+        }
+      }
+      sender ! reportTable
     case BurstAck(senderNodeID: Int, stats: Stats) =>
       serverStats(senderNodeID) += stats
       val s = serverStats(senderNodeID)
@@ -59,13 +83,13 @@ class LoadMaster (val numNodes: Int, val servers: Seq[ActorRef], val burstSize: 
   def transaction() = {
     /*************  client 0 in partition ******/
     //for (i <- 0 until 100) {
-      servers(0) ! TransactionBegin()
-      servers(0) ! TransactionWrite(1)
-      servers(0) ! TransactionCommit()
-      Thread.sleep(10)
-      servers(1) ! TransactionBegin()
-      servers(1) ! TransactionWrite(1)
-      servers(1) ! TransactionCommit()
+//      servers(0) ! TransactionBegin()
+//      servers(0) ! TransactionWrite(1)
+//      servers(0) ! TransactionCommit()
+//      Thread.sleep(10)
+//      servers(1) ! TransactionBegin()
+//      servers(1) ! TransactionWrite(1)
+//      servers(1) ! TransactionCommit()
     //}
 
     /*************  deadlock check *************/
@@ -87,17 +111,15 @@ class LoadMaster (val numNodes: Int, val servers: Seq[ActorRef], val burstSize: 
 //      servers(i) ! TransactionWrite(1)
 //      servers(i) ! TransactionCommit()
 //    }
-//    servers(0) ! TransactionBegin()
-//    servers(0) ! TransactionWrite(1)
-//    servers(0) ! TransactionWrite(2)
-//    servers(0) ! TransactionWrite(3)
-//    servers(0) ! TransactionCommit()
-//    Thread.sleep(500)
-//    servers(1) ! TransactionBegin()
-//    servers(1) ! TransactionWrite(2)
-//    servers(1) ! TransactionWrite(3)
-//    servers(1) ! TransactionWrite(1)
-//    servers(1) ! TransactionCommit()
+    for (i <- 0 until 2) {
+      servers(0) ! TransactionBegin()
+      servers(0) ! TransactionWrite(1)
+      servers(0) ! TransactionCommit()
+      //Thread.sleep(500)
+      servers(1) ! TransactionBegin()
+      servers(1) ! TransactionWrite(1)
+      servers(1) ! TransactionCommit()
+    }
 
     /********************************************/
     /*************  lock release check *************/
@@ -139,8 +161,6 @@ class LoadMaster (val numNodes: Int, val servers: Seq[ActorRef], val burstSize: 
 //          servers(1) ! TransactionRead(1)
 //          servers(1) ! TransactionCommit()
     /********************************************/
-
-
   }
   def burst(server: ActorRef): Unit = {
 //    log.info(s"send a burst to node $target")
@@ -159,8 +179,8 @@ class LoadMaster (val numNodes: Int, val servers: Seq[ActorRef], val burstSize: 
 }
 
 object LoadMaster {
-   def props(numNodes: Int, servers: Seq[ActorRef], burstSize: Int): Props = {
-      Props(classOf[LoadMaster], numNodes, servers, burstSize)
+   def props(numNodes: Int, servers: Seq[ActorRef], burstSize: Int, stores: Seq[ActorRef]): Props = {
+      Props(classOf[LoadMaster], numNodes, servers, burstSize, stores)
    }
 }
 

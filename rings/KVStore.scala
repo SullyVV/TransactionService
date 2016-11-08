@@ -43,8 +43,17 @@ class KVStore extends Actor {
   var endpoints: Option[Seq[ActorRef]] = None
   val heartbeatTable = new mutable.HashMap[Int, Long]
   val validPeriod:Long = 5
+  val reportTable = new mutable.HashMap[BigInt, Int]
   private val dateFormat = new SimpleDateFormat ("mm:ss")
+  var abortCnt: Int = 0
   override def receive = {
+    case CheckReport() => {
+      reportTable.put(-1, abortCnt)
+      for ((k, v) <- store) {
+        reportTable.put(k, v.value)
+      }
+      sender ! reportTable
+    }
     case PartitionedClient(clientID) => {
       if (writeLog.contains(clientID)) {
         // writelog contains clientID means that this client is still valid in that server
@@ -79,7 +88,8 @@ class KVStore extends Actor {
         sender ! new AckMsg(false, true)
       } else {
         val rand = generator.nextInt(100)
-        if (rand > 95) { // fail
+        if (rand > 101) { // fail
+          abortCnt += 1
           sender ! new AckMsg(false, false)
         }  else {// success
           writeLog.put(clientID, writeArray)

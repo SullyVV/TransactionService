@@ -22,6 +22,8 @@ case class DeadClient() extends AppServiceAPI
 case class HeartBeat(clientID: Int) extends AppServiceAPI
 case class Partitioned() extends AppServiceAPI
 case class PartitionedClient(clientID: Int) extends AppServiceAPI
+case class CheckReport() extends AppServiceAPI
+case class Report() extends AppServiceAPI
 /**
  * This object instantiates the service tiers and a load-generating master, and
  * links all the actors together by passing around ActorRef references.
@@ -54,7 +56,7 @@ object KVAppService {
       */
 
     /** Load-generating master */
-    val master = system.actorOf(LoadMaster.props(numClient, servers, 1), "LoadMaster")
+    val master = system.actorOf(LoadMaster.props(numClient, servers, 1, stores), "LoadMaster")
     master
   }
 }
