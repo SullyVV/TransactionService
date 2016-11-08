@@ -42,7 +42,7 @@ class KVStore extends Actor {
   val generator = new scala.util.Random
   var endpoints: Option[Seq[ActorRef]] = None
   val heartbeatTable = new mutable.HashMap[Int, Long]
-  val validPeriod:Long = 5
+  val validPeriod:Long = 15 // a little longer than heartbeat due to network delay
   val reportTable = new mutable.HashMap[BigInt, Int]
   private val dateFormat = new SimpleDateFormat ("mm:ss")
   var abortCnt: Int = 0

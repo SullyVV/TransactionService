@@ -111,7 +111,7 @@ class LoadMaster (val numNodes: Int, val servers: Seq[ActorRef], val burstSize: 
 //      servers(i) ! TransactionWrite(1)
 //      servers(i) ! TransactionCommit()
 //    }
-    for (i <- 0 until 2) {
+    for (i <- 0 until 100) {
       servers(0) ! TransactionBegin()
       servers(0) ! TransactionWrite(1)
       servers(0) ! TransactionCommit()

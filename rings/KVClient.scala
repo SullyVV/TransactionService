@@ -266,6 +266,12 @@ class KVClient (clientID: Int, stores: Seq[ActorRef], system: ActorSystem) {
         }
       }
     }
+
+    for (op <- opsLog) {
+      if (cache.contains(op.key)) {
+        cache -= op.key
+      }
+    }
     println(s"client ${clientID} has got all required locks which are: ${locksHolder}")
     return true
   }
