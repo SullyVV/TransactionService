@@ -11,10 +11,11 @@ import akka.util.Timeout
 object TestHarness {
   val system = ActorSystem("Rings")
   implicit val timeout = Timeout(10000 seconds)
-  val numClient = 3
-  val numServer = 2
+  val numClient = 10
+  val numServer = 5
+  val burstSize = 100
   // Service tier: create app servers and a Seq of per-node Stats
-  val master = KVAppService(system, numClient, numServer)
+  val master = KVAppService(system, numClient, numServer, burstSize)
 
   def main(args: Array[String]): Unit = run()
 
@@ -22,8 +23,13 @@ object TestHarness {
     val future = ask(master, Start())
     Await.result(future, timeout.duration).asInstanceOf[Boolean]
     val future2 = ask(master, Report())
-    val done = Await.result(future2, timeout.duration).asInstanceOf[scala.collection.mutable.HashMap[BigInt, Int]]
-    println(done)
+    val done = Await.result(future2, timeout.duration).asInstanceOf[ReportMsg]
+    println(s"total number of abort is ${done.writeFailed}")
+    println(s"total number of partition  is ${done.partitionCnt}")
+    for ((k, v) <- done.reportTable) {
+      println(s"key ${k}'s final value is ${v}")
+    }
+
     system.shutdown()
 //    val s = System.currentTimeMillis
 //    runUntilDone

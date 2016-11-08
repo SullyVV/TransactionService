@@ -17,6 +17,7 @@ import scala.collection.mutable
 sealed trait KVStoreAPI
 class StoredData(var key: BigInt, var value: Int, var cacheOwner: scala.collection.mutable.ArrayBuffer[Int], var lockOwner: Int)   // default lockOwner ID is -1
 class AckMsg(var result: Boolean, var par: Boolean)
+class ReportMsg(var partitionCnt: Int, var writeFailed: Int, val reportTable: mutable.HashMap[BigInt, Int])
 /**
  * KVStore is a local key-value store based on actors.  Each store actor controls a portion of
  * the key space and maintains a hash of values for the keys in its portion.  The keys are 128 bits
@@ -42,17 +43,18 @@ class KVStore extends Actor {
   val generator = new scala.util.Random
   var endpoints: Option[Seq[ActorRef]] = None
   val heartbeatTable = new mutable.HashMap[Int, Long]
-  val validPeriod:Long = 15 // a little longer than heartbeat due to network delay
-  val reportTable = new mutable.HashMap[BigInt, Int]
+  val validPeriod:Long = 10 // a little longer than heartbeat due to network delay
   private val dateFormat = new SimpleDateFormat ("mm:ss")
-  var abortCnt: Int = 0
+  var writeFailed: Int = 0
+  var partitionCnt: Int = 0
   override def receive = {
     case CheckReport() => {
-      reportTable.put(-1, abortCnt)
+      val reportTable = new mutable.HashMap[BigInt, Int]
       for ((k, v) <- store) {
         reportTable.put(k, v.value)
       }
-      sender ! reportTable
+      val reportMsg = new ReportMsg(partitionCnt, writeFailed, reportTable)
+      sender ! reportMsg
     }
     case PartitionedClient(clientID) => {
       if (writeLog.contains(clientID)) {
@@ -88,8 +90,8 @@ class KVStore extends Actor {
         sender ! new AckMsg(false, true)
       } else {
         val rand = generator.nextInt(100)
-        if (rand > 101) { // fail
-          abortCnt += 1
+        if (rand > 200) { // fail
+          writeFailed += 1
           sender ! new AckMsg(false, false)
         }  else {// success
           writeLog.put(clientID, writeArray)
@@ -174,6 +176,7 @@ class KVStore extends Actor {
           return false
         } else {
           // exceeds validPeriod, old holder is partitioned, reclaim all its locks and clear its write log
+          partitionCnt += 1
           println(s"detect client ${currentLockOwner} is partitioned when client ${clientID} acquiring lock for key ${op.key}")
           reclaimHandler(currentLockOwner)
         }

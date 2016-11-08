@@ -35,7 +35,7 @@ case class Report() extends AppServiceAPI
 
 object KVAppService {
 
-  def apply(system: ActorSystem, numClient: Int, numServer: Int): ActorRef = {
+  def apply(system: ActorSystem, numClient: Int, numServer: Int, burstSize: Int): ActorRef = {
 
     /** Storage tier: create K/V store servers */
     val stores = for (i <- 0 until numServer)
@@ -56,7 +56,7 @@ object KVAppService {
       */
 
     /** Load-generating master */
-    val master = system.actorOf(LoadMaster.props(numClient, servers, 1, stores), "LoadMaster")
+    val master = system.actorOf(LoadMaster.props(numClient, servers, burstSize, stores), "LoadMaster")
     master
   }
 }

@@ -28,19 +28,18 @@ case class Join() extends LoadMasterAPI
   * It also keeps running totals of various Stats returned by the app servers with each burst ack.
   * A listener may register via Join() to receive a message when the experiment is done.
   *
-  * @param numNodes How many actors/servers in the app tier
+  * @param numClients How many actors/servers in the app tier
   * @param servers ActorRefs for the actors/servers in the app tier
   * @param burstSize How many commands per burst
   */
 
-class LoadMaster (val numNodes: Int, val servers: Seq[ActorRef], val burstSize: Int, val stores: Seq[ActorRef]) extends Actor {
+class LoadMaster (val numClients: Int, val servers: Seq[ActorRef], val burstSize: Int, val stores: Seq[ActorRef]) extends Actor {
   val log = Logging(context.system, this)
   var active: Boolean = true
   var listener: Option[ActorRef] = None
-  var nodesActive = numNodes
+  var nodesActive = numClients
   var maxPerNode: Int = 0
   implicit val timeout = Timeout(1000 seconds)
-  private val reportTable = new mutable.HashMap[BigInt, Int]
 
   val serverStats = for (s <- servers) yield new Stats
 
@@ -56,14 +55,19 @@ class LoadMaster (val numNodes: Int, val servers: Seq[ActorRef], val burstSize: 
 //        burst(s)
 //      }
     case Report() =>
+      val reportTable = new mutable.HashMap[BigInt, Int]
+      var totalAbort = 0
+      var totalPartition = 0
       for (store <- stores) {
         val future = ask(store, CheckReport())
-        val done = Await.result(future, timeout.duration).asInstanceOf[scala.collection.mutable.HashMap[BigInt, Int]]
-        for ((k,v) <- done) {
+        val done = Await.result(future, timeout.duration).asInstanceOf[ReportMsg]
+        totalAbort += done.writeFailed
+        totalPartition += done.partitionCnt
+        for ((k,v) <- done.reportTable) {
           reportTable.put(k, v)
         }
       }
-      sender ! reportTable
+      sender ! new ReportMsg(totalPartition, totalAbort, reportTable)
     case BurstAck(senderNodeID: Int, stats: Stats) =>
       serverStats(senderNodeID) += stats
       val s = serverStats(senderNodeID)
@@ -81,8 +85,8 @@ class LoadMaster (val numNodes: Int, val servers: Seq[ActorRef], val burstSize: 
       listener = Some(sender)
   }
   def transaction() = {
-    /*************  client 0 in partition ******/
-    //for (i <- 0 until 100) {
+//    /*************  client 0 in partition ******/
+//    for (i <- 0 until 100) {
 //      servers(0) ! TransactionBegin()
 //      servers(0) ! TransactionWrite(1)
 //      servers(0) ! TransactionCommit()
@@ -90,7 +94,7 @@ class LoadMaster (val numNodes: Int, val servers: Seq[ActorRef], val burstSize: 
 //      servers(1) ! TransactionBegin()
 //      servers(1) ! TransactionWrite(1)
 //      servers(1) ! TransactionCommit()
-    //}
+//    }
 
     /*************  deadlock check *************/
 //    servers(0) ! TransactionBegin()
@@ -105,21 +109,42 @@ class LoadMaster (val numNodes: Int, val servers: Seq[ActorRef], val burstSize: 
 //    servers(1) ! TransactionCommit()
     /********************************************/
 
+    /************* burst test *************/
+    for (i <- 0 until burstSize) {
+      // repeat time for each client
+      for (i <- 0 until numClients) {
+        // all clients write key 1,2,3 in underterministic order
+        servers(i) ! TransactionBegin()
+        servers(i) ! TransactionWrite(1)
+        servers(i) ! TransactionWrite(2)
+        servers(i) ! TransactionWrite(3)
+        servers(i) ! TransactionCommit()
+      }
+    }
+
+
+    /********************************************/
+
+
     /*************  update check *************/
 //    for (i <- 0 until 3) {
 //      servers(i) ! TransactionBegin()
 //      servers(i) ! TransactionWrite(1)
 //      servers(i) ! TransactionCommit()
 //    }
-    for (i <- 0 until 100) {
-      servers(0) ! TransactionBegin()
-      servers(0) ! TransactionWrite(1)
-      servers(0) ! TransactionCommit()
-      //Thread.sleep(500)
-      servers(1) ! TransactionBegin()
-      servers(1) ! TransactionWrite(1)
-      servers(1) ! TransactionCommit()
-    }
+//    for (i <- 0 until 100) {
+//      servers(0) ! TransactionBegin()
+//      servers(0) ! TransactionWrite(1)
+//      servers(0) ! TransactionWrite(2)
+//      servers(0) ! TransactionWrite(3)
+//      servers(0) ! TransactionCommit()
+//      //Thread.sleep(500)
+//      servers(1) ! TransactionBegin()
+//      servers(1) ! TransactionWrite(1)
+//      servers(1) ! TransactionWrite(2)
+//      servers(1) ! TransactionWrite(3)
+//      servers(1) ! TransactionCommit()
+//    }
 
     /********************************************/
     /*************  lock release check *************/
@@ -179,8 +204,8 @@ class LoadMaster (val numNodes: Int, val servers: Seq[ActorRef], val burstSize: 
 }
 
 object LoadMaster {
-   def props(numNodes: Int, servers: Seq[ActorRef], burstSize: Int, stores: Seq[ActorRef]): Props = {
-      Props(classOf[LoadMaster], numNodes, servers, burstSize, stores)
+   def props(numClients: Int, servers: Seq[ActorRef], burstSize: Int, stores: Seq[ActorRef]): Props = {
+      Props(classOf[LoadMaster], numClients, servers, burstSize, stores)
    }
 }
 

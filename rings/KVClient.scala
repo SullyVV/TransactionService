@@ -344,8 +344,6 @@ class KVClient (clientID: Int, stores: Seq[ActorRef], system: ActorSystem) {
   /** clear entry, called by ring server when their cached data is modified by others */
   def clearEntry(key: BigInt) = {
     cache -= key
-    println(s"client $clientID cleared entry for key: $key")
-    println(s"client $clientID new cache is: $cache")
   }
 
   /** clear client, triggered when server tell me that i failed before and my resources are reclaimed*/
