@@ -39,7 +39,7 @@ class KVClient (clientID: Int, stores: Seq[ActorRef], system: ActorSystem) {
   private val acquireTable = new mutable.HashMap[ActorRef, scala.collection.mutable.ArrayBuffer[Operation]]
   private val heartbeatTable = new mutable.ArrayBuffer[ActorRef]
   private var isPartitioned = false
-  system.scheduler.schedule(0 milliseconds,10  milliseconds) {
+  system.scheduler.schedule(0 milliseconds,5  milliseconds) {
       heartbeat()
   }
   // simulate disconnect using a scheduler, handle partition condition in commit
@@ -119,14 +119,14 @@ class KVClient (clientID: Int, stores: Seq[ActorRef], system: ActorSystem) {
       println(s"${dateFormat.format(new Date(System.currentTimeMillis()))}: \033[32mSuccess: client ${clientID} success in acquire locks\033[0m")
 
 //      /*** simulate client0 fails after get all required locks ***/
-//      if (clientID == 0) {
-//        isPartitioned = true
-//        println(s"client ${clientID} is partitioned after lock")
-//        /***** ignore recovery at this time ***/
-//        Thread.sleep(10)
-//        isPartitioned = false
-//        println(s"client ${clientID} recovers after partition")
-//      }
+      if (clientID == 0) {
+        isPartitioned = true
+        println(s"client ${clientID} is partitioned after lock")
+        /***** ignore recovery at this time ***/
+        Thread.sleep(30)
+        isPartitioned = false
+        println(s"client ${clientID} recovers after partition")
+      }
 //      /************************************************************/
 
       // do all operations in local cache first
@@ -154,7 +154,7 @@ class KVClient (clientID: Int, stores: Seq[ActorRef], system: ActorSystem) {
         }
       }
 
-//      /*** simulate client0 fails after obtained votes from all store servers ***/
+      /*** simulate client0 fails after obtained votes from all store servers ***/
 //    if (clientID == 0) {
 //      isPartitioned = true
 //      println(s"client ${clientID} is partitioned after getting votes")
@@ -163,7 +163,7 @@ class KVClient (clientID: Int, stores: Seq[ActorRef], system: ActorSystem) {
 //      isPartitioned = false
 //      println(s"client ${clientID} recovers after partition")
 //    }
-//      /************************************************************/
+      /************************************************************/
 
       // traverse all element in votesTable, if find any false, abort
       for ((k, v) <- votesTable) {
@@ -279,7 +279,6 @@ class KVClient (clientID: Int, stores: Seq[ActorRef], system: ActorSystem) {
   /** Data unlock **/
   def unLock(lockHolder: scala.collection.mutable.ArrayBuffer[BigInt]): Unit = {
     println(s"client ${clientID} try to unlock incomplete locks in acquire phase")
-    println(lockHolder)
     for (lock <- lockHolder) {
         println(s"client ${clientID} try to unlock ${lock} in acquire phase")
         val future = ask(route(lock), UnLock(clientID, lock))
