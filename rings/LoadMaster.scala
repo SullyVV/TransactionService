@@ -86,41 +86,41 @@ class LoadMaster (val numClients: Int, val servers: Seq[ActorRef], val burstSize
   }
   def transaction() = {
    /*************  client 0 in partition ******/
-      servers(0) ! TransactionBegin()
-      servers(0) ! TransactionWrite(1)
-      servers(0) ! TransactionCommit()
-      Thread.sleep(10)
-      servers(1) ! TransactionBegin()
-      servers(1) ! TransactionWrite(1)
-      servers(1) ! TransactionCommit()
+//      servers(0) ! TransactionBegin()
+//      servers(0) ! TransactionWrite(1)
+//      servers(0) ! TransactionCommit()
+//      Thread.sleep(10)
+//      servers(1) ! TransactionBegin()
+//      servers(1) ! TransactionWrite(1)
+//      servers(1) ! TransactionCommit()
     /********************************************/
 
     /*************  API Test *************/
-//        for (i <- 0 until 1000) {
-//          servers(0) ! TransactionBegin()
-//          servers(0) ! TransactionWrite(0)
-//          servers(0) ! TransactionWrite(1)
-//          servers(0) ! TransactionWrite(2)
-//          servers(0) ! TransactionCommit()
-//          Thread.sleep(5)
-//          servers(1) ! TransactionBegin()
-//          servers(1) ! TransactionRead(0)
-//          servers(1) ! TransactionRead(1)
-//          servers(1) ! TransactionRead(2)
-//          servers(1) ! TransactionCommit()
-//          Thread.sleep(5)
-//          servers(1) ! TransactionBegin()
-//          servers(1) ! TransactionWrite(0)
-//          servers(1) ! TransactionWrite(1)
-//          servers(1) ! TransactionWrite(2)
-//          servers(1) ! TransactionCommit()
-//          Thread.sleep(5)
-//          servers(0) ! TransactionBegin()
-//          servers(0) ! TransactionRead(0)
-//          servers(0) ! TransactionRead(1)
-//          servers(0) ! TransactionRead(2)
-//          servers(0) ! TransactionCommit()
-//        }
+        for (i <- 0 until 1000) {
+          servers(0) ! TransactionBegin()
+          servers(0) ! TransactionWrite(0)
+          servers(0) ! TransactionWrite(1)
+          servers(0) ! TransactionWrite(2)
+          servers(0) ! TransactionCommit()
+          Thread.sleep(5)
+          servers(1) ! TransactionBegin()
+          servers(1) ! TransactionRead(0)
+          servers(1) ! TransactionRead(1)
+          servers(1) ! TransactionRead(2)
+          servers(1) ! TransactionCommit()
+          Thread.sleep(5)
+          servers(1) ! TransactionBegin()
+          servers(1) ! TransactionWrite(0)
+          servers(1) ! TransactionWrite(1)
+          servers(1) ! TransactionWrite(2)
+          servers(1) ! TransactionCommit()
+          Thread.sleep(5)
+          servers(0) ! TransactionBegin()
+          servers(0) ! TransactionRead(0)
+          servers(0) ! TransactionRead(1)
+          servers(0) ! TransactionRead(2)
+          servers(0) ! TransactionCommit()
+        }
     /********************************************/
 
     /*************  deadlock check *************/
